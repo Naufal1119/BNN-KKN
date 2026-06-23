@@ -31,8 +31,12 @@ async function startConnection(onMessage) {
     }
 
     if (connection === 'close') {
-      const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-      console.log('✗ Koneksi terputus. Reconnect:', shouldReconnect);
+      const statusCode = lastDisconnect?.error?.output?.statusCode;
+      const shouldReconnect = statusCode !== DisconnectReason.loggedOut;
+      console.log('✗ Koneksi terputus. Status code:', statusCode, 'Reconnect:', shouldReconnect);
+      if (lastDisconnect?.error?.message) {
+        console.log('✗ Error:', lastDisconnect.error.message);
+      }
       if (shouldReconnect) {
         setTimeout(() => startConnection(onMessage), 3000);
       } else {
