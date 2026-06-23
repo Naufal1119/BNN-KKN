@@ -1,4 +1,4 @@
-const { makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whiskeysockets/baileys');
+const { makeWASocket, useMultiFileAuthState, DisconnectReason, getContentType, normalizeMessageContent } = require('@whiskeysockets/baileys');
 const qrcode = require('qrcode-terminal');
 const pino = require('pino');
 
@@ -45,11 +45,15 @@ async function startConnection(onMessage) {
 
   sock.ev.on('messages.upsert', async (messageUpsert) => {
     const message = messageUpsert.messages[0];
-    if (!message.key.fromMe && message.message?.conversation) {
-      const text = message.message.conversation;
-      const jid = message.key.remoteJid;
-      if (onMessage) {
-        await onMessage(sock, text, jid);
+    if (!message.key.fromMe && message.message) {
+      const msgType = getContentType(message.message);
+      const msgContent = normalizeMessageContent(message.message);
+      const text = msgContent?.text || msgContent?.caption || msgContent?.conversation || '';
+      if (text) {
+        const jid = message.key.remoteJid;
+        if (onMessage) {
+          await onMessage(sock, text, jid);
+        }
       }
     }
   });
