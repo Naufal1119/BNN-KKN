@@ -57,10 +57,8 @@ async function startConnection(onMessage) {
       console.log('📨 Raw message keys:', Object.keys(message.message));
       const msgType = getContentType(message.message);
       console.log('📨 Content type:', msgType);
-      const msgContent = normalizeMessageContent(message.message);
-      console.log('📨 Normalized:', JSON.stringify(msgContent));
-
-      const text = msgContent?.text || msgContent?.caption || msgContent?.conversation || '';
+      const msgContent = message.message[msgType];
+      const text = msgContent?.text || msgContent?.caption || message.message?.conversation || '';
       console.log('📨 Extracted text:', text || '(empty)');
 
       if (text) {
