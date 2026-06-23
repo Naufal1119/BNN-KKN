@@ -1,6 +1,17 @@
 const { startConnection, getSock } = require('./src/connection');
 const { handleMessage, initTimers } = require('./src/messages');
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function typingDelay(sock, jid, text) {
+  await sock.sendPresenceUpdate('composing', jid);
+  const base = Math.min(text.length * 3, 2000);
+  const wait = Math.max(base + Math.random() * 500, 1500);
+  await delay(wait);
+}
+
 async function main() {
   console.log('Memulai WhatsApp Chatbot...\n');
 
@@ -8,6 +19,7 @@ async function main() {
     try {
       const reply = handleMessage(text, jid);
       if (reply) {
+        await typingDelay(sock, jid, reply);
         await sock.sendMessage(jid, { text: reply });
       }
     } catch (err) {

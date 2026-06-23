@@ -6,39 +6,51 @@ const TIMEOUT_REMINDER = 3 * 60 * 1000;
 const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
 const reminderMessage = `
-╔══════════════════════════════════════════╗
-║       PEMBERITAHUAN INACTIVITAS         ║
-╚══════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════╗
+║                   PEMBERITAHUAN                             ║
+║              BATAS WAKTU PELAYANAN                          ║
+╚══════════════════════════════════════════════════════════════╝
 
-Yth. Pengguna Layanan,
+Yth. Bapak/Ibu Pengguna Layanan,
 
-Kami mendeteksi tidak ada aktivitas dalam beberapa waktu terakhir.
+Berdasarkan sistem pencatatan kami, terdeteksi bahwa tidak terdapat aktivitas komunikasi dalam beberapa waktu terakhir.
 
-🗓️ *Sesi chat Anda akan ditutup secara otomatis* dalam 2 menit apabila tidak ada tanggapan.
+Sehubungan dengan hal tersebut, dengan ini kami informasikan bahwa *sesi pelayanan ini akan ditutup secara otomatis* dalam waktu 2 (dua) menit apabila tidak ada tanggapan dari Anda.
 
-Jika Anda masih memerlukan bantuan, silakan kirim:
-• Ketik *0* atau *menu* untuk kembali ke menu utama
-• Atau ketik pesan Anda untuk melanjutkan
+Apabila Anda masih memerlukan bantuan atau informasi lebih lanjut, silakan:
+┌─────────────────────────────────────────────┐
+│  • Ketik *0* atau *menu* untuk kembali ke   │
+│    menu utama                               │
+│  • Atau ketik pesan Anda untuk melanjutkan  │
+│    sesi pelayanan                           │
+└─────────────────────────────────────────────┘
 
-Terima kasih atas perhatian Anda.
+Kami menghaturkan terima kasih atas perhatian dan kesediaan Anda untuk terus menggunakan layanan kami.
 `;
 
 const closeMessage = `
-╔══════════════════════════════════════════╗
-║         SESI CHAT TELAH DITUTUP         ║
-╚══════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════╗
+║            SESI PELAYANAN TELAH DITUTUP                     ║
+╚══════════════════════════════════════════════════════════════╝
 
-Yth. Pengguna Layanan,
+Yth. Bapak/Ibu Pengguna Layanan,
 
-Sesi chat ini telah ditutup secara otomatis karena tidak ada aktivitas dalam jangka waktu tertentu.
+Dengan ini diberitahukan bahwa sesi pelayanan Anda telah ditutup secara otomatis dikarenakan tidak terdapat aktivitas dalam jangka waktu yang telah ditentukan.
 
-🔹 Apabila Anda masih memerlukan bantuan, silakan kirim *menu* kapan saja untuk memulai sesi chat baru.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔹  Apabila Anda masih memerlukan bantuan atau ingin
+    mengakses layanan kembali, silakan kirim *menu*
+    kapan saja untuk memulai sesi pelayanan baru.
 
-🔹 Untuk informasi lebih lanjut, Anda dapat menghubungi Customer Service kami di:
-   📞 021-12345678 (Senin-Jumat, 08.00-16.00)
-   📧 cs@perusahaan.com
+🔹  Untuk informasi lebih lanjut, Anda dapat
+    menghubungi Customer Service kami melalui:
+    📞  021-12345678 (Senin-Jumat, 08.00-16.00 WIB)
+    📧  cs@perusahaan.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Terima kasih telah mempercayakan layanan kepada kami. 🙏
+Terima kasih atas kepercayaan yang telah diberikan kepada kami. Kami siap melayani Anda kembali kapan pun diperlukan.
+
+*© 2026 - Sistem Pelayanan Berbasis Teknologi Informasi*
 `;
 
 function initTimers(sock) {
@@ -107,7 +119,12 @@ function handleMessage(text, jid) {
       }
     }
     startTimers(jid, session);
-    return `⚠️ Maaf, pilihan *${text}* tidak tersedia.\n\nSilakan pilih nomor *1* sampai *5* yang tertera pada menu.\n\n${mainMenu}`;
+    return `⚠️  *INFORMASI*
+Maaf, pilihan "*${text}*" yang Anda masukkan tidak tersedia dalam sistem kami.
+
+Silakan pilih salah satu nomor *1* sampai *5* yang tertera pada menu di bawah ini:
+
+${mainMenu}`;
   }
 
   if (session.menu && session.menu.startsWith('sub_')) {
@@ -132,11 +149,17 @@ function handleMessage(text, jid) {
 
     if (subKey === 4) {
       resetSession(jid);
-      return `${sub.body}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nTerima kasih telah menghubungi kami. Pesan Anda akan segera diproses oleh petugas kami.\n\n${mainMenu}`;
+      return `${sub.body}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n✅  *KONFIRMASI*\nTerima kasih telah menghubungi kami melalui layanan *Customer Service*. Pesan dan identitas Anda telah kami catat dalam sistem dan akan segera diproses oleh petugas kami pada jam operasional pelayanan.\n\n${mainMenu}`;
     }
 
     startTimers(jid, session);
-    return `⚠️ Maaf, pilihan *${text}* tidak valid.\n\n${sub.body}`;
+    return `⚠️  *INFORMASI*
+Maaf, pilihan "*${text}*" yang Anda masukkan tidak sesuai dengan ketentuan yang tersedia pada menu saat ini.
+
+Silakan coba kembali dengan pilihan yang benar.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${sub.body}`;
   }
 
   if (session.menu === 'detail') {
