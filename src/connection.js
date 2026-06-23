@@ -44,17 +44,31 @@ async function startConnection(onMessage) {
   sock.ev.on('creds.update', saveCreds);
 
   sock.ev.on('messages.upsert', async (messageUpsert) => {
+    console.log('📩 Event messages.upsert type:', messageUpsert.type);
     const message = messageUpsert.messages[0];
+    console.log('📨 Key:', JSON.stringify(message.key));
+    console.log('📨 FromMe:', message.key.fromMe);
+
     if (!message.key.fromMe && message.message) {
+      console.log('📨 Raw message keys:', Object.keys(message.message));
       const msgType = getContentType(message.message);
+      console.log('📨 Content type:', msgType);
       const msgContent = normalizeMessageContent(message.message);
+      console.log('📨 Normalized:', JSON.stringify(msgContent));
+
       const text = msgContent?.text || msgContent?.caption || msgContent?.conversation || '';
+      console.log('📨 Extracted text:', text || '(empty)');
+
       if (text) {
         const jid = message.key.remoteJid;
         if (onMessage) {
           await onMessage(sock, text, jid);
         }
       }
+    } else if (message.key.fromMe) {
+      console.log('⏭ Skip: fromMe');
+    } else if (!message.message) {
+      console.log('⏭ Skip: no message content');
     }
   });
 
