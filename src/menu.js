@@ -1,695 +1,424 @@
 const header = `
-╔══════════════════════════════════════════════════════════════╗
-║                    LAYANAN INFORMASI                         ║
-║                 DAN PELAYANAN PUBLIK                         ║
-║                                                              ║
-║          SISTEM PELAYANAN BERBASIS TEKNOLOGI                 ║
-║                 INFORMASI (SPBTI)                            ║
-╚══════════════════════════════════════════════════════════════╝`;
-
-const footerMenu = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📌 Ketik *0* untuk kembali ke menu utama
-📌 Ketik *menu* untuk menampilkan menu kembali
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-*© 2026 - Seluruh hak cipta dilindungi undang-undang*`;
-
-const footerBack = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ketik *0* untuk kembali ke menu utama.`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+      LAYANAN INFORMASI DAN PELAYANAN PUBLIK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
 const mainMenu = `${header}
 
 Assalamu'alaikum Warahmatullahi Wabarakatuh.
 
-Selamat datang dan terima kasih telah menghubungi *Layanan Informasi dan Pelayanan Publik* kami. Kami berkomitmen untuk memberikan pelayanan yang cepat, tepat, dan profesional kepada seluruh masyarakat.
+Selamat datang di layanan kami. Silakan pilih menu yang tersedia dengan membalas nomor di bawah ini:
 
-Silakan memilih jenis layanan yang Anda butuhkan dengan membalas nomor menu di bawah ini:
+ 1️⃣  Informasi Layanan dan Produk
+ 2️⃣  Status Permohonan Layanan
+ 3️⃣  Panduan, Persyaratan, dan Ketentuan
+ 4️⃣  Hubungi Customer Service
+ 5️⃣  Pertanyaan Umum (FAQ)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    🏛️  [1] Informasi Layanan dan Produk
-
-    📋  [2] Status Permohonan Layanan
-
-    📖  [3] Panduan, Persyaratan, dan Ketentuan
-
-    📞  [4] Hubungi Customer Service
-
-    ❓  [5] Pertanyaan yang Sering Diajukan (FAQ)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${footerMenu}`;
+Ketik *0* untuk kembali ke menu utama.`;
 
 const subMenus = {
   1: {
     title: 'INFORMASI LAYANAN DAN PRODUK',
     body: `${header}
 
-Berikut adalah informasi layanan yang kami sediakan. Silakan pilih dengan membalas huruf yang sesuai untuk melihat detail lebih lanjut:
+Silakan pilih informasi yang Anda butuhkan:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    🔹  [a] Layanan Pengaduan Masyarakat
-    🔹  [b] Informasi Produk dan Program
-    🔹  [c] Jam dan Hari Operasional Pelayanan
-    🔹  [d] Alamat dan Lokasi Kantor
-    🔹  [e] Landasan Hukum dan Regulasi
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ a.  Layanan Pengaduan Masyarakat
+ b.  Informasi Produk dan Program
+ c.  Jam dan Hari Operasional
+ d.  Alamat dan Lokasi Kantor
+ e.  Landasan Hukum dan Regulasi
 
-Silakan kirimkan huruf *a*, *b*, *c*, *d*, atau *e*.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
     children: {
       a: `${header}
 
-══════════════════════════════════════════════════════════════
-               LAYANAN PENGADUAN MASYARAKAT
-══════════════════════════════════════════════════════════════
+━━━ LAYANAN PENGADUAN MASYARAKAT ━━━
 
-Kami menerima dan menindaklanjuti setiap pengaduan, saran, serta masukan yang disampaikan oleh masyarakat melalui saluran resmi sebagai berikut:
+Kami menerima pengaduan, saran, dan masukan melalui:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📞  Telepon            : 021-12345678
-📧  Email              : pengaduan@perusahaan.com
-🌐  Website            : www.perusahaan.com/pengaduan
-💬  WhatsApp           : 0812-3456-7890
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞  021-12345678
+📧  pengaduan@perusahaan.com
+🌐  www.perusahaan.com/pengaduan
 
-Apabila Anda hendak menyampaikan pengaduan melalui layanan chat ini, mohon kirimkan data berikut secara lengkap agar dapat kami proses dengan baik:
+Untuk menyampaikan pengaduan melalui chat ini, kirimkan:
 
-┌─────────────────────────────────────────────┐
-│  1. Nama Lengkap                            │
-│  2. Nomor Induk Kependudukan (NIK)          │
-│  3. Alamat Lengkap                          │
-│  4. Nomor Telepon yang Dapat Dihubungi      │
-│  5. Uraian Pengaduan                        │
-│  6. Lokasi dan Waktu Kejadian               │
-│  7. Dokumen Pendukung (jika ada)            │
-└─────────────────────────────────────────────┘
+ 1. Nama lengkap
+ 2. NIK
+ 3. Alamat lengkap
+ 4. No. telepon
+ 5. Uraian pengaduan
+ 6. Lokasi dan waktu kejadian
 
-⏱  *Estimasi waktu penanganan:* 1×24 jam kerja sejak laporan diverifikasi.
-📌  *Nomor tiket pengaduan* akan diterbitkan dan disampaikan kepada Anda melalui pesan ini setelah pengaduan berhasil diregistrasi.
+⏱ Estimasi penanganan: 1×24 jam kerja setelah diverifikasi.
+📌 Nomor tiket akan diterbitkan setelah pengaduan diregistrasi.
 
-Kami menjamin setiap pengaduan akan ditangani secara profesional dan sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       b: `${header}
 
-══════════════════════════════════════════════════════════════
-               INFORMASI PRODUK DAN PROGRAM
-══════════════════════════════════════════════════════════════
+━━━ INFORMASI PRODUK DAN PROGRAM ━━━
 
-Saat ini kami menyelenggarakan berbagai produk dan program layanan yang dirancang untuk memenuhi kebutuhan masyarakat, antara lain:
+Produk dan program layanan yang kami sediakan:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏆  [1] Layanan Utama
-     Merupakan produk layanan inti yang menjadi fokus utama
-     penyelenggaraan pelayanan publik kami.
+ 1️⃣ Layanan Utama — Layanan inti pelayanan publik
+ 2️⃣ Program Kemitraan — Kerja sama dengan berbagai pihak
+ 3️⃣ Layanan Premium — Fasilitas prioritas (opsional)
 
-🤝  [2] Program Kemitraan
-     Program kerja sama dengan berbagai pihak dalam rangka
-     meningkatkan kualitas dan jangkauan pelayanan.
+Informasi lengkap dapat diakses di www.perusahaan.com atau hubungi Customer Service.
 
-⭐  [3] Layanan Premium
-     Layanan dengan prioritas dan fasilitas tambahan bagi
-     pengguna yang memerlukan penanganan khusus.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Untuk memperoleh informasi yang lebih lengkap dan detail mengenai masing-masing produk dan program, silakan mengunjungi website resmi kami di *www.perusahaan.com* atau menghubungi Customer Service kami melalui saluran yang tersedia.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       c: `${header}
 
-══════════════════════════════════════════════════════════════
-               JAM DAN HARI OPERASIONAL PELAYANAN
-══════════════════════════════════════════════════════════════
+━━━ JAM DAN HARI OPERASIONAL ━━━
 
-Berikut adalah jadwal operasional pelayanan di lingkungan kami:
+🏢 Kantor Pusat
+   Senin–Kamis : 08.00 – 16.00 WIB
+   Jumat       : 08.00 – 16.30 WIB
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏛️  *KANTOR PUSAT*
+🏪 Unit Pelayanan Terpadu
+   Senin–Jumat : 08.00 – 15.00 WIB
 
-    Hari Senin s.d. Kamis
-    ⏰  08.00 – 16.00 WIB
+❌ Sabtu, Minggu, dan Hari Libur Nasional: TUTUP
 
-    Hari Jumat
-    ⏰  08.00 – 16.30 WIB
+☎️ Pengaduan dapat disampaikan 24 jam via website/email.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🏪  *UNIT PELAYANAN TERPADU*
-
-    Hari Senin s.d. Jumat
-    ⏰  08.00 – 15.00 WIB
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-❌  *LIBUR*
-    Hari Sabtu, Minggu, dan Hari Libur Nasional yang telah
-    ditetapkan oleh Pemerintah.
-
-☎️  *LAYANAN PENGADUAN 24 JAM*
-    Pengaduan dapat disampaikan melalui website dan email
-    tanpa terbatas waktu operasional kantor.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       d: `${header}
 
-══════════════════════════════════════════════════════════════
-               ALAMAT DAN LOKASI KANTOR
-══════════════════════════════════════════════════════════════
+━━━ ALAMAT DAN LOKASI KANTOR ━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏛️  *KANTOR PUSAT*
+🏛️ Kantor Pusat
+   Jl. Profesional No. 123, Jakarta Pusat 12345
+   📞 021-12345678
 
-    Jalan Profesional Nomor 123
-    Kelurahan Contoh, Kecamatan Teladan
-    Jakarta Pusat 12345
-    Telepon: 021-12345678
+🏪 Unit Pelayanan Terpadu
+   Gedung Pelayanan Lt. 1, Jl. Pelayanan No. 45
+   Jakarta Selatan 54321
+   📞 021-87654321
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lokasi kantor cabang: www.perusahaan.com/lokasi
 
-🏪  *UNIT PELAYANAN TERPADU*
-
-    Gedung Pelayanan Lantai 1
-    Jalan Pelayanan Nomor 45
-    Jakarta Selatan 54321
-    Telepon: 021-87654321
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Untuk mengetahui lokasi kantor cabang dan unit pelayanan terdekat di wilayah Anda, silakan mengakses website resmi kami di *www.perusahaan.com/lokasi* atau menghubungi Customer Service.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       e: `${header}
 
-══════════════════════════════════════════════════════════════
-               LANDASAN HUKUM DAN REGULASI
-══════════════════════════════════════════════════════════════
+━━━ LANDASAN HUKUM DAN REGULASI ━━━
 
-Seluruh penyelenggaraan layanan kami didasarkan pada ketentuan peraturan perundang-undangan yang berlaku, antara lain sebagai berikut:
+Layanan kami berdasarkan peraturan berikut:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📜  Undang-Undang Nomor XX Tahun 20XX
-    tentang Pelayanan Publik
+📜 UU No. XX/20XX tentang Pelayanan Publik
+📜 PP No. XX/20XX tentang Standar Pelayanan
+📜 Permen No. XX/20XX tentang Tata Cara Pelayanan
+📜 Keputusan Direksi No. XXX/20XX tentang SOP
 
-📜  Peraturan Pemerintah Nomor XX Tahun 20XX
-    tentang Standar Pelayanan Publik
+Dokumen selengkapnya: www.perusahaan.com/regulasi
 
-📜  Peraturan Menteri Nomor XX Tahun 20XX
-    tentang Tata Cara Penyelenggaraan Pelayanan
-
-📜  Peraturan Daerah Nomor XX Tahun 20XX
-    tentang Penyelenggaraan Pelayanan di Daerah
-
-📜  Keputusan Direksi Nomor XXX/20XX
-    tentang Kebijakan Mutu dan Standar Operasional Prosedur
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Dokumen regulasi selengkapnya dapat diakses dan diunduh melalui website resmi kami di *www.perusahaan.com/regulasi*.
-
-Kami senantiasa berkomitmen untuk menyelenggarakan pelayanan yang sesuai dengan ketentuan hukum dan peraturan yang berlaku demi mewujudkan tata kelola pelayanan publik yang baik (good governance).
-${footerBack}`
+Ketik *0* untuk kembali ke menu utama.`
     }
   },
   2: {
     title: 'STATUS PERMOHONAN LAYANAN',
     body: `${header}
 
-Silakan memilih jenis status permohonan yang ingin Anda ketahui informasinya:
+Pilih jenis status yang ingin diketahui:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    🔹  [a] Status Pendaftaran
-    🔹  [b] Status Pengaduan
-    🔹  [c] Status Pembayaran
-    🔹  [d] Status Kelengkapan Berkas
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ a.  Status Pendaftaran
+ b.  Status Pengaduan
+ c.  Status Pembayaran
+ d.  Status Kelengkapan Berkas
 
-Silakan kirimkan huruf *a*, *b*, *c*, atau *d*.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
     children: {
       a: `${header}
 
-══════════════════════════════════════════════════════════════
-               CEK STATUS PENDAFTARAN
-══════════════════════════════════════════════════════════════
+━━━ CEK STATUS PENDAFTARAN ━━━
 
-Untuk mengetahui status permohonan pendaftaran Anda, silakan kirimkan *Nomor Registrasi* yang telah diterbitkan dan disampaikan kepada Anda pada saat proses pendaftaran.
+Kirimkan *Nomor Registrasi* Anda untuk mengecek status pendaftaran.
 
-Format nomor registrasi:
-┌──────────────────────────────────────┐
-│  *REG-2025-XXXXXX*                   │
-│  (12 karakter)                       │
-└──────────────────────────────────────┘
+Format: *REG-2025-XXXXXX* (12 karakter)
 
-Nomor registrasi telah dikirimkan melalui *SMS* dan/atau *Email* yang Anda daftarkan pada saat melakukan pendaftaran.
+Nomor registrasi telah dikirim melalui SMS/Email saat pendaftaran.
 
-Apabila Anda mengalami kendala atau kehilangan nomor registrasi, silakan menghubungi Customer Service kami untuk mendapatkan bantuan lebih lanjut.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       b: `${header}
 
-══════════════════════════════════════════════════════════════
-               CEK STATUS PENGADUAN
-══════════════════════════════════════════════════════════════
+━━━ CEK STATUS PENGADUAN ━━━
 
-Untuk mengetahui status penanganan pengaduan Anda, silakan kirimkan *Nomor Tiket* yang telah diterbitkan pada saat pengaduan Anda berhasil diregistrasi.
+Kirimkan *Nomor Tiket* yang diterbitkan saat pengaduan diregistrasi.
 
-Format nomor tiket:
-┌──────────────────────────────────────┐
-│  *TKT-2025-XXXXXX*                   │
-│  (12 karakter)                       │
-└──────────────────────────────────────┘
+Format: *TKT-2025-XXXXXX*
 
-Apabila Anda belum memiliki nomor tiket pengaduan, silakan menyampaikan pengaduan terlebih dahulu melalui menu *Layanan Pengaduan Masyarakat* pada menu utama.
-${footerBack}`,
+Belum punya nomor tiket? Sampaikan pengaduan melalui menu *Layanan Pengaduan Masyarakat* terlebih dahulu.
+
+Ketik *0* untuk kembali ke menu utama.`,
       c: `${header}
 
-══════════════════════════════════════════════════════════════
-               CEK STATUS PEMBAYARAN
-══════════════════════════════════════════════════════════════
+━━━ CEK STATUS PEMBAYARAN ━━━
 
-Untuk mengetahui status pembayaran layanan Anda, silakan kirimkan *Nomor Invoice* atau *Kode Billing* yang tercantum pada bukti pembayaran yang telah Anda lakukan.
+Kirimkan *Nomor Invoice* atau *Kode Billing* dari bukti pembayaran.
 
-Format nomor:
-┌──────────────────────────────────────┐
-│  Invoice: *INV-2025-XXXXXX*          │
-│  Bill  : *BILL-2025-XXXXXX*          │
-└──────────────────────────────────────┘
+Format:
+   Invoice: *INV-2025-XXXXXX*
+   Billing: *BILL-2025-XXXXXX*
 
-Pembayaran yang telah terverifikasi akan mempercepat proses pemrosesan permohonan layanan Anda.
-${footerBack}`,
+Pembayaran yang terverifikasi akan mempercepat proses layanan.
+
+Ketik *0* untuk kembali ke menu utama.`,
       d: `${header}
 
-══════════════════════════════════════════════════════════════
-               CEK KELENGKAPAN BERKAS
-══════════════════════════════════════════════════════════════
+━━━ CEK KELENGKAPAN BERKAS ━━━
 
-Untuk mengetahui status kelengkapan berkas permohonan Anda, silakan kirimkan *Nomor Permohonan* yang tercantum pada tanda terima dokumen yang telah diberikan oleh petugas kami.
+Kirimkan *Nomor Permohonan* yang tercantum pada tanda terima dokumen.
 
-Format nomor permohonan:
-┌──────────────────────────────────────┐
-│  *PMN-2025-XXXXXX*                   │
-│  (12 karakter)                       │
-└──────────────────────────────────────┘
+Format: *PMN-2025-XXXXXX*
 
-Petugas kami akan melakukan pemeriksaan dan memberikan informasi secara lengkap mengenai dokumen yang masih kurang atau perlu dilengkapi untuk memproses permohonan Anda.
-${footerBack}`
+Petugas akan menginformasikan dokumen yang masih kurang.
+
+Ketik *0* untuk kembali ke menu utama.`
     }
   },
   3: {
     title: 'PANDUAN, PERSYARATAN, DAN KETENTUAN',
     body: `${header}
 
-Berikut adalah berbagai informasi panduan, persyaratan, dan ketentuan yang perlu Anda ketahui dalam mengakses layanan kami. Silakan pilih dengan membalas nomor yang sesuai:
+Pilih informasi yang Anda butuhkan:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    📋  [1] Persyaratan Dokumen
-    📝  [2] Tata Cara Pendaftaran
-    🔄  [3] Alur dan Mekanisme Proses Layanan
-    ⏱️  [4] Estimasi Waktu Penyelesaian
-    💰  [5] Biaya dan Tarif Layanan
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 1️⃣  Persyaratan Dokumen
+ 2️⃣  Tata Cara Pendaftaran
+ 3️⃣  Alur Proses Layanan
+ 4️⃣  Estimasi Waktu Penyelesaian
+ 5️⃣  Biaya dan Tarif Layanan
 
-Silakan kirimkan nomor *1*, *2*, *3*, *4*, atau *5*.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
     children: {
       1: `${header}
 
-══════════════════════════════════════════════════════════════
-               PERSYARATAN DOKUMEN
-══════════════════════════════════════════════════════════════
+━━━ PERSYARATAN DOKUMEN ━━━
 
-Sehubungan dengan pengajuan permohonan layanan, terdapat sejumlah dokumen yang wajib dan perlu dipersiapkan sebagai berikut:
+Dokumen Wajib:
+✅ Fotokopi KTP (masih berlaku)
+✅ Fotokopi Kartu Keluarga
+✅ Pas foto 3×4 (2 lembar)
+✅ Surat permohonan bermaterai
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋  *DOKUMEN WAJIB*
+Dokumen Pendukung:
+✅ Fotokopi NPWP
+✅ Surat keterangan domisili
+✅ Dokumen lain sesuai jenis layanan
 
-    ✅  Fotokopi Kartu Tanda Penduduk (KTP) yang masih berlaku
-    ✅  Fotokopi Kartu Keluarga (KK)
-    ✅  Pas foto berwarna terbaru ukuran 3×4 sebanyak 2 (dua) lembar
-    ✅  Surat permohonan yang ditandatangani di atas materai
+Ketentuan:
+• Dokumen harus jelas dan terbaca
+• Dokumen asli ditunjukkan saat verifikasi
+• Kelengkapan dokumen mempercepat proses
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📋  *DOKUMEN PENDUKUNG*
-
-    ✅  Fotokopi Nomor Pokok Wajib Pajak (NPWP)
-    ✅  Surat keterangan domisili dari kelurahan setempat
-    ✅  Dokumen pendukung lainnya yang dipersyaratkan sesuai dengan jenis layanan yang diajukan
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⚠️  *KETENTUAN PENTING*
-
-    1. Seluruh dokumen wajib dalam keadaan jelas, utuh, dan dapat terbaca dengan baik.
-    2. Dokumen asli wajib ditunjukkan pada saat proses verifikasi di kantor.
-    3. Kelengkapan dan kebenaran dokumen akan mempercepat proses verifikasi dan pemrosesan permohonan.
-    4. Ketidaklengkapan dokumen dapat mengakibatkan penundaan atau penolakan permohonan.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       2: `${header}
 
-══════════════════════════════════════════════════════════════
-               TATA CARA PENDAFTARAN
-══════════════════════════════════════════════════════════════
+━━━ TATA CARA PENDAFTARAN ━━━
 
-Pendaftaran layanan dapat dilakukan melalui 2 (dua) jalur, yaitu secara *online* maupun *offline* (langsung). Berikut adalah panduan lengkapnya:
+🌐 Online
+   1. Akses www.perusahaan.com/daftar
+   2. Isi formulir pendaftaran
+   3. Upload dokumen persyaratan
+   4. Klik "Kirim Permohonan"
+   5. Simpan nomor registrasi
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌐  *A. PENDAFTARAN SECARA ONLINE*
+🏛️ Offline (Langsung)
+   1. Datang ke kantor terdekat
+   2. Ambil nomor antrean
+   3. Serahkan dokumen ke petugas
+   4. Isi formulir pendaftaran
+   5. Terima tanda terima dokumen
 
-    Langkah 1 : Akses website www.perusahaan.com/daftar
-    Langkah 2 : Isi dan lengkapi formulir pendaftaran secara elektronik
-    Langkah 3 : Unggah (upload) dokumen persyaratan yang diminta
-    Langkah 4 : Lakukan verifikasi data dan klik tombol "Kirim Permohonan"
-    Langkah 5 : Catat dan simpan *Nomor Registrasi* yang akan ditampilkan
-               setelah permohonan berhasil dikirim
+⏱ Verifikasi: 1-3 hari kerja setelah dokumen lengkap.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🏛️  *B. PENDAFTARAN SECARA OFFLINE (LANGSUNG)*
-
-    Langkah 1 : Datang langsung ke kantor atau unit pelayanan terdekat
-    Langkah 2 : Ambil nomor antrean pada mesin antrean yang tersedia
-    Langkah 3 : Serahkan dokumen persyaratan kepada petugas loket
-    Langkah 4 : Isi dan tanda tangani formulir pendaftaran
-    Langkah 5 : Terima *Tanda Terima Dokumen* sebagai bukti registrasi
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-⏱  *Verifikasi berkas* akan dilaksanakan dalam waktu 1×24 jam hingga 3×24 jam kerja sejak seluruh dokumen dinyatakan lengkap dan diterima oleh petugas.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       3: `${header}
 
-══════════════════════════════════════════════════════════════
-               ALUR DAN MEKANISME PROSES LAYANAN
-══════════════════════════════════════════════════════════════
+━━━ ALUR PROSES LAYANAN ━━━
 
-Berikut adalah alur dan mekanisme proses layanan secara umum yang berlaku di lingkungan kami:
+ 1️⃣ Pendaftaran
+    → Pengajuan permohonan
+    → Pemeriksaan kelengkapan
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🗂️  *TAHAP 1: PENDAFTARAN*
-    ├── Pengajuan permohonan oleh pemohon
-    └── Pemeriksaan awal kelengkapan dokumen
+ 2️⃣ Verifikasi
+    → Verifikasi data dan dokumen
+    → Konfirmasi informasi
 
-🔍  *TAHAP 2: VERIFIKASI*
-    ├── Verifikasi keabsahan data dan dokumen
-    ├── Konfirmasi kebenaran dan keakuratan informasi
-    └── Permintaan kelengkapan tambahan (jika diperlukan)
+ 3️⃣ Pemrosesan
+    → Pengolahan permohonan
+    → Validasi akhir
 
-⚙️  *TAHAP 3: PEMROSESAN*
-    ├── Pemrosesan dan pengolahan permohonan
-    ├── Pengecekan dan validasi akhir oleh pejabat berwenang
-    └── Persiapan penerbitan hasil/dokumen
+ 4️⃣ Penyelesaian
+    → Penerbitan hasil/dokumen
+    → Pemberitahuan ke pemohon
 
-📨  *TAHAP 4: PENYELESAIAN*
-    ├── Penerbitan hasil dan/atau dokumen
-    ├── Pemberitahuan hasil kepada pemohon
-    └── Pengambilan dokumen (offline) atau pengiriman (online)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Status dapat dicek melalui menu *Cek Status Permohonan*.
 
-Status dan perkembangan permohonan dapat dipantau secara berkala melalui menu *Cek Status Permohonan Layanan* pada menu utama.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       4: `${header}
 
-══════════════════════════════════════════════════════════════
-               ESTIMASI WAKTU PENYELESAIAN
-══════════════════════════════════════════════════════════════
+━━━ ESTIMASI WAKTU PENYELESAIAN ━━━
 
-Berikut adalah estimasi waktu yang diperlukan untuk menyelesaikan setiap tahapan proses layanan:
+Verifikasi berkas        : 1-2 hari kerja
+Pemrosesan permohonan    : 3-5 hari kerja
+Penerbitan dokumen       : 1-2 hari kerja
+Total                    : 5-9 hari kerja
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏱️  *TAHAPAN LAYANAN                      ESTIMASI WAKTU*
+Faktor yang mempengaruhi:
+• Kelengkapan dokumen
+• Volume permohonan
+• Jenis layanan
 
-    Verifikasi dan pemeriksaan berkas     1 - 2 hari kerja
-    Proses pemrosesan permohonan          3 - 5 hari kerja
-    Penerbitan dokumen hasil              1 - 2 hari kerja
-    ─────────────────────────────────────────────────────
-    *TOTAL KESELURUHAN*                   5 - 9 hari kerja
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Pengaduan prioritas: maksimal 1×24 jam.
 
-📌  *CATATAN PENTING:*
-
-    Estimasi waktu penyelesaian di atas dapat berbeda dan dipengaruhi oleh beberapa faktor, antara lain:
-    • Kelengkapan dan keabsahan dokumen yang diserahkan
-    • Volume dan jumlah permohonan yang sedang diproses
-    • Jenis dan kompleksitas layanan yang diajukan
-    • Ketersediaan pejabat yang berwenang
-
-📌  *PENGADUAN PRIORITAS*
-    Pengaduan dengan kategori prioritas akan ditangani dalam waktu maksimal *1×24 jam*.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       5: `${header}
 
-══════════════════════════════════════════════════════════════
-               BIAYA DAN TARIF LAYANAN
-══════════════════════════════════════════════════════════════
+━━━ BIAYA DAN TARIF LAYANAN ━━━
 
-Berikut adalah informasi mengenai biaya dan tarif yang berlaku untuk setiap jenis layanan:
+Pendaftaran              : GRATIS
+Penggantian dokumen      : Rp50.000,-
+Legalisir dokumen        : Rp25.000,-/lembar
+Akses premium            : Rp150.000,-/tahun
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💰  *RINCIAN BIAYA LAYANAN*
+⚠️ PERHATIAN
+Kami TIDAK PERNAH meminta biaya di luar ketentuan resmi.
+Waspada penipuan yang mengatasnamakan perusahaan.
 
-    Pendaftaran awal              :   GRATIS (Rp0,-)
-    Penggantian dokumen hilang     :   Rp50.000,-
-    Legalisir dokumen              :   Rp25.000,-/lembar
-    Akses layanan premium          :   Rp150.000,-/tahun
-    Biaya administrasi keterlambatan: Rp10.000,-/hari
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Informasi tarif: www.perusahaan.com/tarif
 
-⚠️  *PERHATIAN!*
-┌──────────────────────────────────────────────────────────┐
-│  Kami TIDAK PERNAH meminta biaya tambahan di luar       │
-│  ketentuan tarif resmi yang telah ditetapkan.            │
-│                                                          │
-│  Waspada terhadap segala bentuk tindakan penipuan        │
-│  yang mengatasnamakan perusahaan kami.                   │
-│                                                          │
-│  Seluruh pembayaran resmi hanya dilakukan melalui        │
-│  bank-bank yang telah ditunjuk secara resmi.             │
-└──────────────────────────────────────────────────────────┘
-
-Informasi tarif secara lengkap dapat diakses melalui website resmi kami di *www.perusahaan.com/tarif*.
-${footerBack}`
+Ketik *0* untuk kembali ke menu utama.`
     }
   },
   4: {
     title: 'HUBUNGI CUSTOMER SERVICE',
     body: `${header}
 
-Kami siap memberikan bantuan dan melayani Anda melalui berbagai saluran komunikasi yang tersedia sebagai berikut:
+Saluran komunikasi resmi:
 
-══════════════════════════════════════════════════════════════
-               SALURAN KOMUNIKASI RESMI
-══════════════════════════════════════════════════════════════
+📞 Telepon : 021-12345678
+   (Senin–Jumat, 08.00–16.00 WIB)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📞  *TELEPON*
-    Nomor      : 021-12345678
-    Waktu      : Senin s.d. Jumat, pukul 08.00 - 16.00 WIB
+💬 WhatsApp : 0812-3456-7890
+📧 Email   : cs@perusahaan.com
+🌐 Website : www.perusahaan.com
 
-💬  *WHATSAPP*
-    Nomor      : 0812-3456-7890
-    Waktu      : 24 jam (dalam jam kerja akan direspon segera)
+📍 Kantor Pusat
+   Jl. Profesional No. 123, Jakarta Pusat
 
-📧  *EMAIL*
-    Alamat     : cs@perusahaan.com
-    Waktu      : 1×24 jam respon
+Anda juga dapat menyampaikan pesan melalui chat ini. Petugas kami akan merespon sesegera mungkin pada jam operasional.
 
-🌐  *WEBSITE*
-    Alamat     : www.perusahaan.com
-
-📍  *KANTOR PUSAT*
-    Alamat     : Jl. Profesional No. 123, Jakarta Pusat 12345
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Apabila Anda memerlukan bantuan lebih lanjut, Anda juga dapat menyampaikan pesan secara langsung melalui layanan chat ini dan petugas Customer Service kami akan merespon dan membantu Anda sesegera mungkin pada jam operasional pelayanan.
-${footerBack}`
+Ketik *0* untuk kembali ke menu utama.`
   },
   5: {
-    title: 'PERTANYAAN YANG SERING DIAJUKAN (FAQ)',
+    title: 'PERTANYAAN UMUM (FAQ)',
     body: `${header}
 
-Berikut adalah kumpulan pertanyaan yang sering diajukan oleh para pengguna layanan beserta jawabannya. Silakan pilih nomor pertanyaan yang sesuai dengan kebutuhan Anda:
+Pilih pertanyaan yang sesuai:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    ❓  [1] Bagaimana prosedur reset password akun?
-    ❓  [2] Berapa lama proses pendaftaran?
-    ❓  [3] Apakah dikenakan biaya pendaftaran?
-    ❓  [4] Bagaimana cara memperbarui data diri?
-    ❓  [5] Apa yang harus dilakukan jika lupa nomor registrasi?
-    ❓  [6] Bagaimana tata cara mengajukan pengaduan?
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 1️⃣  Cara reset password?
+ 2️⃣  Lama proses pendaftaran?
+ 3️⃣  Biaya pendaftaran?
+ 4️⃣  Cara memperbarui data diri?
+ 5️⃣  Lupa nomor registrasi?
+ 6️⃣  Cara mengajukan pengaduan?
 
-Silakan kirimkan nomor *1*, *2*, *3*, *4*, *5*, atau *6*.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
     children: {
       1: `${header}
 
-══════════════════════════════════════════════════════════════
-FAQ 1: PROSEDUR RESET PASSWORD AKUN
-══════════════════════════════════════════════════════════════
+━━━ FAQ: RESET PASSWORD ━━━
 
-🔹 *Pertanyaan:*
-   Bagaimana prosedur untuk melakukan reset password akun?
+Langkah reset password:
+1. Buka www.perusahaan.com
+2. Klik "Lupa Password"
+3. Masukkan email terdaftar
+4. Cek email untuk tautan reset
+5. Buat password baru
+6. Login kembali
 
-🔸 *Jawaban:*
-   Berikut adalah langkah-langkah untuk melakukan reset password akun Anda:
+Tidak terima email? Periksa folder Spam.
 
-   1. Buka halaman *login* pada website resmi kami di www.perusahaan.com
-   2. Klik tautan *"Lupa Password"* atau *"Forgot Password"* yang tersedia
-   3. Masukkan alamat email yang telah terdaftar pada akun Anda
-   4. Periksa kotak masuk (inbox) email Anda untuk mendapatkan tautan reset password
-   5. Klik tautan tersebut dan ikuti petunjuk untuk membuat password baru
-   6. Login kembali menggunakan password baru yang telah dibuat
-
-📌  Apabila Anda tidak menerima email reset, harap periksa folder *Spam* atau *Promotions* pada layanan email Anda.
-📌  Pastikan alamat email yang dimasukkan sesuai dengan alamat email yang didaftarkan pada saat pembuatan akun.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       2: `${header}
 
-══════════════════════════════════════════════════════════════
-FAQ 2: LAMA PROSES PENDAFTARAN
-══════════════════════════════════════════════════════════════
+━━━ FAQ: LAMA PROSES PENDAFTARAN ━━━
 
-🔹 *Pertanyaan:*
-   Berapa lama waktu yang dibutuhkan untuk memproses pendaftaran?
+Proses pendaftaran:
 
-🔸 *Jawaban:*
-   Proses pendaftaran umumnya memerlukan waktu sebagai berikut:
+Verifikasi berkas   : 1-3 hari
+Validasi data       : 1-2 hari
+Penerbitan dokumen  : 1-2 hari
+Total               : 3-7 hari
 
-   ┌─────────────────────────────────────────────┬──────────────┐
-   │  Tahapan                                    │  Waktu       │
-   ├─────────────────────────────────────────────┼──────────────┤
-   │  Verifikasi berkas lengkap                  │  1 - 3 hari  │
-   │  Verifikasi dan validasi data               │  1 - 2 hari  │
-   │  Penerbitan dokumen/hasil                   │  1 - 2 hari  │
-   ├─────────────────────────────────────────────┼──────────────┤
-   │  *TOTAL ESTIMASI*                           │  3 - 7 hari  │
-   └─────────────────────────────────────────────┴──────────────┘
+Faktor: kelengkapan dokumen, volume permohonan, jenis layanan.
 
-📌  *Faktor-faktor yang mempengaruhi:*
-   • Kelengkapan dan kebenaran dokumen persyaratan
-   • Volume permohonan yang masuk dan sedang diproses
-   • Jenis dan kompleksitas layanan yang diajukan
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       3: `${header}
 
-══════════════════════════════════════════════════════════════
-FAQ 3: BIAYA PENDAFTARAN
-══════════════════════════════════════════════════════════════
+━━━ FAQ: BIAYA PENDAFTARAN ━━━
 
-🔹 *Pertanyaan:*
-   Apakah ada biaya yang dikenakan untuk proses pendaftaran?
+Pendaftaran *GRATIS*, tidak dipungut biaya.
 
-🔸 *Jawaban:*
-   *TIDAK ADA BIAYA.* Pendaftaran layanan di lingkungan kami *GRATIS* dan tidak dipungut biaya sepeser pun.
+⚠️ WASPADA PENIPUAN
+• Kami tidak pernah meminta biaya di luar ketentuan
+• Tidak ada transfer ke rekening pribadi
+• Laporkan pungutan liar
 
-┌──────────────────────────────────────────────────────────┐
-│                   ⚠️  WASPADA PENIPUAN                     │
-│                                                          │
-│  1. Kami TIDAK PERNAH meminta biaya di luar ketentuan    │
-│     tarif resmi yang berlaku.                            │
-│  2. Kami TIDAK PERNAH meminta transfer ke rekening       │
-│     pribadi atas nama individu.                          │
-│  3. Segera laporkan apabila menemukan indikasi           │
-│     pungutan liar (pungli) kepada pihak berwenang.       │
-└──────────────────────────────────────────────────────────┘
+Biaya hanya untuk legalisir, penggantian dokumen, dan layanan premium (opsional).
 
-💰  *Biaya hanya dikenakan untuk layanan tertentu:*
-    • Legalisir dokumen
-    • Penggantian dokumen karena hilang atau rusak
-    • Layanan premium (sifatnya opsional)
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       4: `${header}
 
-══════════════════════════════════════════════════════════════
-FAQ 4: PEMBARUAN DATA DIRI
-══════════════════════════════════════════════════════════════
+━━━ FAQ: PERBARUI DATA DIRI ━━━
 
-🔹 *Pertanyaan:*
-   Bagaimana prosedur untuk memperbarui atau mengubah data diri?
+🌐 Online:
+   1. Login ke www.perusahaan.com
+   2. Menu Profil → Ubah Data
+   3. Perbarui data
+   4. Simpan
 
-🔸 *Jawaban:*
-   Pembaruan data diri dapat dilakukan melalui 2 (dua) jalur sebagai berikut:
+🏛️ Offline:
+   1. Datang ke kantor terdekat
+   2. Bawa KTP dan KK
+   3. Isi formulir perubahan data
+   4. Serahkan ke petugas
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌐  *SECARA ONLINE*
+Perubahan data penting memerlukan verifikasi tambahan.
 
-    Langkah 1 : Login ke akun Anda di www.perusahaan.com
-    Langkah 2 : Masuk ke menu *"Profil"* atau *"Data Saya"*
-    Langkah 3 : Klik tombol *"Ubah Data"* atau *"Edit"*
-    Langkah 4 : Lakukan perubahan pada data yang diperlukan
-    Langkah 5 : Simpan perubahan dan tunggu konfirmasi
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-🏛️  *SECARA OFFLINE*
-
-    Langkah 1 : Datang langsung ke kantor atau unit pelayanan terdekat
-    Langkah 2 : Bawa dokumen pendukung (KTP asli, KK, dan dokumen lainnya)
-    Langkah 3 : Isi formulir permohonan perubahan data
-    Langkah 4 : Serahkan kepada petugas untuk diproses
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📌  Perubahan data yang bersifat substansial (nama, alamat, status perkawinan) memerlukan verifikasi tambahan dan kelengkapan dokumen pendukung.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       5: `${header}
 
-══════════════════════════════════════════════════════════════
-FAQ 5: NOMOR REGISTRASI HILANG
-══════════════════════════════════════════════════════════════
+━━━ FAQ: NOMOR REGISTRASI HILANG ━━━
 
-🔹 *Pertanyaan:*
-   Apa yang harus saya lakukan apabila lupa atau kehilangan nomor registrasi?
+Hubungi Customer Service:
+📞 021-12345678
+💬 0812-3456-7890
+📧 cs@perusahaan.com
 
-🔸 *Jawaban:*
-   Jika Anda lupa atau kehilangan nomor registrasi, silakan menghubungi Customer Service kami melalui saluran berikut:
+Sertakan data verifikasi:
+• Nama lengkap
+• NIK
+• Tanggal pendaftaran (perkiraan)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📞  Telepon : 021-12345678
-💬  WhatsApp: 0812-3456-7890
-📧  Email   : cs@perusahaan.com
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Petugas akan membantu setelah data diverifikasi.
 
-Sertakan data berikut untuk proses verifikasi identitas:
-┌─────────────────────────────────────────────┐
-│  1. Nama lengkap (sesuai KTP)               │
-│  2. Nomor Induk Kependudukan (NIK)          │
-│  3. Tanggal pendaftaran (perkiraan)         │
-│  4. Alamat email yang didaftarkan           │
-└─────────────────────────────────────────────┘
-
-Petugas kami akan membantu Anda menemukan nomor registrasi setelah data diri berhasil diverifikasi.
-${footerBack}`,
+Ketik *0* untuk kembali ke menu utama.`,
       6: `${header}
 
-══════════════════════════════════════════════════════════════
-FAQ 6: TATA CARA MENGAJUKAN PENGADUAN
-══════════════════════════════════════════════════════════════
+━━━ FAQ: CARA MENGAJUKAN PENGADUAN ━━━
 
-🔹 *Pertanyaan:*
-   Bagaimana tata cara untuk mengajukan pengaduan?
+Pengaduan dapat diajukan melalui:
 
-🔸 *Jawaban:*
-   Pengaduan dapat diajukan melalui beberapa saluran resmi sebagai berikut:
+📱 Chat ini — Kirim detail pengaduan
+🌐 Website — www.perusahaan.com/pengaduan
+📧 Email — pengaduan@perusahaan.com
+🏛️ Datang langsung — ke kantor terdekat
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📱  *MELALUI LAYANAN CHAT INI*
-    Kirimkan detail pengaduan Anda langsung melalui chat ini
-    dengan menyertakan:
-    • Nama lengkap dan NIK
-    • Uraian pengaduan secara jelas dan rinci
-    • Waktu dan lokasi kejadian
-    • Dokumen pendukung (jika ada)
+Setiap pengaduan akan diberikan nomor tiket untuk pengecekan status.
 
-🌐  *MELALUI WEBSITE*
-    Akses www.perusahaan.com/pengaduan
-    dan lengkapi formulir pengaduan secara elektronik
-
-📧  *MELALUI EMAIL*
-    Kirimkan pengaduan ke alamat: pengaduan@perusahaan.com
-
-🏛️  *DATANG LANGSUNG*
-    Kunjungi kantor atau unit pelayanan terdekat dengan
-    membawa dokumen pendukung yang diperlukan
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📌  Setiap pengaduan yang diterima akan diregistrasi dan diterbitkan *Nomor Tiket Pengaduan* untuk memudahkan Anda dalam memantau status penanganan pengaduan.
-${footerBack}`
+Ketik *0* untuk kembali ke menu utama.`
     }
   }
 };

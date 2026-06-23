@@ -49,7 +49,18 @@ async function startConnection(onMessage) {
     if (!message.key.fromMe && message.message) {
       const msgType = getContentType(message.message);
       const msgContent = message.message[msgType];
-      const text = msgContent?.text || msgContent?.caption || message.message?.conversation || '';
+      let text = '';
+      if (msgType === 'interactiveResponseMessage') {
+        const nativeFlow = msgContent?.nativeFlowResponseMessage;
+        if (nativeFlow?.paramsJson) {
+          try {
+            text = JSON.parse(nativeFlow.paramsJson).id || '';
+          } catch (e) {}
+        }
+        text = text || msgContent?.body?.text || '';
+      } else {
+        text = msgContent?.text || msgContent?.caption || message.message?.conversation || '';
+      }
       if (text) {
         const jid = message.key.remoteJid;
         if (onMessage) {

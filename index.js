@@ -1,5 +1,6 @@
 const { startConnection, getSock } = require('./src/connection');
 const { handleMessage, initTimers } = require('./src/messages');
+const { sendInteractiveMainMenu } = require('./src/interactive');
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -19,8 +20,11 @@ async function main() {
     try {
       const reply = handleMessage(text, jid);
       if (reply) {
-        await typingDelay(sock, jid, reply);
-        await sock.sendMessage(jid, { text: reply });
+        await typingDelay(sock, jid, reply.text);
+        await sock.sendMessage(jid, { text: reply.text });
+        if (reply.interactive) {
+          await sendInteractiveMainMenu(sock, jid);
+        }
       }
     } catch (err) {
       console.error('Error sending message:', err);
