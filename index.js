@@ -1,10 +1,10 @@
 const { startConnection, getSock } = require('./src/connection');
-const { handleMessage } = require('./src/messages');
+const { handleMessage, initTimers } = require('./src/messages');
 
 async function main() {
   console.log('Memulai WhatsApp Chatbot...\n');
 
-  await startConnection(async (sock, text, jid) => {
+  const sock = await startConnection(async (sock, text, jid) => {
     try {
       const reply = handleMessage(text, jid);
       if (reply) {
@@ -14,6 +14,8 @@ async function main() {
       console.error('Error sending message:', err);
     }
   });
+
+  initTimers(sock);
 
   const port = process.env.PORT || 3000;
   const http = require('http');
