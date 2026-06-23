@@ -1,7 +1,7 @@
 const { mainMenu, subMenus } = require('./menu');
+const { getSock } = require('./connection');
 
 const userSessions = new Map();
-let sockRef = null;
 const TIMEOUT_REMINDER = 3 * 60 * 1000;
 const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
@@ -33,9 +33,7 @@ Informasi lebih lanjut:
 Terima kasih.
 `;
 
-function initTimers(sock) {
-  sockRef = sock;
-}
+function initTimers() {}
 
 function getSession(jid) {
   if (!userSessions.has(jid)) {
@@ -63,14 +61,16 @@ function startTimers(jid, session) {
   if (session.closed) return;
 
   session.reminderTimer = setTimeout(() => {
-    if (sockRef) {
-      sockRef.sendMessage(jid, { text: reminderMessage });
+    const sock = getSock();
+    if (sock) {
+      sock.sendMessage(jid, { text: reminderMessage });
     }
 
     session.closeTimer = setTimeout(() => {
-      if (sockRef && !session.closed) {
+      const sockNow = getSock();
+      if (sockNow && !session.closed) {
         session.closed = true;
-        sockRef.sendMessage(jid, { text: closeMessage });
+        sockNow.sendMessage(jid, { text: closeMessage });
       }
       userSessions.delete(jid);
     }, TIMEOUT_CLOSE - TIMEOUT_REMINDER);

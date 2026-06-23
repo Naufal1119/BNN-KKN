@@ -1,7 +1,7 @@
 const header = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-      LAYANAN INFORMASI DAN PELAYANAN PUBLIK
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LAYANAN INFORMASI DAN PELAYANAN PUBLIK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
 const mainMenu = `${header}
 

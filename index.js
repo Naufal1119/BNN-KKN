@@ -31,7 +31,7 @@ async function main() {
     }
   });
 
-  initTimers(sock);
+  initTimers();
 
   const port = process.env.PORT || 3000;
   const http = require('http');
