@@ -1,4 +1,4 @@
-const { generateWAMessageFromContent } = require('@whiskeysockets/baileys');
+const { sendInteractiveMessage } = require('@ryuu-reinzz/button-helper');
 const { subMenus } = require('./menu');
 
 const interactiveMenus = {
@@ -155,61 +155,24 @@ async function sendInteractive(sock, jid, menuKey) {
   try {
     const buttonTitle = config.buttonText || 'Pilih';
 
-    const nativeFlowButtons = [{
-      name: 'single_select',
-      buttonParamsJson: JSON.stringify({
-        title: buttonTitle,
-        sections: config.sections.map(section => ({
-          title: section.title,
-          rows: section.rows.map(row => ({
-            id: row.rowId,
-            title: row.title,
-            description: row.description
+    await sendInteractiveMessage(sock, jid, {
+      text: config.text,
+      footer: config.footer,
+      title: config.header,
+      interactiveButtons: [{
+        name: 'single_select',
+        buttonParamsJson: JSON.stringify({
+          title: buttonTitle,
+          sections: config.sections.map(section => ({
+            title: section.title,
+            rows: section.rows.map(row => ({
+              id: row.rowId,
+              title: row.title,
+              description: row.description
+            }))
           }))
-        }))
-      })
-    }];
-
-    const interactiveMsg = {
-      interactiveMessage: {
-        header: { title: config.header },
-        body: { text: config.text },
-        footer: { text: config.footer },
-        nativeFlowMessage: {
-          buttons: nativeFlowButtons,
-          messageVersion: 1
-        }
-      }
-    };
-
-    const msg = generateWAMessageFromContent(
-      jid,
-      interactiveMsg,
-      { userJid: sock.user?.id }
-    );
-
-    const additionalNodes = [
-      {
-        tag: 'biz',
-        attrs: {},
-        content: [{
-          tag: 'interactive',
-          attrs: { type: 'native_flow', v: '1' },
-          content: [{
-            tag: 'native_flow',
-            attrs: { v: '9', name: 'mixed' }
-          }]
-        }]
-      }
-    ];
-
-    if (!jid.endsWith('@g.us')) {
-      additionalNodes.push({ tag: 'bot', attrs: { biz_bot: '1' } });
-    }
-
-    await sock.relayMessage(jid, msg.message, {
-      messageId: msg.key.id,
-      additionalNodes
+        })
+      }]
     });
     console.log(`sendInteractive: "${menuKey}" sent to ${jid}`);
   } catch (err) {
