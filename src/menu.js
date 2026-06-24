@@ -1,22 +1,11 @@
 const header = `
-━━━━━━━━━━━━━━━━━━━━━━━━━
-TES
-LAYANAN INFORMASI DAN PELAYANAN PUBLIK
-━━━━━━━━━━━━━━━━━━━━━━━━━`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+      LAYANAN INFORMASI DAN PELAYANAN PUBLIK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
 const mainMenu = `${header}
 
-Assalamu'alaikum Warahmatullahi Wabarakatuh.
-
-Selamat datang di layanan kami. Silakan pilih menu yang tersedia dengan membalas nomor di bawah ini:
-
- 1️⃣  Informasi Layanan dan Produk
- 2️⃣  Status Permohonan Layanan
- 3️⃣  Panduan, Persyaratan, dan Ketentuan
- 4️⃣  Hubungi Customer Service
- 5️⃣  Pertanyaan Umum (FAQ)
-
-Ketik *0* untuk kembali ke menu utama.`;
+Selamat datang di Layanan Chatbot. Sahabat dapat memilih opsi menu yang dibutuhkan:`;
 
 const subMenus = {
   1: {
@@ -424,4 +413,4 @@ Ketik *0* untuk kembali ke menu utama.`
   }
 };
 
-module.exports = { mainMenu, subMenus };
+module.exports = { header, mainMenu, subMenus };

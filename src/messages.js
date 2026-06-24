@@ -1,4 +1,5 @@
-const { mainMenu, subMenus } = require('./menu');
+const { mainMenu } = require('./menu');
+const { interactiveMenus, detailContent } = require('./interactive');
 const { getSock } = require('./connection');
 
 const userSessions = new Map();
@@ -37,7 +38,7 @@ function initTimers() {}
 
 function getSession(jid) {
   if (!userSessions.has(jid)) {
-    userSessions.set(jid, { menu: 'main' });
+    userSessions.set(jid, { currentMenu: 'main' });
   }
   return userSessions.get(jid);
 }
@@ -48,7 +49,7 @@ function resetSession(jid) {
     clearTimeout(session.reminderTimer);
     clearTimeout(session.closeTimer);
   }
-  userSessions.set(jid, { menu: 'main' });
+  userSessions.set(jid, { currentMenu: 'main' });
 }
 
 function clearTimers(session) {
@@ -86,66 +87,43 @@ function handleMessage(text, jid) {
   if (msg === 'menu' || msg === '0') {
     resetSession(jid);
     startTimers(jid, getSession(jid));
-    return { text: mainMenu, interactive: 'main' };
+    return { text: interactiveMenus.main.text, menu: 'main' };
   }
 
-  if (session.menu === 'main') {
-    const choice = parseInt(msg);
-    if (choice >= 1 && choice <= 5) {
-      const sub = subMenus[choice];
-      if (sub && sub.body) {
-        session.menu = `sub_${choice}`;
-        session.subMenu = choice;
-        startTimers(jid, session);
-        return { text: sub.body, interactive: 'sub' };
-      }
-    }
+  if (interactiveMenus[msg]) {
+    session.currentMenu = msg;
     startTimers(jid, session);
-    return { text: `⚠️ Maaf, pilihan "${text}" tidak tersedia. Silakan pilih nomor 1-5.\n\n${mainMenu}`, interactive: 'main' };
+    return { text: interactiveMenus[msg].text, menu: msg };
   }
 
-  if (session.menu && session.menu.startsWith('sub_')) {
-    const subKey = session.subMenu;
-    const sub = subMenus[subKey];
-
-    if (msg === '0') {
-      resetSession(jid);
-      startTimers(jid, getSession(jid));
-      return { text: mainMenu, interactive: 'main' };
-    }
-
-    if (sub && sub.children) {
-      const childContent = sub.children[msg];
-      if (childContent) {
-        session.menu = 'detail';
-        session.parentMenu = subKey;
-        startTimers(jid, session);
-        return { text: `${childContent}\n\nKetik *0* untuk kembali ke menu utama.` };
-      }
-    }
-
-    if (subKey === 4) {
-      resetSession(jid);
-      return { text: `${sub.body}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nPesan Anda telah tercatat dan akan segera diproses.\n\n${mainMenu}`, interactive: 'main' };
-    }
-
+  if (detailContent[msg]) {
+    session.currentMenu = 'detail';
     startTimers(jid, session);
-    return { text: `⚠️ Maaf, pilihan "${text}" tidak tersedia. Silakan coba lagi.\n\n${sub.body}`, interactive: 'sub' };
+    return { text: detailContent[msg] };
   }
 
-  if (session.menu === 'detail') {
-    if (msg === '0') {
-      resetSession(jid);
-      startTimers(jid, getSession(jid));
-      return { text: mainMenu, interactive: 'main' };
+  if (session.currentMenu && session.currentMenu !== 'main' && session.currentMenu !== 'detail') {
+    const contextualKey = `${session.currentMenu}${msg}`;
+    if (interactiveMenus[contextualKey]) {
+      session.currentMenu = contextualKey;
+      startTimers(jid, session);
+      return { text: interactiveMenus[contextualKey].text, menu: contextualKey };
     }
-    startTimers(jid, session);
-    return { text: `Terima kasih. Informasi Anda telah kami catat.\n\nKetik *0* untuk kembali ke menu utama.` };
+    if (detailContent[contextualKey]) {
+      session.currentMenu = 'detail';
+      startTimers(jid, session);
+      return { text: detailContent[contextualKey] };
+    }
   }
 
-  resetSession(jid);
-  startTimers(jid, getSession(jid));
-  return { text: mainMenu, interactive: 'main' };
+  const currentText = session.currentMenu && interactiveMenus[session.currentMenu]
+    ? interactiveMenus[session.currentMenu].text
+    : interactiveMenus.main.text;
+  const currentKey = session.currentMenu && interactiveMenus[session.currentMenu]
+    ? session.currentMenu
+    : 'main';
+  startTimers(jid, session);
+  return { text: `⚠️ Maaf, pilihan "${text}" tidak tersedia.\n\n${currentText}`, menu: currentKey };
 }
 
 module.exports = { handleMessage, resetSession, initTimers };
