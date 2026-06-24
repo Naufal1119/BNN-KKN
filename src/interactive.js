@@ -89,7 +89,7 @@ const interactiveMenus = {
       rows: [
         { title: 'Sampaikan Pengaduan', rowId: '3a', description: 'Sampaikan pengaduan via chat' },
         { title: 'Cek Status Pengaduan', rowId: '3b', description: 'Cek status pengaduan anda' },
-        { title: 'Hubungi Customer Service', rowId: '3c', description: 'Saluran komunikasi resmi' },
+        { title: 'Customer Service', rowId: '3c', description: 'Saluran komunikasi resmi' },
       ]
     }]
   }
@@ -139,13 +139,22 @@ Ketik *0* untuk kembali ke menu utama.`,
   '3c': subMenus[4]?.body
 };
 
-function sendInteractive(sock, jid, menuKey) {
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function sendInteractive(sock, jid, menuKey) {
   const config = interactiveMenus[menuKey];
-  if (!config) return;
+  if (!config) {
+    console.log(`sendInteractive: config "${menuKey}" not found`);
+    return;
+  }
+
+  await delay(800);
 
   try {
     const interactiveMsg = {
-      header: proto.Message.InteractiveMessage.Header.create({ title: config.header }),
+      header: proto.Message.InteractiveMessage.Header.create({ title: config.header, hasMediaAttachment: false }),
       body: proto.Message.InteractiveMessage.Body.create({ text: config.text }),
       footer: proto.Message.InteractiveMessage.Footer.create({ text: config.footer }),
       nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
@@ -168,9 +177,10 @@ function sendInteractive(sock, jid, menuKey) {
       { userJid: sock.user?.id }
     );
 
-    sock.relayMessage(jid, msg.message, { messageId: msg.key.id });
+    await sock.relayMessage(jid, msg.message, { messageId: msg.key.id });
+    console.log(`sendInteractive: "${menuKey}" sent to ${jid}`);
   } catch (err) {
-    console.error('Gagal mengirim interactive:', err);
+    console.error(`sendInteractive "${menuKey}" error:`, err.message);
   }
 }
 
