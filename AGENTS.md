@@ -7,8 +7,9 @@
 - Hasil: tombol single_select muncul di WhatsApp
 - File: `src/interactive.js` (manual version di commit history)
 
-## BAGUS#2 — Via @ryuu-reinzz/button-helper (working)
+## BAGUS#2 — Via @ryuu-reinzz/button-helper (tested, not used)
 - Sama seperti BAGUS#1 tapi pakai `sendInteractiveMessage()` dari helper package
 - Lebih clean, no manual proto/additionalNodes
-- Package: `@ryuu-reinzz/button-helper`
-- File: `src/interactive.js` (current)
+- **Masalah**: helper package dynamic import cuma cari `baileys` / `@ryuu-reinzz/baileys` / `@adiwajshing/baileys`, sedangkan project pake `@whiskeysockets/baileys`
+- Patch node_modules tidak ke-track git, jadi fallback ke manual BAGUS#1
+- Package: `@ryuu-reinzz/button-helper` (masih terinstall, tidak dipakai di code)
