@@ -6,6 +6,16 @@ const userSessions = new Map();
 const TIMEOUT_REMINDER = 3 * 60 * 1000;
 const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
+const welcomeMessage = `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       LAYANAN INFORMASI BNN PROVINSI SULAWESI SELATAN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Terima kasih telah mengakses layanan BNNP Sulsel. Senang dapat membantu Sahabat.
+
+Silakan pilih menu yang dibutuhkan:
+`;
+
 const reminderMessage = `
 ━━━ BATAS WAKTU PELAYANAN ━━━
 
@@ -38,7 +48,7 @@ function initTimers() {}
 
 function getSession(jid) {
   if (!userSessions.has(jid)) {
-    userSessions.set(jid, { currentMenu: 'main' });
+    userSessions.set(jid, { currentMenu: 'main', greeted: false });
   }
   return userSessions.get(jid);
 }
@@ -49,7 +59,7 @@ function resetSession(jid) {
     clearTimeout(session.reminderTimer);
     clearTimeout(session.closeTimer);
   }
-  userSessions.set(jid, { currentMenu: 'main' });
+  userSessions.set(jid, { currentMenu: 'main', greeted: session?.greeted ?? false });
 }
 
 function clearTimers(session) {
@@ -80,6 +90,14 @@ function startTimers(jid, session) {
 
 function handleMessage(text, jid) {
   const session = getSession(jid);
+
+  if (!session.greeted) {
+    session.greeted = true;
+    session.currentMenu = 'main';
+    startTimers(jid, session);
+    return { text: welcomeMessage, menu: 'main' };
+  }
+
   const msg = text.toLowerCase().trim();
 
   clearTimers(session);

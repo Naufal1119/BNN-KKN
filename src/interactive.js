@@ -3,7 +3,7 @@ const { subMenus } = require('./menu');
 
 const interactiveMenus = {
   main: {
-    text: 'Selamat datang di Layanan Chatbot. Sahabat dapat memilih opsi menu yang dibutuhkan:',
+    text: 'Selamat datang di Layanan Chatbot BNNP Sulsel. Sahabat dapat memilih opsi menu yang dibutuhkan:',
     header: 'LAYANAN INFORMASI DAN PELAYANAN PUBLIK',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Menu',

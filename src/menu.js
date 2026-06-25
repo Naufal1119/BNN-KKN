@@ -5,7 +5,7 @@ const header = `
 
 const mainMenu = `${header}
 
-Selamat datang di Layanan Chatbot. Sahabat dapat memilih opsi menu yang dibutuhkan:`;
+Selamat datang di Layanan Chatbot BNNP Sulsel. Sahabat dapat memilih opsi menu yang dibutuhkan:`;
 
 const subMenus = {
   1: {
