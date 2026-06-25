@@ -43,6 +43,7 @@ const interactiveMenus = {
         { title: 'Alamat Kantor', rowId: '2c', description: 'Alamat dan lokasi kantor' },
         { title: 'Panduan dan Persyaratan', rowId: '2d', description: 'Syarat, alur, biaya layanan' },
         { title: 'Pertanyaan Umum', rowId: '2e', description: 'FAQ seputar layanan' },
+        { title: 'Media Sosial dan Website', rowId: '2f', description: 'Instagram, X, Facebook, YouTube, TikTok' },
       ]
     }]
   },
@@ -134,6 +135,35 @@ Ketik *0* untuk kembali ke menu utama.`,
   '2e4': subMenus[5]?.children?.['4'],
   '2e5': subMenus[5]?.children?.['5'],
   '2e6': subMenus[5]?.children?.['6'],
+  '2f': `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MEDIA SOSIAL DAN WEBSITE BNNP SULSEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 Website
+   sulsel.bnn.go.id
+
+📸 Instagram
+   @infobnn_prov_sulsel
+   instagram.com/infobnn_prov_sulsel
+
+🐦 X (Twitter)
+   @humasBNNPsulsel
+   x.com/humasBNNPsulsel
+
+📘 Facebook
+   BNNP Sulawesi Selatan
+   facebook.com/bnnpsulawesiselatan
+
+▶️ YouTube
+   @bnnpsulawesiselatan
+   youtube.com/@bnnpsulawesiselatan
+
+🎵 TikTok
+   @halobnn_sulsel
+   tiktok.com/@halobnn_sulsel
+
+Ketik *0* untuk kembali ke menu utama.`,
   '3a': subMenus[1]?.children?.a,
   '3b': subMenus[2]?.children?.b,
   '3c': subMenus[4]?.body
