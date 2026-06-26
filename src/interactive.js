@@ -3,11 +3,7 @@ const { subMenus } = require('./menu');
 
 const interactiveMenus = {
   main: {
-    text: `Selamat datang di Layanan Chatbot BNNP Sulsel. Sahabat dapat memilih opsi menu yang dibutuhkan:
-
-1. Administrasi — Cek status, perbarui data, cetak kartu
-2. Informasi — Produk, jam operasional, alamat, panduan, medsos
-3. Pengaduan — Sampaikan pengaduan, hubungi CS`,
+    text: `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`,
     header: 'LAYANAN INFORMASI DAN PELAYANAN PUBLIK',
     footer: '',
     buttonText: 'Pilih Menu',
@@ -21,20 +17,16 @@ const interactiveMenus = {
     }]
   },
   '1': {
-    text: `Anda memilih Administrasi. Berikut opsi yang tersedia:
-
-• Cek Status Pendaftaran — Cek status pendaftaran layanan
-• Perbarui Data Peserta — Perbarui data diri peserta
-• Cetak Kartu Peserta — Cetak ulang kartu peserta`,
+    text: `Anda memilih Administrasi. Silakan pilih opsi di bawah:`,
     header: 'ADMINISTRASI',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
       title: 'ADMINISTRASI',
       rows: [
-        { title: 'Cek Status Pendaftaran', rowId: '1a', description: 'Cek status pendaftaran layanan' },
-        { title: 'Perbarui Data Peserta', rowId: '1b', description: 'Perbarui data diri peserta' },
-        { title: 'Cetak Kartu Peserta', rowId: '1c', description: 'Cetak ulang kartu peserta' },
+        { title: 'Cek Status Pendaftaran', rowId: '1a' },
+        { title: 'Perbarui Data Peserta', rowId: '1b' },
+        { title: 'Cetak Kartu Peserta', rowId: '1c' },
       ]
     }, {
       title: 'NAVIGASI',
@@ -44,26 +36,19 @@ const interactiveMenus = {
     }]
   },
   '2': {
-    text: `Anda memilih Informasi. Berikut opsi yang tersedia:
-
-• Produk dan Program — Info produk dan program layanan
-• Jam Operasional — Jam dan hari operasional kantor
-• Alamat Kantor — Alamat dan lokasi kantor
-• Panduan dan Persyaratan — Syarat, alur, biaya layanan
-• Pertanyaan Umum — FAQ seputar layanan
-• Media Sosial dan Website — IG, X, FB, YT, TikTok BNNP Sulsel`,
+    text: `Anda memilih Informasi. Silakan pilih opsi di bawah:`,
     header: 'INFORMASI',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
       title: 'INFORMASI',
       rows: [
-        { title: 'Produk dan Program', rowId: '2a', description: 'Info produk dan program layanan' },
-        { title: 'Jam Operasional', rowId: '2b', description: 'Jam dan hari operasional kantor' },
-        { title: 'Alamat Kantor', rowId: '2c', description: 'Alamat dan lokasi kantor' },
-        { title: 'Panduan dan Persyaratan', rowId: '2d', description: 'Syarat, alur, biaya layanan' },
-        { title: 'Pertanyaan Umum', rowId: '2e', description: 'FAQ seputar layanan' },
-        { title: 'Media Sosial dan Website', rowId: '2f', description: 'Instagram, X, Facebook, YouTube, TikTok' },
+        { title: 'Produk dan Program', rowId: '2a' },
+        { title: 'Jam Operasional', rowId: '2b' },
+        { title: 'Alamat Kantor', rowId: '2c' },
+        { title: 'Panduan dan Persyaratan', rowId: '2d' },
+        { title: 'Pertanyaan Umum', rowId: '2e' },
+        { title: 'Media Sosial dan Website', rowId: '2f' },
       ]
     }, {
       title: 'NAVIGASI',
@@ -73,24 +58,18 @@ const interactiveMenus = {
     }]
   },
   '2d': {
-    text: `Anda memilih Panduan dan Persyaratan. Berikut opsi yang tersedia:
-
-• Persyaratan Dokumen — Dokumen wajib dan pendukung
-• Tata Cara Pendaftaran — Cara daftar online dan offline
-• Alur Proses Layanan — Tahapan pemrosesan layanan
-• Estimasi Waktu — Estimasi waktu penyelesaian
-• Biaya dan Tarif — Biaya dan tarif layanan`,
+    text: `Anda memilih Panduan dan Persyaratan. Silakan pilih opsi di bawah:`,
     header: 'PANDUAN DAN PERSYARATAN',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
       title: 'PANDUAN',
       rows: [
-        { title: 'Persyaratan Dokumen', rowId: '2d1', description: 'Dokumen wajib dan pendukung' },
-        { title: 'Tata Cara Pendaftaran', rowId: '2d2', description: 'Cara daftar online dan offline' },
-        { title: 'Alur Proses Layanan', rowId: '2d3', description: 'Tahapan pemrosesan layanan' },
-        { title: 'Estimasi Waktu', rowId: '2d4', description: 'Estimasi waktu penyelesaian' },
-        { title: 'Biaya dan Tarif', rowId: '2d5', description: 'Biaya dan tarif layanan' },
+        { title: 'Persyaratan Dokumen', rowId: '2d1' },
+        { title: 'Tata Cara Pendaftaran', rowId: '2d2' },
+        { title: 'Alur Proses Layanan', rowId: '2d3' },
+        { title: 'Estimasi Waktu', rowId: '2d4' },
+        { title: 'Biaya dan Tarif', rowId: '2d5' },
       ]
     }, {
       title: 'NAVIGASI',
@@ -100,26 +79,19 @@ const interactiveMenus = {
     }]
   },
   '2e': {
-    text: `Anda memilih Pertanyaan Umum (FAQ). Berikut opsi yang tersedia:
-
-• Cara Reset Password — Langkah reset password akun
-• Lama Proses Pendaftaran — Estimasi waktu pendaftaran
-• Biaya Pendaftaran — Apakah pendaftaran berbayar?
-• Perbarui Data Diri — Cara memperbarui data peserta
-• Lupa Nomor Registrasi — Cara mengembalikan nomor registrasi
-• Cara Mengajukan Pengaduan — Saluran dan cara pengaduan`,
+    text: `Anda memilih Pertanyaan Umum (FAQ). Silakan pilih opsi di bawah:`,
     header: 'PERTANYAAN UMUM',
     footer: '',
     buttonText: 'Lihat Opsi',
     sections: [{
       title: 'FAQ',
       rows: [
-        { title: 'Cara Reset Password', rowId: '2e1', description: 'Langkah reset password akun' },
-        { title: 'Lama Proses Pendaftaran', rowId: '2e2', description: 'Estimasi waktu pendaftaran' },
-        { title: 'Biaya Pendaftaran', rowId: '2e3', description: 'Apakah pendaftaran berbayar?' },
-        { title: 'Perbarui Data Diri', rowId: '2e4', description: 'Cara memperbarui data peserta' },
-        { title: 'Lupa Nomor Registrasi', rowId: '2e5', description: 'Cara mengembalikan nomor registrasi' },
-        { title: 'Cara Mengajukan Pengaduan', rowId: '2e6', description: 'Saluran dan cara pengaduan' },
+        { title: 'Cara Reset Password', rowId: '2e1' },
+        { title: 'Lama Proses Pendaftaran', rowId: '2e2' },
+        { title: 'Biaya Pendaftaran', rowId: '2e3' },
+        { title: 'Perbarui Data Diri', rowId: '2e4' },
+        { title: 'Lupa Nomor Registrasi', rowId: '2e5' },
+        { title: 'Cara Mengajukan Pengaduan', rowId: '2e6' },
       ]
     }, {
       title: 'NAVIGASI',
@@ -129,20 +101,16 @@ const interactiveMenus = {
     }]
   },
   '3': {
-    text: `Anda memilih Pengaduan. Berikut opsi yang tersedia:
-
-• Sampaikan Pengaduan — Sampaikan pengaduan via chat
-• Cek Status Pengaduan — Cek status pengaduan anda
-• Customer Service — Saluran komunikasi resmi`,
+    text: `Anda memilih Pengaduan. Silakan pilih opsi di bawah:`,
     header: 'PENGADUAN',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
       title: 'PENGADUAN',
       rows: [
-        { title: 'Sampaikan Pengaduan', rowId: '3a', description: 'Sampaikan pengaduan via chat' },
-        { title: 'Cek Status Pengaduan', rowId: '3b', description: 'Cek status pengaduan anda' },
-        { title: 'Customer Service', rowId: '3c', description: 'Saluran komunikasi resmi' },
+        { title: 'Sampaikan Pengaduan', rowId: '3a' },
+        { title: 'Cek Status Pengaduan', rowId: '3b' },
+        { title: 'Customer Service', rowId: '3c' },
       ]
     }, {
       title: 'NAVIGASI',
