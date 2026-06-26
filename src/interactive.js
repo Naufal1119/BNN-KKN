@@ -1,6 +1,148 @@
 const { sendInteractiveMessage } = require('@ryuu-reinzz/button-helper');
 const { subMenus } = require('./menu');
 
+const generateBodyWithAllOptions = (menuKey, childrenData) => {
+  const stripHeader = (text) => {
+    if (!text) return '';
+    let result = text;
+    while (result.includes('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')) {
+      const lines = result.split('\n');
+      let firstSeparatorIdx = -1;
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].includes('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')) {
+          firstSeparatorIdx = i;
+          break;
+        }
+      }
+      if (firstSeparatorIdx === -1) break;
+      const remaining = lines.slice(firstSeparatorIdx + 2);
+      result = remaining.join('\n');
+    }
+    return result.trim();
+  };
+
+  let body = '';
+
+  if (menuKey === '1') {
+    const ops = childrenData;
+    body = `Anda memilih Administrasi. Berikut detail layanan yang tersedia:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.a?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.d?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.b?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.e?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.c?.body || '')}`;
+  } else if (menuKey === '2') {
+    const ops = childrenData;
+    body = `Anda memilih Informasi. Berikut detail layanan yang tersedia:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.a?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.b?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.c?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.d?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.e?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.f?.body || '')}`;
+  } else if (menuKey === '2d') {
+    const ops = childrenData;
+    body = `Anda memilih Panduan dan Persyaratan. Berikut detail layanan yang tersedia:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[1] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[2] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[3] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[4] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[5] || '')}`;
+  } else if (menuKey === '2e') {
+    const ops = childrenData;
+    body = `Anda memilih Pertanyaan Umum (FAQ). Berikut detail layanan yang tersedia:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[1] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[2] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[3] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[4] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[5] || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops[6] || '')}`;
+  } else if (menuKey === '3') {
+    const ops = childrenData;
+    body = `Anda memilih Pengaduan. Berikut detail layanan yang tersedia:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.a?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.b?.body || '')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${stripHeader(ops.c?.body || '')}`;
+  }
+
+  return body || '';
+};
+
 const interactiveMenus = {
   main: {
     text: `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`,
@@ -10,14 +152,14 @@ const interactiveMenus = {
     sections: [{
       title: 'MENU LAYANAN',
       rows: [
-        { title: 'Administrasi', rowId: '1', description: 'Cek status, perbarui data, cetak kartu' },
-        { title: 'Informasi', rowId: '2', description: 'Produk, jam operasional, alamat, panduan' },
-        { title: 'Pengaduan', rowId: '3', description: 'Sampaikan pengaduan, hubungi CS' },
+        { title: 'Administrasi', rowId: '1' },
+        { title: 'Informasi', rowId: '2' },
+        { title: 'Pengaduan', rowId: '3' },
       ]
     }]
   },
   '1': {
-    text: `Anda memilih Administrasi. Silakan pilih opsi di bawah:`,
+    text: generateBodyWithAllOptions('1', subMenus),
     header: 'ADMINISTRASI',
     footer: '',
     buttonText: 'Pilih',
@@ -36,7 +178,7 @@ const interactiveMenus = {
     }]
   },
   '2': {
-    text: `Anda memilih Informasi. Silakan pilih opsi di bawah:`,
+    text: generateBodyWithAllOptions('2', subMenus),
     header: 'INFORMASI',
     footer: '',
     buttonText: 'Pilih',
@@ -58,7 +200,7 @@ const interactiveMenus = {
     }]
   },
   '2d': {
-    text: `Anda memilih Panduan dan Persyaratan. Silakan pilih opsi di bawah:`,
+    text: generateBodyWithAllOptions('2d', subMenus[3]?.children),
     header: 'PANDUAN DAN PERSYARATAN',
     footer: '',
     buttonText: 'Pilih',
@@ -79,7 +221,7 @@ const interactiveMenus = {
     }]
   },
   '2e': {
-    text: `Anda memilih Pertanyaan Umum (FAQ). Silakan pilih opsi di bawah:`,
+    text: generateBodyWithAllOptions('2e', subMenus[5]?.children),
     header: 'PERTANYAAN UMUM',
     footer: '',
     buttonText: 'Lihat Opsi',
@@ -101,7 +243,7 @@ const interactiveMenus = {
     }]
   },
   '3': {
-    text: `Anda memilih Pengaduan. Silakan pilih opsi di bawah:`,
+    text: generateBodyWithAllOptions('3', subMenus),
     header: 'PENGADUAN',
     footer: '',
     buttonText: 'Pilih',
