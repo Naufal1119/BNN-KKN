@@ -9,14 +9,15 @@ const interactiveMenus = {
 2. Informasi — Produk, jam operasional, alamat, panduan, medsos
 3. Pengaduan — Sampaikan pengaduan, hubungi CS`,
     header: 'LAYANAN INFORMASI DAN PELAYANAN PUBLIK',
-    footer: 'Ketik 0 untuk kembali ke menu utama',
-    buttonText: 'Lihat Menu',
+    footer: '',
+    buttonText: 'Pilih Menu',
     sections: [{
       title: 'MENU LAYANAN',
       rows: [
         { title: 'Administrasi', rowId: '1', description: 'Cek status, perbarui data, cetak kartu' },
         { title: 'Informasi', rowId: '2', description: 'Produk, jam operasional, alamat, panduan' },
         { title: 'Pengaduan', rowId: '3', description: 'Sampaikan pengaduan, hubungi CS' },
+        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   },
@@ -27,14 +28,15 @@ const interactiveMenus = {
 • Perbarui Data Peserta — Perbarui data diri peserta
 • Cetak Kartu Peserta — Cetak ulang kartu peserta`,
     header: 'ADMINISTRASI',
-    footer: 'Ketik 0 untuk kembali ke menu utama',
-    buttonText: 'Lihat Opsi',
+    footer: '',
+    buttonText: 'Pilih',
     sections: [{
       title: 'ADMINISTRASI',
       rows: [
         { title: 'Cek Status Pendaftaran', rowId: '1a', description: 'Cek status pendaftaran layanan' },
         { title: 'Perbarui Data Peserta', rowId: '1b', description: 'Perbarui data diri peserta' },
         { title: 'Cetak Kartu Peserta', rowId: '1c', description: 'Cetak ulang kartu peserta' },
+        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   },
@@ -48,8 +50,8 @@ const interactiveMenus = {
 • Pertanyaan Umum — FAQ seputar layanan
 • Media Sosial dan Website — IG, X, FB, YT, TikTok BNNP Sulsel`,
     header: 'INFORMASI',
-    footer: 'Ketik 0 untuk kembali ke menu utama',
-    buttonText: 'Lihat Opsi',
+    footer: '',
+    buttonText: 'Pilih',
     sections: [{
       title: 'INFORMASI',
       rows: [
@@ -59,6 +61,7 @@ const interactiveMenus = {
         { title: 'Panduan dan Persyaratan', rowId: '2d', description: 'Syarat, alur, biaya layanan' },
         { title: 'Pertanyaan Umum', rowId: '2e', description: 'FAQ seputar layanan' },
         { title: 'Media Sosial dan Website', rowId: '2f', description: 'Instagram, X, Facebook, YouTube, TikTok' },
+        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   },
@@ -71,8 +74,8 @@ const interactiveMenus = {
 • Estimasi Waktu — Estimasi waktu penyelesaian
 • Biaya dan Tarif — Biaya dan tarif layanan`,
     header: 'PANDUAN DAN PERSYARATAN',
-    footer: 'Ketik 0 untuk kembali ke menu utama',
-    buttonText: 'Lihat Opsi',
+    footer: '',
+    buttonText: 'Pilih',
     sections: [{
       title: 'PANDUAN',
       rows: [
@@ -81,6 +84,7 @@ const interactiveMenus = {
         { title: 'Alur Proses Layanan', rowId: '2d3', description: 'Tahapan pemrosesan layanan' },
         { title: 'Estimasi Waktu', rowId: '2d4', description: 'Estimasi waktu penyelesaian' },
         { title: 'Biaya dan Tarif', rowId: '2d5', description: 'Biaya dan tarif layanan' },
+        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   },
@@ -94,7 +98,7 @@ const interactiveMenus = {
 • Lupa Nomor Registrasi — Cara mengembalikan nomor registrasi
 • Cara Mengajukan Pengaduan — Saluran dan cara pengaduan`,
     header: 'PERTANYAAN UMUM',
-    footer: 'Ketik 0 untuk kembali ke menu utama',
+    footer: '',
     buttonText: 'Lihat Opsi',
     sections: [{
       title: 'FAQ',
@@ -105,6 +109,7 @@ const interactiveMenus = {
         { title: 'Perbarui Data Diri', rowId: '2e4', description: 'Cara memperbarui data peserta' },
         { title: 'Lupa Nomor Registrasi', rowId: '2e5', description: 'Cara mengembalikan nomor registrasi' },
         { title: 'Cara Mengajukan Pengaduan', rowId: '2e6', description: 'Saluran dan cara pengaduan' },
+        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   },
@@ -115,14 +120,15 @@ const interactiveMenus = {
 • Cek Status Pengaduan — Cek status pengaduan anda
 • Customer Service — Saluran komunikasi resmi`,
     header: 'PENGADUAN',
-    footer: 'Ketik 0 untuk kembali ke menu utama',
-    buttonText: 'Lihat Opsi',
+    footer: '',
+    buttonText: 'Pilih',
     sections: [{
       title: 'PENGADUAN',
       rows: [
         { title: 'Sampaikan Pengaduan', rowId: '3a', description: 'Sampaikan pengaduan via chat' },
         { title: 'Cek Status Pengaduan', rowId: '3b', description: 'Cek status pengaduan anda' },
         { title: 'Customer Service', rowId: '3c', description: 'Saluran komunikasi resmi' },
+        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   }
