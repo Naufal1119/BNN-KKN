@@ -17,7 +17,6 @@ const interactiveMenus = {
         { title: 'Administrasi', rowId: '1', description: 'Cek status, perbarui data, cetak kartu' },
         { title: 'Informasi', rowId: '2', description: 'Produk, jam operasional, alamat, panduan' },
         { title: 'Pengaduan', rowId: '3', description: 'Sampaikan pengaduan, hubungi CS' },
-        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
       ]
     }]
   },
@@ -36,7 +35,11 @@ const interactiveMenus = {
         { title: 'Cek Status Pendaftaran', rowId: '1a', description: 'Cek status pendaftaran layanan' },
         { title: 'Perbarui Data Peserta', rowId: '1b', description: 'Perbarui data diri peserta' },
         { title: 'Cetak Kartu Peserta', rowId: '1c', description: 'Cetak ulang kartu peserta' },
-        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
+      ]
+    }, {
+      title: 'NAVIGASI',
+      rows: [
+        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   },
@@ -61,7 +64,11 @@ const interactiveMenus = {
         { title: 'Panduan dan Persyaratan', rowId: '2d', description: 'Syarat, alur, biaya layanan' },
         { title: 'Pertanyaan Umum', rowId: '2e', description: 'FAQ seputar layanan' },
         { title: 'Media Sosial dan Website', rowId: '2f', description: 'Instagram, X, Facebook, YouTube, TikTok' },
-        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
+      ]
+    }, {
+      title: 'NAVIGASI',
+      rows: [
+        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   },
@@ -84,7 +91,11 @@ const interactiveMenus = {
         { title: 'Alur Proses Layanan', rowId: '2d3', description: 'Tahapan pemrosesan layanan' },
         { title: 'Estimasi Waktu', rowId: '2d4', description: 'Estimasi waktu penyelesaian' },
         { title: 'Biaya dan Tarif', rowId: '2d5', description: 'Biaya dan tarif layanan' },
-        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
+      ]
+    }, {
+      title: 'NAVIGASI',
+      rows: [
+        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   },
@@ -109,7 +120,11 @@ const interactiveMenus = {
         { title: 'Perbarui Data Diri', rowId: '2e4', description: 'Cara memperbarui data peserta' },
         { title: 'Lupa Nomor Registrasi', rowId: '2e5', description: 'Cara mengembalikan nomor registrasi' },
         { title: 'Cara Mengajukan Pengaduan', rowId: '2e6', description: 'Saluran dan cara pengaduan' },
-        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
+      ]
+    }, {
+      title: 'NAVIGASI',
+      rows: [
+        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   },
@@ -128,7 +143,11 @@ const interactiveMenus = {
         { title: 'Sampaikan Pengaduan', rowId: '3a', description: 'Sampaikan pengaduan via chat' },
         { title: 'Cek Status Pengaduan', rowId: '3b', description: 'Cek status pengaduan anda' },
         { title: 'Customer Service', rowId: '3c', description: 'Saluran komunikasi resmi' },
-        { title: 'Kembali ke Menu Utama', rowId: '0', description: '' },
+      ]
+    }, {
+      title: 'NAVIGASI',
+      rows: [
+        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   }
@@ -157,8 +176,7 @@ Untuk mencetak Kartu Peserta:
   4. Simpan file PDF dan cetak
 
 ⏱ Proses: 5-10 menit (langsung) / 1×24 jam (online)
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
   '2a': subMenus[1]?.children?.b,
   '2b': subMenus[1]?.children?.c,
   '2c': subMenus[1]?.children?.d,
@@ -199,9 +217,7 @@ Ketik *0* untuk kembali ke menu utama.`,
 
 🎵 TikTok
    @halobnn_sulsel
-   tiktok.com/@halobnn_sulsel
-
-Ketik *0* untuk kembali ke menu utama.`,
+    tiktok.com/@halobnn_sulsel`,
   '3a': subMenus[1]?.children?.a,
   '3b': subMenus[2]?.children?.b,
   '3c': subMenus[4]?.body

@@ -19,8 +19,7 @@ Silakan pilih informasi yang Anda butuhkan:
  c.  Jam dan Hari Operasional
  d.  Alamat dan Lokasi Kantor
  e.  Landasan Hukum dan Regulasi
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
     children: {
       a: `${header}
 
@@ -43,8 +42,7 @@ Untuk menyampaikan pengaduan melalui chat ini, kirimkan:
 
 ⏱ Estimasi penanganan: 1×24 jam kerja setelah diverifikasi.
 📌 Nomor tiket akan diterbitkan setelah pengaduan diregistrasi.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       b: `${header}
 
 ━━━ INFORMASI PRODUK DAN PROGRAM ━━━
@@ -56,8 +54,7 @@ Produk dan program layanan yang kami sediakan:
  3️⃣ Layanan Premium — Fasilitas prioritas (opsional)
 
 Informasi lengkap dapat diakses di www.perusahaan.com atau hubungi Customer Service.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       c: `${header}
 
 ━━━ JAM DAN HARI OPERASIONAL ━━━
@@ -72,8 +69,7 @@ Ketik *0* untuk kembali ke menu utama.`,
 ❌ Sabtu, Minggu, dan Hari Libur Nasional: TUTUP
 
 ☎️ Pengaduan dapat disampaikan 24 jam via website/email.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       d: `${header}
 
 ━━━ ALAMAT DAN LOKASI KANTOR ━━━
@@ -88,8 +84,7 @@ Ketik *0* untuk kembali ke menu utama.`,
    📞 021-87654321
 
 Lokasi kantor cabang: www.perusahaan.com/lokasi
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       e: `${header}
 
 ━━━ LANDASAN HUKUM DAN REGULASI ━━━
@@ -102,8 +97,7 @@ Layanan kami berdasarkan peraturan berikut:
 📜 Keputusan Direksi No. XXX/20XX tentang SOP
 
 Dokumen selengkapnya: www.perusahaan.com/regulasi
-
-Ketik *0* untuk kembali ke menu utama.`
+`
     }
   },
   2: {
@@ -116,8 +110,7 @@ Pilih jenis status yang ingin diketahui:
  b.  Status Pengaduan
  c.  Status Pembayaran
  d.  Status Kelengkapan Berkas
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
     children: {
       a: `${header}
 
@@ -128,8 +121,7 @@ Kirimkan *Nomor Registrasi* Anda untuk mengecek status pendaftaran.
 Format: *REG-2025-XXXXXX* (12 karakter)
 
 Nomor registrasi telah dikirim melalui SMS/Email saat pendaftaran.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       b: `${header}
 
 ━━━ CEK STATUS PENGADUAN ━━━
@@ -139,8 +131,7 @@ Kirimkan *Nomor Tiket* yang diterbitkan saat pengaduan diregistrasi.
 Format: *TKT-2025-XXXXXX*
 
 Belum punya nomor tiket? Sampaikan pengaduan melalui menu *Layanan Pengaduan Masyarakat* terlebih dahulu.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       c: `${header}
 
 ━━━ CEK STATUS PEMBAYARAN ━━━
@@ -152,8 +143,7 @@ Format:
    Billing: *BILL-2025-XXXXXX*
 
 Pembayaran yang terverifikasi akan mempercepat proses layanan.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       d: `${header}
 
 ━━━ CEK KELENGKAPAN BERKAS ━━━
@@ -163,8 +153,7 @@ Kirimkan *Nomor Permohonan* yang tercantum pada tanda terima dokumen.
 Format: *PMN-2025-XXXXXX*
 
 Petugas akan menginformasikan dokumen yang masih kurang.
-
-Ketik *0* untuk kembali ke menu utama.`
+`
     }
   },
   3: {
@@ -178,8 +167,7 @@ Pilih informasi yang Anda butuhkan:
  3️⃣  Alur Proses Layanan
  4️⃣  Estimasi Waktu Penyelesaian
  5️⃣  Biaya dan Tarif Layanan
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
     children: {
       1: `${header}
 
@@ -200,8 +188,7 @@ Ketentuan:
 • Dokumen harus jelas dan terbaca
 • Dokumen asli ditunjukkan saat verifikasi
 • Kelengkapan dokumen mempercepat proses
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       2: `${header}
 
 ━━━ TATA CARA PENDAFTARAN ━━━
@@ -221,8 +208,7 @@ Ketik *0* untuk kembali ke menu utama.`,
    5. Terima tanda terima dokumen
 
 ⏱ Verifikasi: 1-3 hari kerja setelah dokumen lengkap.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       3: `${header}
 
 ━━━ ALUR PROSES LAYANAN ━━━
@@ -244,8 +230,7 @@ Ketik *0* untuk kembali ke menu utama.`,
     → Pemberitahuan ke pemohon
 
 Status dapat dicek melalui menu *Cek Status Permohonan*.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       4: `${header}
 
 ━━━ ESTIMASI WAKTU PENYELESAIAN ━━━
@@ -261,8 +246,7 @@ Faktor yang mempengaruhi:
 • Jenis layanan
 
 Pengaduan prioritas: maksimal 1×24 jam.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       5: `${header}
 
 ━━━ BIAYA DAN TARIF LAYANAN ━━━
@@ -277,8 +261,7 @@ Kami TIDAK PERNAH meminta biaya di luar ketentuan resmi.
 Waspada penipuan yang mengatasnamakan perusahaan.
 
 Informasi tarif: www.perusahaan.com/tarif
-
-Ketik *0* untuk kembali ke menu utama.`
+`
     }
   },
   4: {
@@ -298,8 +281,7 @@ Saluran komunikasi resmi:
    Jl. Profesional No. 123, Jakarta Pusat
 
 Anda juga dapat menyampaikan pesan melalui chat ini. Petugas kami akan merespon sesegera mungkin pada jam operasional.
-
-Ketik *0* untuk kembali ke menu utama.`
+`
   },
   5: {
     title: 'PERTANYAAN UMUM (FAQ)',
@@ -313,8 +295,7 @@ Pilih pertanyaan yang sesuai:
  4️⃣  Cara memperbarui data diri?
  5️⃣  Lupa nomor registrasi?
  6️⃣  Cara mengajukan pengaduan?
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
     children: {
       1: `${header}
 
@@ -329,8 +310,7 @@ Langkah reset password:
 6. Login kembali
 
 Tidak terima email? Periksa folder Spam.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       2: `${header}
 
 ━━━ FAQ: LAMA PROSES PENDAFTARAN ━━━
@@ -343,8 +323,7 @@ Penerbitan dokumen  : 1-2 hari
 Total               : 3-7 hari
 
 Faktor: kelengkapan dokumen, volume permohonan, jenis layanan.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       3: `${header}
 
 ━━━ FAQ: BIAYA PENDAFTARAN ━━━
@@ -357,8 +336,7 @@ Pendaftaran *GRATIS*, tidak dipungut biaya.
 • Laporkan pungutan liar
 
 Biaya hanya untuk legalisir, penggantian dokumen, dan layanan premium (opsional).
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       4: `${header}
 
 ━━━ FAQ: PERBARUI DATA DIRI ━━━
@@ -376,8 +354,7 @@ Ketik *0* untuk kembali ke menu utama.`,
    4. Serahkan ke petugas
 
 Perubahan data penting memerlukan verifikasi tambahan.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       5: `${header}
 
 ━━━ FAQ: NOMOR REGISTRASI HILANG ━━━
@@ -393,8 +370,7 @@ Sertakan data verifikasi:
 • Tanggal pendaftaran (perkiraan)
 
 Petugas akan membantu setelah data diverifikasi.
-
-Ketik *0* untuk kembali ke menu utama.`,
+`,
       6: `${header}
 
 ━━━ FAQ: CARA MENGAJUKAN PENGADUAN ━━━
@@ -407,8 +383,7 @@ Pengaduan dapat diajukan melalui:
 🏛️ Datang langsung — ke kantor terdekat
 
 Setiap pengaduan akan diberikan nomor tiket untuk pengecekan status.
-
-Ketik *0* untuk kembali ke menu utama.`
+`
     }
   }
 };
