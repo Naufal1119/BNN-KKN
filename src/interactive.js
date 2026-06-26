@@ -3,7 +3,11 @@ const { subMenus } = require('./menu');
 
 const interactiveMenus = {
   main: {
-    text: 'Selamat datang di Layanan Chatbot BNNP Sulsel. Sahabat dapat memilih opsi menu yang dibutuhkan:',
+    text: `Selamat datang di Layanan Chatbot BNNP Sulsel. Sahabat dapat memilih opsi menu yang dibutuhkan:
+
+1. Administrasi — Cek status, perbarui data, cetak kartu
+2. Informasi — Produk, jam operasional, alamat, panduan, medsos
+3. Pengaduan — Sampaikan pengaduan, hubungi CS`,
     header: 'LAYANAN INFORMASI DAN PELAYANAN PUBLIK',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Menu',
@@ -17,7 +21,11 @@ const interactiveMenus = {
     }]
   },
   '1': {
-    text: 'Anda memilih Administrasi. Silakan pilih opsi di bawah:',
+    text: `Anda memilih Administrasi. Berikut opsi yang tersedia:
+
+• Cek Status Pendaftaran — Cek status pendaftaran layanan
+• Perbarui Data Peserta — Perbarui data diri peserta
+• Cetak Kartu Peserta — Cetak ulang kartu peserta`,
     header: 'ADMINISTRASI',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Opsi',
@@ -31,7 +39,14 @@ const interactiveMenus = {
     }]
   },
   '2': {
-    text: 'Anda memilih Informasi. Silakan pilih opsi di bawah:',
+    text: `Anda memilih Informasi. Berikut opsi yang tersedia:
+
+• Produk dan Program — Info produk dan program layanan
+• Jam Operasional — Jam dan hari operasional kantor
+• Alamat Kantor — Alamat dan lokasi kantor
+• Panduan dan Persyaratan — Syarat, alur, biaya layanan
+• Pertanyaan Umum — FAQ seputar layanan
+• Media Sosial dan Website — IG, X, FB, YT, TikTok BNNP Sulsel`,
     header: 'INFORMASI',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Opsi',
@@ -48,7 +63,13 @@ const interactiveMenus = {
     }]
   },
   '2d': {
-    text: 'Anda memilih Panduan dan Persyaratan. Silakan pilih:',
+    text: `Anda memilih Panduan dan Persyaratan. Berikut opsi yang tersedia:
+
+• Persyaratan Dokumen — Dokumen wajib dan pendukung
+• Tata Cara Pendaftaran — Cara daftar online dan offline
+• Alur Proses Layanan — Tahapan pemrosesan layanan
+• Estimasi Waktu — Estimasi waktu penyelesaian
+• Biaya dan Tarif — Biaya dan tarif layanan`,
     header: 'PANDUAN DAN PERSYARATAN',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Opsi',
@@ -64,7 +85,14 @@ const interactiveMenus = {
     }]
   },
   '2e': {
-    text: 'Anda memilih Pertanyaan Umum (FAQ). Silakan pilih:',
+    text: `Anda memilih Pertanyaan Umum (FAQ). Berikut opsi yang tersedia:
+
+• Cara Reset Password — Langkah reset password akun
+• Lama Proses Pendaftaran — Estimasi waktu pendaftaran
+• Biaya Pendaftaran — Apakah pendaftaran berbayar?
+• Perbarui Data Diri — Cara memperbarui data peserta
+• Lupa Nomor Registrasi — Cara mengembalikan nomor registrasi
+• Cara Mengajukan Pengaduan — Saluran dan cara pengaduan`,
     header: 'PERTANYAAN UMUM',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Opsi',
@@ -81,7 +109,11 @@ const interactiveMenus = {
     }]
   },
   '3': {
-    text: 'Anda memilih Pengaduan. Silakan pilih opsi di bawah:',
+    text: `Anda memilih Pengaduan. Berikut opsi yang tersedia:
+
+• Sampaikan Pengaduan — Sampaikan pengaduan via chat
+• Cek Status Pengaduan — Cek status pengaduan anda
+• Customer Service — Saluran komunikasi resmi`,
     header: 'PENGADUAN',
     footer: 'Ketik 0 untuk kembali ke menu utama',
     buttonText: 'Lihat Opsi',
