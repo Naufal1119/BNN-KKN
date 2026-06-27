@@ -56,16 +56,14 @@ async function startConnection(onMessage) {
           try {
             const parsed = JSON.parse(nativeFlow.paramsJson);
             text = parsed.id || parsed.buttonId || parsed.selectedId || '';
-            console.log('[DEBUG] interactiveResponse paramsJson:', nativeFlow.paramsJson, '=> text:', text);
-          } catch (e) {
-            console.log('[DEBUG] interactiveResponse parse error:', e.message, 'raw:', nativeFlow.paramsJson);
-          }
+          } catch (e) {}
         }
         text = text || msgContent?.body?.text || '';
+      } else if (msgType === 'templateButtonReplyMessage') {
+        text = msgContent?.selectedId || msgContent?.selectedButtonId || msgContent?.displayText || '';
       } else {
         text = msgContent?.text || msgContent?.caption || message.message?.conversation || '';
       }
-      console.log('[DEBUG] msgType:', msgType, '| text:', text);
       if (text) {
         const jid = message.key.remoteJid;
         if (onMessage) {

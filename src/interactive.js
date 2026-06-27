@@ -204,7 +204,6 @@ async function sendInteractive(sock, jid, menuKey) {
     let interactiveButtons;
 
     if (config.type === 'quick_reply') {
-      // Quick reply buttons - directly clickable without dropdown
       interactiveButtons = config.buttons.map(button => ({
         name: 'quick_reply',
         buttonParamsJson: JSON.stringify({
@@ -212,7 +211,6 @@ async function sendInteractive(sock, jid, menuKey) {
           id: button.id
         })
       }));
-      console.log('[DEBUG] quick_reply buttons:', JSON.stringify(interactiveButtons, null, 2));
     } else {
       // Single select dropdown menu
       const buttonTitle = config.buttonText || 'Pilih';
