@@ -6,15 +6,12 @@ const interactiveMenus = {
     text: `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`,
     header: 'LAYANAN INFORMASI DAN PELAYANAN PUBLIK',
     footer: '',
-    buttonText: 'Pilih Menu',
-    sections: [{
-      title: 'MENU LAYANAN',
-      rows: [
-        { title: 'Administrasi', rowId: '1' },
-        { title: 'Informasi', rowId: '2' },
-        { title: 'Pengaduan', rowId: '3' },
-      ]
-    }]
+    type: 'quick_reply',
+    buttons: [
+      { text: 'Administrasi', id: '1' },
+      { text: 'Informasi', id: '2' },
+      { text: 'Pengaduan', id: '3' },
+    ]
   },
   '1': {
     text: `Anda memilih Administrasi. Silakan pilih opsi di bawah:`,
@@ -204,13 +201,21 @@ async function sendInteractive(sock, jid, menuKey) {
   await delay(800);
 
   try {
-    const buttonTitle = config.buttonText || 'Pilih';
+    let interactiveButtons;
 
-    await sendInteractiveMessage(sock, jid, {
-      text: config.text,
-      footer: config.footer,
-      title: config.header,
-      interactiveButtons: [{
+    if (config.type === 'quick_reply') {
+      // Quick reply buttons - directly clickable without dropdown
+      interactiveButtons = config.buttons.map(button => ({
+        name: 'quick_reply',
+        buttonParamsJson: JSON.stringify({
+          display_text: button.text,
+          id: button.id
+        })
+      }));
+    } else {
+      // Single select dropdown menu
+      const buttonTitle = config.buttonText || 'Pilih';
+      interactiveButtons = [{
         name: 'single_select',
         buttonParamsJson: JSON.stringify({
           title: buttonTitle,
@@ -223,7 +228,14 @@ async function sendInteractive(sock, jid, menuKey) {
             }))
           }))
         })
-      }]
+      }];
+    }
+
+    await sendInteractiveMessage(sock, jid, {
+      text: config.text,
+      footer: config.footer,
+      title: config.header,
+      interactiveButtons: interactiveButtons
     });
     console.log(`sendInteractive: "${menuKey}" sent to ${jid}`);
   } catch (err) {
