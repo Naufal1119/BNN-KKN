@@ -6,15 +6,7 @@ const userSessions = new Map();
 const TIMEOUT_REMINDER = 3 * 60 * 1000;
 const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
-const welcomeMessage = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       LAYANAN INFORMASI BNN PROVINSI SULAWESI SELATAN
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Terima kasih telah mengakses layanan BNNP Sulsel. Senang dapat membantu Sahabat.
-
-Silakan pilih menu yang dibutuhkan:
-`;
+const welcomeMessage = `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`;
 
 const reminderMessage = `
 ━━━ BATAS WAKTU PELAYANAN ━━━
