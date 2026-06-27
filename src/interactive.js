@@ -78,21 +78,6 @@ const interactiveMenus = {
       ]
     }]
   },
-  '2g': {
-    text: `Anda memilih Lokasi Kantor Cabang. Silakan pilih kabupaten/kota:`,
-    header: 'LOKASI KANTOR CABANG BNNP SULSEL',
-    footer: '',
-    buttonText: 'Pilih',
-    sections: [{
-      title: 'KANTOR CABANG',
-      rows: [
-        { title: '📍 BNN Kab. Bone', rowId: '2g1' },
-        { title: '📍 BNN Kab. Sidenreng Rappang', rowId: '2g2' },
-        { title: '📍 BNN Kota Palopo', rowId: '2g3' },
-        { title: '📍 BNN Kab. Tana Toraja', rowId: '2g4' },
-      ]
-    }]
-  },
   '3': {
     text: `Anda memilih Pengaduan. Silakan pilih opsi di bawah:`,
     header: 'PENGADUAN',
@@ -173,81 +158,51 @@ Untuk mencetak Kartu Peserta:
 🎵 TikTok
    @halobnn_sulsel
    tiktok.com/@halobnn_sulsel`,
-  '3a': subMenus[1]?.children?.a,
+'3a': subMenus[1]?.children?.a,
   '3b': subMenus[2]?.children?.b,
   '3c': subMenus[4]?.body,
-  '2g1': `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   BNN KAB. BONE
+  '2g': `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LOKASI KANTOR CABANG BNNP SULSEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   📍 BNN KAB. BONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Alamat: Jl. Ahmad Yani No. 45, Watang Pulu, Kec. Bone, Kab. Bone, Sulsel 92713
+📞 Telp: (0481) 210xx | 📧 bnn.bone@bnn.go.id
+⏰ Senin–Jumat, 08.00–16.00 WITA
+🗺️ Maps: https://maps.app.goo.gl/bone-bnn
 
-📍 Alamat: Jl. Ahmad Yani No. 45, Watang Pulu, Kec. Bone, Kab. Bone, Sulawesi Selatan 92713
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   📍 BNN KAB. SIDENRENG RAPPANG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Alamat: Jl. Sultan Hasanuddin No. 88, Panca Lautang, Kec. Baranti, Kab. Sidrap, Sulsel 91611
+📞 Telp: (0484) 21xxx | 📧 bnn.sidrap@bnn.go.id
+⏰ Senin–Jumat, 08.00–16.00 WITA
+🗺️ Maps: https://maps.app.goo.gl/sidrap-bnn
 
-📞 Telepon: (0481) 210xx
-📧 Email: bnn.bone@bnn.go.id
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   📍 BNN KOTA PALOPO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Alamat: Jl. Andi Djemma No. 12, Wara, Kec. Wara, Kota Palopo, Sulsel 91911
+📞 Telp: (0471) 2xxxxx | 📧 bnn.palopo@bnn.go.id
+⏰ Senin–Jumat, 08.00–16.00 WITA
+🗺️ Maps: https://maps.app.goo.gl/palopo-bnn
 
-⏰ Jam Operasional: Senin–Jumat, 08.00–16.00 WITA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   📍 BNN KAB. TANA TORAJA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 Alamat: Jl. Pongtiku No. 56, Rantepao Utara, Kec. Rantepao, Kab. Tana Toraja, Sulsel 91819
+📞 Telp: (0423) 2xxxx | 📧 bnn.tanatoraja@bnn.go.id
+⏰ Senin–Jumat, 08.00–16.00 WITA
+🗺️ Maps: https://maps.app.goo.gl/tanatoraja-bnn
 
-📌 Layanan:
-  • Pendaftaran Program Rehabilitasi
-  • Konseling & Edukasi Pencegahan
-  • Pemeriksaan Narkoba (Urine Test)
-  • Pelayanan Administrasi Umum
-
-🗺️ Google Maps: https://maps.app.goo.gl/bone-bnn`,
-  '2g2': `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   BNN KAB. SIDENRENG RAPPANG
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📍 Alamat: Jl. Sultan Hasanuddin No. 88, Panca Lautang, Kec. Baranti, Kab. Sidenreng Rappang, Sulawesi Selatan 91611
-
-📞 Telepon: (0484) 21xxx
-📧 Email: bnn.sidrap@bnn.go.id
-
-⏰ Jam Operasional: Senin–Jumat, 08.00–16.00 WITA
-
-📌 Layanan:
-  • Pendaftaran Program Rehabilitasi
-  • Konseling & Edukasi Pencegahan
-  • Pemeriksaan Narkoba (Urine Test)
-  • Pelayanan Administrasi Umum
-
-🗺️ Google Maps: https://maps.app.goo.gl/sidrap-bnn`,
-  '2g3': `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   BNN KOTA PALOPO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📍 Alamat: Jl. Andi Djemma No. 12, Wara, Kec. Wara, Kota Palopo, Sulawesi Selatan 91911
-
-📞 Telepon: (0471) 2xxxxx
-📧 Email: bnn.palopo@bnn.go.id
-
-⏰ Jam Operasional: Senin–Jumat, 08.00–16.00 WITA
-
-📌 Layanan:
-  • Pendaftaran Program Rehabilitasi
-  • Konseling & Edukasi Pencegahan
-  • Pemeriksaan Narkoba (Urine Test)
-  • Pelayanan Administrasi Umum
-
-🗺️ Google Maps: https://maps.app.goo.gl/palopo-bnn`,
-  '2g4': `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   BNN KAB. TANA TORAJA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📍 Alamat: Jl. Pongtiku No. 56, Rantepao Utara, Kec. Rantepao, Kab. Tana Toraja, Sulawesi Selatan 91819
-
-📞 Telepon: (0423) 2xxxx
-📧 Email: bnn.tanatoraja@bnn.go.id
-
-⏰ Jam Operasional: Senin–Jumat, 08.00–16.00 WITA
-
-📌 Layanan:
-  • Pendaftaran Program Rehabilitasi
-  • Konseling & Edukasi Pencegahan
-  • Pemeriksaan Narkoba (Urine Test)
-  • Pelayanan Administrasi Umum
-
-🗺️ Google Maps: https://maps.app.goo.gl/tanatoraja-bnn`
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 Semua cabang menyediakan:
+   • Pendaftaran Program Rehabilitasi
+   • Konseling & Edukasi Pencegahan
+   • Pemeriksaan Narkoba (Urine Test)
+   • Pelayanan Administrasi Umum`,
 };
 
 function delay(ms) {
