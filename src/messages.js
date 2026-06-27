@@ -94,7 +94,7 @@ function handleMessage(text, jid) {
 
   clearTimers(session);
 
-  if (msg === 'menu' || msg === '0') {
+  if (msg === 'menu') {
     resetSession(jid);
     startTimers(jid, getSession(jid));
     return { text: interactiveMenus.main.text, menu: 'main' };

@@ -25,11 +25,6 @@ const interactiveMenus = {
         { title: 'Perbarui Data Peserta', rowId: '1b' },
         { title: 'Cetak Kartu Peserta', rowId: '1c' },
       ]
-    }, {
-      title: 'NAVIGASI',
-      rows: [
-        { title: 'Kembali ke Menu Utama', rowId: '0' },
-      ]
     }]
   },
   '2': {
@@ -47,11 +42,6 @@ const interactiveMenus = {
         { title: 'Pertanyaan Umum', rowId: '2e' },
         { title: 'Media Sosial dan Website', rowId: '2f' },
       ]
-    }, {
-      title: 'NAVIGASI',
-      rows: [
-        { title: 'Kembali ke Menu Utama', rowId: '0' },
-      ]
     }]
   },
   '2d': {
@@ -67,11 +57,6 @@ const interactiveMenus = {
         { title: 'Alur Proses Layanan', rowId: '2d3' },
         { title: 'Estimasi Waktu', rowId: '2d4' },
         { title: 'Biaya dan Tarif', rowId: '2d5' },
-      ]
-    }, {
-      title: 'NAVIGASI',
-      rows: [
-        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   },
@@ -90,11 +75,6 @@ const interactiveMenus = {
         { title: 'Lupa Nomor Registrasi', rowId: '2e5' },
         { title: 'Cara Mengajukan Pengaduan', rowId: '2e6' },
       ]
-    }, {
-      title: 'NAVIGASI',
-      rows: [
-        { title: 'Kembali ke Menu Utama', rowId: '0' },
-      ]
     }]
   },
   '3': {
@@ -108,11 +88,6 @@ const interactiveMenus = {
         { title: 'Sampaikan Pengaduan', rowId: '3a' },
         { title: 'Cek Status Pengaduan', rowId: '3b' },
         { title: 'Customer Service', rowId: '3c' },
-      ]
-    }, {
-      title: 'NAVIGASI',
-      rows: [
-        { title: 'Kembali ke Menu Utama', rowId: '0' },
       ]
     }]
   }
