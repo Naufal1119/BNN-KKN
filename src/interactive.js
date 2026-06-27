@@ -1,148 +1,6 @@
 const { sendInteractiveMessage } = require('@ryuu-reinzz/button-helper');
 const { subMenus } = require('./menu');
 
-const generateBodyWithAllOptions = (menuKey, childrenData) => {
-  const stripHeader = (text) => {
-    if (!text) return '';
-    let result = text;
-    while (result.includes('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')) {
-      const lines = result.split('\n');
-      let firstSeparatorIdx = -1;
-      for (let i = 0; i < lines.length; i++) {
-        if (lines[i].includes('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')) {
-          firstSeparatorIdx = i;
-          break;
-        }
-      }
-      if (firstSeparatorIdx === -1) break;
-      const remaining = lines.slice(firstSeparatorIdx + 2);
-      result = remaining.join('\n');
-    }
-    return result.trim();
-  };
-
-  let body = '';
-
-  if (menuKey === '1') {
-    const ops = childrenData;
-    body = `Anda memilih Administrasi. Berikut detail layanan yang tersedia:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.a?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.d?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.b?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.e?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.c?.body || '')}`;
-  } else if (menuKey === '2') {
-    const ops = childrenData;
-    body = `Anda memilih Informasi. Berikut detail layanan yang tersedia:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.a?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.b?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.c?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.d?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.e?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.f?.body || '')}`;
-  } else if (menuKey === '2d') {
-    const ops = childrenData;
-    body = `Anda memilih Panduan dan Persyaratan. Berikut detail layanan yang tersedia:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[1] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[2] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[3] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[4] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[5] || '')}`;
-  } else if (menuKey === '2e') {
-    const ops = childrenData;
-    body = `Anda memilih Pertanyaan Umum (FAQ). Berikut detail layanan yang tersedia:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[1] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[2] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[3] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[4] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[5] || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops[6] || '')}`;
-  } else if (menuKey === '3') {
-    const ops = childrenData;
-    body = `Anda memilih Pengaduan. Berikut detail layanan yang tersedia:
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.a?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.b?.body || '')}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${stripHeader(ops.c?.body || '')}`;
-  }
-
-  return body || '';
-};
-
 const interactiveMenus = {
   main: {
     text: `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`,
@@ -159,7 +17,7 @@ const interactiveMenus = {
     }]
   },
   '1': {
-    text: generateBodyWithAllOptions('1', subMenus),
+    text: `Anda memilih Administrasi. Silakan pilih opsi di bawah:`,
     header: 'ADMINISTRASI',
     footer: '',
     buttonText: 'Pilih',
@@ -178,7 +36,7 @@ const interactiveMenus = {
     }]
   },
   '2': {
-    text: generateBodyWithAllOptions('2', subMenus),
+    text: `Anda memilih Informasi. Silakan pilih opsi di bawah:`,
     header: 'INFORMASI',
     footer: '',
     buttonText: 'Pilih',
@@ -200,7 +58,7 @@ const interactiveMenus = {
     }]
   },
   '2d': {
-    text: generateBodyWithAllOptions('2d', subMenus[3]?.children),
+    text: `Anda memilih Panduan dan Persyaratan. Silakan pilih opsi di bawah:`,
     header: 'PANDUAN DAN PERSYARATAN',
     footer: '',
     buttonText: 'Pilih',
@@ -221,7 +79,7 @@ const interactiveMenus = {
     }]
   },
   '2e': {
-    text: generateBodyWithAllOptions('2e', subMenus[5]?.children),
+    text: `Anda memilih Pertanyaan Umum (FAQ). Silakan pilih opsi di bawah:`,
     header: 'PERTANYAAN UMUM',
     footer: '',
     buttonText: 'Lihat Opsi',
@@ -243,7 +101,7 @@ const interactiveMenus = {
     }]
   },
   '3': {
-    text: generateBodyWithAllOptions('3', subMenus),
+    text: `Anda memilih Pengaduan. Silakan pilih opsi di bawah:`,
     header: 'PENGADUAN',
     footer: '',
     buttonText: 'Pilih',
@@ -268,7 +126,7 @@ const detailContent = {
   '1b': subMenus[5]?.children?.['4'],
   '1c': `${subMenus[1]?.body}
 
-━━━ CETAK KARTU PESERTA ━━━
+━━━━ CETAK KARTU PESERTA ━━━━
 
 Untuk mencetak Kartu Peserta:
 
@@ -285,8 +143,7 @@ Untuk mencetak Kartu Peserta:
   3. Klik tombol Cetak
   4. Simpan file PDF dan cetak
 
-⏱ Proses: 5-10 menit (langsung) / 1×24 jam (online)
-`,
+⏱ Proses: 5-10 menit (langsung) / 1×24 jam (online)`,
   '2a': subMenus[1]?.children?.b,
   '2b': subMenus[1]?.children?.c,
   '2c': subMenus[1]?.children?.d,
@@ -302,9 +159,9 @@ Untuk mencetak Kartu Peserta:
   '2e5': subMenus[5]?.children?.['5'],
   '2e6': subMenus[5]?.children?.['6'],
   '2f': `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        MEDIA SOSIAL DAN WEBSITE BNNP SULSEL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🌐 Website
    sulsel.bnn.go.id
@@ -327,7 +184,7 @@ Untuk mencetak Kartu Peserta:
 
 🎵 TikTok
    @halobnn_sulsel
-    tiktok.com/@halobnn_sulsel`,
+   tiktok.com/@halobnn_sulsel`,
   '3a': subMenus[1]?.children?.a,
   '3b': subMenus[2]?.children?.b,
   '3c': subMenus[4]?.body
