@@ -212,6 +212,7 @@ async function sendInteractive(sock, jid, menuKey) {
           id: button.id
         })
       }));
+      console.log('[DEBUG] quick_reply buttons:', JSON.stringify(interactiveButtons, null, 2));
     } else {
       // Single select dropdown menu
       const buttonTitle = config.buttonText || 'Pilih';

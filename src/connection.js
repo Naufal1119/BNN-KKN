@@ -54,13 +54,18 @@ async function startConnection(onMessage) {
         const nativeFlow = msgContent?.nativeFlowResponseMessage;
         if (nativeFlow?.paramsJson) {
           try {
-            text = JSON.parse(nativeFlow.paramsJson).id || '';
-          } catch (e) {}
+            const parsed = JSON.parse(nativeFlow.paramsJson);
+            text = parsed.id || parsed.buttonId || parsed.selectedId || '';
+            console.log('[DEBUG] interactiveResponse paramsJson:', nativeFlow.paramsJson, '=> text:', text);
+          } catch (e) {
+            console.log('[DEBUG] interactiveResponse parse error:', e.message, 'raw:', nativeFlow.paramsJson);
+          }
         }
         text = text || msgContent?.body?.text || '';
       } else {
         text = msgContent?.text || msgContent?.caption || message.message?.conversation || '';
       }
+      console.log('[DEBUG] msgType:', msgType, '| text:', text);
       if (text) {
         const jid = message.key.remoteJid;
         if (onMessage) {
