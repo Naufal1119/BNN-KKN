@@ -590,43 +590,42 @@ Untuk mencetak Kartu Peserta:
 '3a': subMenus[1]?.children?.a,
   '3b': subMenus[2]?.children?.b,
   '3c': subMenus[4]?.body,
-  '2g': `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  '2g': `
    LOKASI KANTOR CABANG BNNP SULSEL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
    📍 BNN KAB. BONE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📍 Alamat: Jl. Ahmad Yani No. 45, Watang Pulu, Kec. Bone, Kab. Bone, Sulsel 92713
 📞 Telp: (0481) 210xx | 📧 bnn.bone@bnn.go.id
 ⏰ Senin–Jumat, 08.00–16.00 WITA
 🗺️ Maps: https://maps.app.goo.gl/bone-bnn
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
    📍 BNN KAB. SIDENRENG RAPPANG
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📍 Alamat: Jl. Sultan Hasanuddin No. 88, Panca Lautang, Kec. Baranti, Kab. Sidrap, Sulsel 91611
 📞 Telp: (0484) 21xxx | 📧 bnn.sidrap@bnn.go.id
 ⏰ Senin–Jumat, 08.00–16.00 WITA
 🗺️ Maps: https://maps.app.goo.gl/sidrap-bnn
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
    📍 BNN KOTA PALOPO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📍 Alamat: Jl. Andi Djemma No. 12, Wara, Kec. Wara, Kota Palopo, Sulsel 91911
 📞 Telp: (0471) 2xxxxx | 📧 bnn.palopo@bnn.go.id
 ⏰ Senin–Jumat, 08.00–16.00 WITA
 🗺️ Maps: https://maps.app.goo.gl/palopo-bnn
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
    📍 BNN KAB. TANA TORAJA
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📍 Alamat: Jl. Pongtiku No. 56, Rantepao Utara, Kec. Rantepao, Kab. Tana Toraja, Sulsel 91819
 📞 Telp: (0423) 2xxxx | 📧 bnn.tanatoraja@bnn.go.id
 ⏰ Senin–Jumat, 08.00–16.00 WITA
 🗺️ Maps: https://maps.app.goo.gl/tanatoraja-bnn
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 📌 Semua cabang menyediakan:
    • Pendaftaran Program Rehabilitasi
    • Konseling & Edukasi Pencegahan
