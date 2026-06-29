@@ -695,13 +695,21 @@ function handleMessage(text, jid) {
     return { text: interactiveMenus.mainAdmin.text, menu: 'mainAdmin' };
   }
 
+  if (isLoggedIn && (msg.startsWith('admin_') || msg.startsWith('help_') || msg === 'mainAdmin')) {
+    if (interactiveMenus[msg]) {
+      session.currentMenu = msg;
+      startTimers(jid, session);
+      return { text: interactiveMenus[msg].text, menu: msg };
+    }
+  }
+
   if (msg === 'menu') {
     resetSession(jid);
     startTimers(jid, getSession(jid));
     return { text: interactiveMenus.main.text, menu: 'main' };
   }
 
-  if (isLoggedIn && interactiveMenus[msg]) {
+  if (interactiveMenus[msg]) {
     session.currentMenu = msg;
     startTimers(jid, session);
     return { text: interactiveMenus[msg].text, menu: msg };
