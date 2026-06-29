@@ -1,6 +1,7 @@
 const { mainMenu } = require('./menu');
 const { interactiveMenus, detailContent } = require('./interactive');
 const { getSock } = require('./connection');
+const admin = require('./admin');
 
 const userSessions = new Map();
 const TIMEOUT_REMINDER = 3 * 60 * 1000;
@@ -80,6 +81,114 @@ function startTimers(jid, session) {
   }, TIMEOUT_REMINDER);
 }
 
+function handleAdminCommand(text, jid) {
+  const parts = text.trim().split(/\s+/);
+  const cmd = parts[0].toLowerCase();
+
+  if (cmd === '/login') {
+    const pin = parts[1];
+    if (!pin) return { text: 'Format: /login <PIN>' };
+    const result = admin.authenticateWithPin(jid, pin);
+    if (result.success) return { text: `✅ Login berhasil. Role: ${result.role}` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/logout') {
+    admin.logoutAdmin(jid);
+    return { text: '✅ Logged out.' };
+  }
+
+  if (!admin.isAdmin(jid)) return null;
+  if (cmd === '/add') {
+    const args = parts.slice(1).join(' ');
+    const sepIdx = args.indexOf('|');
+    if (sepIdx === -1) return { text: 'Format: /add <key>|<konten>' };
+    const key = args.substring(0, sepIdx).trim();
+    const content = args.substring(sepIdx + 1).trim();
+    const result = admin.addContent(jid, key, content);
+    if (result.success) return { text: `✅ Konten "${key}" berhasil ditambahkan.` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/edit') {
+    const args = parts.slice(1).join(' ');
+    const sepIdx = args.indexOf('|');
+    if (sepIdx === -1) return { text: 'Format: /edit <key>|<konten baru>' };
+    const key = args.substring(0, sepIdx).trim();
+    const content = args.substring(sepIdx + 1).trim();
+    const result = admin.editContent(jid, key, content);
+    if (result.success) return { text: `✅ Konten "${key}" berhasil diupdate.` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/delete' || cmd === '/hapus') {
+    const key = parts[1];
+    if (!key) return { text: 'Format: /hapus <key>' };
+    const result = admin.deleteContent(jid, key);
+    if (result.success) return { text: `✅ Konten "${key}" dihapus.` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/list') {
+    const list = admin.listContent(jid);
+    return { text: `📋 *Konten Dinamis:*\n\n${list}` };
+  }
+
+  if (cmd === '/admins') {
+    const list = admin.listAdmins(jid);
+    return { text: `👥 *Daftar Admin:*\n\n${list}` };
+  }
+
+  if (cmd === '/addadmin') {
+    const target = parts[1];
+    if (!target) return { text: 'Format: /addadmin <nomor>\nContoh: /addadmin 6281234567890' };
+    const targetJid = target.includes('@') ? target : `${target}@s.whatsapp.net`;
+    const result = admin.addAdmin(jid, targetJid);
+    if (result.success) return { text: `✅ Admin berhasil ditambahkan: ${target}` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/removeadmin') {
+    const target = parts[1];
+    if (!target) return { text: 'Format: /removeadmin <nomor>' };
+    const targetJid = target.includes('@') ? target : `${target}@s.whatsapp.net`;
+    const result = admin.removeAdmin(jid, targetJid);
+    if (result.success) return { text: `✅ Admin dihapus: ${target}` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/changepin' || cmd === '/gantipin') {
+    const newPin = parts[1];
+    if (!newPin) return { text: 'Format: /gantipin <PIN baru>' };
+    const result = admin.changePin(jid, newPin);
+    if (result.success) return { text: `✅ PIN berhasil diganti menjadi: ${newPin}` };
+    return { text: `❌ ${result.reason}` };
+  }
+
+  if (cmd === '/help' || cmd === '/bantuan') {
+    return {
+      text: `🔧 *Admin Commands:*
+
+/login <PIN> - Login sebagai admin
+/logout - Logout
+
+/add <key>|<konten> - Tambah info baru
+/edit <key>|<konten> - Edit info
+/hapus <key> - Hapus info
+/list - Daftar semua info
+
+/admins - Daftar admin
+/addadmin <nomor> - Tambah admin (owner)
+/removeadmin <nomor> - Hapus admin (owner)
+/gantipin <PIN> - Ganti PIN (owner)
+
+/help - Bantuan ini`
+    };
+  }
+
+  return null;
+}
+
 function handleMessage(text, jid) {
   const session = getSession(jid);
 
@@ -93,6 +202,9 @@ function handleMessage(text, jid) {
   const msg = text.toLowerCase().trim();
 
   clearTimers(session);
+
+  const adminReply = handleAdminCommand(text, jid);
+  if (adminReply) return adminReply;
 
   if (msg === 'menu') {
     resetSession(jid);
@@ -112,6 +224,13 @@ function handleMessage(text, jid) {
     return { text: detailContent[msg] };
   }
 
+  const dynamicContent = admin.getDynamicContent(msg);
+  if (dynamicContent) {
+    session.currentMenu = 'detail';
+    startTimers(jid, session);
+    return { text: dynamicContent };
+  }
+
   if (session.currentMenu && session.currentMenu !== 'main' && session.currentMenu !== 'detail') {
     const contextualKey = `${session.currentMenu}${msg}`;
     if (interactiveMenus[contextualKey]) {
@@ -123,6 +242,12 @@ function handleMessage(text, jid) {
       session.currentMenu = 'detail';
       startTimers(jid, session);
       return { text: detailContent[contextualKey] };
+    }
+    const dynamicContextual = admin.getDynamicContent(contextualKey);
+    if (dynamicContextual) {
+      session.currentMenu = 'detail';
+      startTimers(jid, session);
+      return { text: dynamicContextual };
     }
   }
 
