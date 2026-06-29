@@ -3,4 +3,3 @@ auth_info/
 logs/
 .env
 *.log
-data/admins.json
