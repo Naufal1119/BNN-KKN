@@ -64,6 +64,7 @@ async function startConnection(onMessage) {
       } else {
         text = msgContent?.text || msgContent?.caption || message.message?.conversation || '';
       }
+      console.log('[DEBUG] msgType:', msgType, '| text:', text, '| jid:', message.key.remoteJid);
       if (text) {
         const jid = message.key.remoteJid;
         if (onMessage) {
