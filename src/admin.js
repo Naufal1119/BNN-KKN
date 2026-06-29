@@ -59,9 +59,12 @@ function logoutAdmin(jid) {
 }
 
 function authenticateWithPin(jid, pin) {
+  console.log('[DEBUG] authenticateWithPin:', { jid, pin });
   const adminsData = getAdminsData();
+  console.log('[DEBUG] admins data:', adminsData);
   if (pin !== adminsData.pin) return { success: false, reason: 'PIN salah' };
   const admin = adminsData.admins.find(a => a.jid === jid);
+  console.log('[DEBUG] found admin:', admin);
   if (!admin) return { success: false, reason: 'Nomor belum terdaftar sebagai admin' };
   loginAdmin(jid);
   return { success: true, role: admin.role };

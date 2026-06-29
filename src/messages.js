@@ -82,6 +82,7 @@ function startTimers(jid, session) {
 }
 
 function handleAdminCommand(text, jid) {
+  console.log('[DEBUG] handleAdminCommand:', { text, jid });
   const parts = text.trim().split(/\s+/);
   const cmd = parts[0].toLowerCase();
 
@@ -89,6 +90,7 @@ function handleAdminCommand(text, jid) {
     const pin = parts[1];
     if (!pin) return { text: 'Format: /login <PIN>' };
     const result = admin.authenticateWithPin(jid, pin);
+    console.log('[DEBUG] login result:', result);
     if (result.success) return { text: `✅ Login berhasil. Role: ${result.role}` };
     return { text: `❌ ${result.reason}` };
   }
