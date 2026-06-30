@@ -30,7 +30,7 @@ function saveJSON(file, data) {
 }
 
 function getAdminsData() {
-  return loadJSON(ADMINS_FILE) || { admins: [], pin: '9283' };
+  return loadJSON(ADMINS_FILE) || { admins: [], pin: process.env.ADMIN_PIN || '1234' };
 }
 
 function getContentData() {
