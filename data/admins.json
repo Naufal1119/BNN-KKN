@@ -1,0 +1,17 @@
+{
+  "admins": [
+    {
+      "jid": "628xxxxxxxxxx@s.whatsapp.net",
+      "role": "owner",
+      "addedBy": "system",
+      "addedAt": "2026-06-29T00:00:00.000Z"
+    },
+    {
+      "jid": "255056817463484@lid",
+      "role": "owner",
+      "addedBy": "system",
+      "addedAt": "2026-06-29T10:40:14.000Z"
+    }
+  ],
+  "pin": "9283"
+}
