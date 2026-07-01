@@ -12,29 +12,15 @@ const welcomeMessage = `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan p
 const reminderMessage = `
 ━━━ BATAS WAKTU PELAYANAN ━━━
 
-Yth. Bapak/Ibu Pengguna Layanan,
+Apakah Sahabat BNNP masih bersama kami?
 
-Tidak ada aktivitas dalam beberapa waktu terakhir. Sesi ini akan ditutup otomatis dalam 2 menit.
-
-Jika masih memerlukan bantuan, ketik *0* atau *menu* untuk kembali ke menu utama.
-
-Terima kasih.
+Jika masih memerlukan bantuan, silakan ketik *menu* untuk kembali ke menu utama.
 `;
 
 const closeMessage = `
 ━━━ SESI PELAYANAN DITUTUP ━━━
 
-Yth. Bapak/Ibu Pengguna Layanan,
-
-Sesi pelayanan telah ditutup karena tidak ada aktivitas.
-
-Untuk memulai kembali, kirim *menu* kapan saja.
-
-Informasi lebih lanjut:
-📞 021-12345678 (Senin–Jumat, 08.00–16.00)
-📧 cs@perusahaan.com
-
-Terima kasih.
+Terima kasih telah mengakses Layanan Pandawa, senang dapat membantu Sahabat BNN.
 `;
 
 function initTimers() {}
