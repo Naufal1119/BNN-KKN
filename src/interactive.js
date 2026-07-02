@@ -521,6 +521,17 @@ const interactiveMenus = {
       { text: '⬅️ Kembali', id: 'admin_admins' },
     ]
   },
+  error_fallback: {
+    text: `⚠️ Maaf, pilihan yang Anda masukkan tidak tersedia.
+
+Silakan pilih menu yang tersedia atau klik tombol di bawah untuk kembali ke menu utama.`,
+    header: 'PILIHAN TIDAK TERSEDIA',
+    footer: 'Klik tombol di bawah untuk kembali',
+    type: 'quick_reply',
+    buttons: [
+      { text: '🏠 Kembali ke Menu Utama', id: 'menu' },
+    ]
+  },
 };
 
 const detailContent = {
