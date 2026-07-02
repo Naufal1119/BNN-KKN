@@ -21,9 +21,10 @@ async function main() {
       const reply = handleMessage(text, jid);
       if (reply) {
         await typingDelay(sock, jid, reply.text);
-        await sock.sendMessage(jid, { text: reply.text });
         if (reply.menu) {
-          await sendInteractive(sock, jid, reply.menu);
+          await sendInteractive(sock, jid, reply.menu, reply.text);
+        } else {
+          await sock.sendMessage(jid, { text: reply.text });
         }
       }
     } catch (err) {

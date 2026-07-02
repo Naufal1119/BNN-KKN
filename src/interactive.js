@@ -658,7 +658,7 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function sendInteractive(sock, jid, menuKey) {
+async function sendInteractive(sock, jid, menuKey, bodyText) {
   const config = interactiveMenus[menuKey];
   if (!config) {
     console.log(`sendInteractive: config "${menuKey}" not found`);
@@ -679,7 +679,6 @@ async function sendInteractive(sock, jid, menuKey) {
         })
       }));
     } else {
-      // Single select dropdown menu
       const buttonTitle = config.buttonText || 'Pilih';
       interactiveButtons = [{
         name: 'single_select',
@@ -698,7 +697,7 @@ async function sendInteractive(sock, jid, menuKey) {
     }
 
     await sendInteractiveMessage(sock, jid, {
-      text: config.text,
+      text: bodyText || config.text,
       footer: config.footer,
       title: config.header,
       interactiveButtons: interactiveButtons
