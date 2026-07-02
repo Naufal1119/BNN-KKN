@@ -9,19 +9,11 @@ const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
 const welcomeMessage = `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`;
 
-const reminderMessage = `
-━━━ BATAS WAKTU PELAYANAN ━━━
+const reminderMessage = `Apakah Sahabat BNNP masih bersama kami?
 
-Apakah Sahabat BNNP masih bersama kami?
+Jika masih memerlukan bantuan, silakan pilih menu yang tersedia.`;
 
-Jika masih memerlukan bantuan, silakan ketik *menu* untuk kembali ke menu utama.
-`;
-
-const closeMessage = `
-━━━ SESI PELAYANAN DITUTUP ━━━
-
-Terima kasih telah mengakses Layanan Pandawa, senang dapat membantu Sahabat BNN.
-`;
+const closeMessage = `Terima kasih telah mengakses Layanan Pandawa, senang dapat membantu Sahabat BNN.`;
 
 function initTimers() {}
 

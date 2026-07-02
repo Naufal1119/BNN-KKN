@@ -548,7 +548,7 @@ const detailContent = {
   '1b': subMenus[5]?.children?.['4'],
   '1c': `${subMenus[1]?.body}
 
-━━━━ CETAK KARTU PESERTA ━━━━
+CETAK KARTU PESERTA
 
 Untuk mencetak Kartu Peserta:
 
@@ -581,9 +581,7 @@ Untuk mencetak Kartu Peserta:
   '2e5': subMenus[5]?.children?.['5'],
   '2e6': subMenus[5]?.children?.['6'],
   '2f': `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       MEDIA SOSIAL DAN WEBSITE BNNP SULSEL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MEDIA SOSIAL DAN WEBSITE BNNP SULSEL
 
 🌐 Website
    sulsel.bnn.go.id
@@ -611,9 +609,7 @@ Untuk mencetak Kartu Peserta:
   '3b': subMenus[2]?.children?.b,
   '3c': subMenus[4]?.body,
   '2g': `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   LOKASI KANTOR CABANG BNNP SULSEL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LOKASI KANTOR CABANG BNNP SULSEL
 
 📍 BNN KAB. BONE
 📌 Macanang, Tanete Riattang Bar., Macanang, Kec. Tanete Riattang Bar., Kabupaten Bone, Sulawesi Selatan 92713

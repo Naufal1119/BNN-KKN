@@ -1,7 +1,4 @@
-const header = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-      LAYANAN INFORMASI DAN PELAYANAN PUBLIK
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+const header = `LAYANAN INFORMASI DAN PELAYANAN PUBLIK`;
 
 const mainMenu = `${header}
 
@@ -23,7 +20,7 @@ Silakan pilih informasi yang Anda butuhkan:
     children: {
       a: `${header}
 
-━━━ LAYANAN PENGADUAN MASYARAKAT ━━━
+LAYANAN PENGADUAN MASYARAKAT
 
 Kami menerima pengaduan, saran, dan masukan melalui:
 
@@ -45,7 +42,7 @@ Untuk menyampaikan pengaduan melalui chat ini, kirimkan:
 `,
       b: `${header}
 
-━━━ INFORMASI PRODUK DAN PROGRAM ━━━
+INFORMASI PRODUK DAN PROGRAM
 
 Produk dan program layanan yang kami sediakan:
 
@@ -57,7 +54,7 @@ Informasi lengkap dapat diakses di www.perusahaan.com atau hubungi Customer Serv
 `,
       c: `${header}
 
-━━━ JAM DAN HARI OPERASIONAL ━━━
+JAM DAN HARI OPERASIONAL
 
 🏢 Kantor Pusat
    Senin–Kamis : 08.00 – 16.00 WIB
@@ -72,7 +69,7 @@ Informasi lengkap dapat diakses di www.perusahaan.com atau hubungi Customer Serv
 `,
       d: `${header}
 
-━━━ ALAMAT DAN LOKASI KANTOR ━━━
+ALAMAT DAN LOKASI KANTOR
 
 🏛️ Kantor Pusat
    Jl. Profesional No. 123, Jakarta Pusat 12345
@@ -87,7 +84,7 @@ Lokasi kantor cabang: www.perusahaan.com/lokasi
 `,
       e: `${header}
 
-━━━ LANDASAN HUKUM DAN REGULASI ━━━
+LANDASAN HUKUM DAN REGULASI
 
 Layanan kami berdasarkan peraturan berikut:
 
@@ -114,7 +111,7 @@ Pilih jenis status yang ingin diketahui:
     children: {
       a: `${header}
 
-━━━ CEK STATUS PENDAFTARAN ━━━
+CEK STATUS PENDAFTARAN
 
 Kirimkan *Nomor Registrasi* Anda untuk mengecek status pendaftaran.
 
@@ -124,7 +121,7 @@ Nomor registrasi telah dikirim melalui SMS/Email saat pendaftaran.
 `,
       b: `${header}
 
-━━━ CEK STATUS PENGADUAN ━━━
+CEK STATUS PENGADUAN
 
 Kirimkan *Nomor Tiket* yang diterbitkan saat pengaduan diregistrasi.
 
@@ -134,7 +131,7 @@ Belum punya nomor tiket? Sampaikan pengaduan melalui menu *Layanan Pengaduan Mas
 `,
       c: `${header}
 
-━━━ CEK STATUS PEMBAYARAN ━━━
+CEK STATUS PEMBAYARAN
 
 Kirimkan *Nomor Invoice* atau *Kode Billing* dari bukti pembayaran.
 
@@ -146,7 +143,7 @@ Pembayaran yang terverifikasi akan mempercepat proses layanan.
 `,
       d: `${header}
 
-━━━ CEK KELENGKAPAN BERKAS ━━━
+CEK KELENGKAPAN BERKAS
 
 Kirimkan *Nomor Permohonan* yang tercantum pada tanda terima dokumen.
 
@@ -171,7 +168,7 @@ Pilih informasi yang Anda butuhkan:
     children: {
       1: `${header}
 
-━━━ PERSYARATAN DOKUMEN ━━━
+PERSYARATAN DOKUMEN
 
 Dokumen Wajib:
 ✅ Fotokopi KTP (masih berlaku)
@@ -191,7 +188,7 @@ Ketentuan:
 `,
       2: `${header}
 
-━━━ TATA CARA PENDAFTARAN ━━━
+TATA CARA PENDAFTARAN
 
 🌐 Online
    1. Akses www.perusahaan.com/daftar
@@ -211,7 +208,7 @@ Ketentuan:
 `,
       3: `${header}
 
-━━━ ALUR PROSES LAYANAN ━━━
+ALUR PROSES LAYANAN
 
  1️⃣ Pendaftaran
     → Pengajuan permohonan
@@ -233,7 +230,7 @@ Status dapat dicek melalui menu *Cek Status Permohonan*.
 `,
       4: `${header}
 
-━━━ ESTIMASI WAKTU PENYELESAIAN ━━━
+ESTIMASI WAKTU PENYELESAIAN
 
 Verifikasi berkas        : 1-2 hari kerja
 Pemrosesan permohonan    : 3-5 hari kerja
@@ -249,7 +246,7 @@ Pengaduan prioritas: maksimal 1×24 jam.
 `,
       5: `${header}
 
-━━━ BIAYA DAN TARIF LAYANAN ━━━
+BIAYA DAN TARIF LAYANAN
 
 Pendaftaran              : GRATIS
 Penggantian dokumen      : Rp50.000,-
@@ -299,7 +296,7 @@ Pilih pertanyaan yang sesuai:
     children: {
       1: `${header}
 
-━━━ FAQ: RESET PASSWORD ━━━
+FAQ: RESET PASSWORD
 
 Langkah reset password:
 1. Buka www.perusahaan.com
@@ -313,7 +310,7 @@ Tidak terima email? Periksa folder Spam.
 `,
       2: `${header}
 
-━━━ FAQ: LAMA PROSES PENDAFTARAN ━━━
+FAQ: LAMA PROSES PENDAFTARAN
 
 Proses pendaftaran:
 
@@ -326,7 +323,7 @@ Faktor: kelengkapan dokumen, volume permohonan, jenis layanan.
 `,
       3: `${header}
 
-━━━ FAQ: BIAYA PENDAFTARAN ━━━
+FAQ: BIAYA PENDAFTARAN
 
 Pendaftaran *GRATIS*, tidak dipungut biaya.
 
@@ -339,7 +336,7 @@ Biaya hanya untuk legalisir, penggantian dokumen, dan layanan premium (opsional)
 `,
       4: `${header}
 
-━━━ FAQ: PERBARUI DATA DIRI ━━━
+FAQ: PERBARUI DATA DIRI
 
 🌐 Online:
    1. Login ke www.perusahaan.com
@@ -357,7 +354,7 @@ Perubahan data penting memerlukan verifikasi tambahan.
 `,
       5: `${header}
 
-━━━ FAQ: NOMOR REGISTRASI HILANG ━━━
+FAQ: NOMOR REGISTRASI HILANG
 
 Hubungi Customer Service:
 📞 021-12345678
@@ -373,7 +370,7 @@ Petugas akan membantu setelah data diverifikasi.
 `,
       6: `${header}
 
-━━━ FAQ: CARA MENGAJUKAN PENGADUAN ━━━
+FAQ: CARA MENGAJUKAN PENGADUAN
 
 Pengaduan dapat diajukan melalui:
 
