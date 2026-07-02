@@ -737,8 +737,9 @@ function handleMessage(text, jid) {
   const adminReply = handleAdminCommand(text, jid);
   if (adminReply) return adminReply;
 
-  startTimers(jid, session);
-  return { text: `⚠️ Maaf, pilihan "${text}" tidak tersedia. Silakan pilih menu yang tersedia.`, menu: 'error_fallback' };
+  resetSession(jid);
+  startTimers(jid, getSession(jid));
+  return { text: interactiveMenus.main.text, menu: 'main' };
 }
 
 module.exports = { handleMessage, resetSession, initTimers };
