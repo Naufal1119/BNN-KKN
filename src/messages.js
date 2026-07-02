@@ -704,14 +704,14 @@ function handleMessage(text, jid) {
   if (detailContent[msg]) {
     session.currentMenu = 'detail';
     startTimers(jid, session);
-    return { text: detailContent[msg] };
+    return { text: detailContent[msg], menu: 'content_back' };
   }
 
   const dynamicContent = admin.getDynamicContent(msg);
   if (dynamicContent) {
     session.currentMenu = 'detail';
     startTimers(jid, session);
-    return { text: dynamicContent };
+    return { text: dynamicContent, menu: 'content_back' };
   }
 
   if (session.currentMenu && session.currentMenu !== 'main' && session.currentMenu !== 'detail' && session.currentMenu !== 'mainAdmin') {
@@ -724,13 +724,13 @@ function handleMessage(text, jid) {
     if (detailContent[contextualKey]) {
       session.currentMenu = 'detail';
       startTimers(jid, session);
-      return { text: detailContent[contextualKey] };
+      return { text: detailContent[contextualKey], menu: 'content_back' };
     }
     const dynamicContextual = admin.getDynamicContent(contextualKey);
     if (dynamicContextual) {
       session.currentMenu = 'detail';
       startTimers(jid, session);
-      return { text: dynamicContextual };
+      return { text: dynamicContextual, menu: 'content_back' };
     }
   }
 

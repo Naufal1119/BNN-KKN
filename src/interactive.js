@@ -532,6 +532,16 @@ Silakan pilih menu yang tersedia atau klik tombol di bawah untuk kembali ke menu
       { text: '🏠 Kembali ke Menu Utama', id: 'menu' },
     ]
   },
+  content_back: {
+    text: 'Gunakan tombol di bawah untuk kembali ke menu utama atau menu admin.',
+    header: '',
+    footer: '',
+    type: 'quick_reply',
+    buttons: [
+      { text: '🏠 Kembali ke Menu Utama', id: 'menu' },
+      { text: '📋 Menu Admin', id: 'mainAdmin' },
+    ]
+  },
 };
 
 const detailContent = {
