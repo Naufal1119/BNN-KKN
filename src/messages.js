@@ -695,7 +695,12 @@ function handleMessage(text, jid) {
   if (detailContent[msg]) {
     session.currentMenu = 'detail';
     startTimers(jid, session);
-    return { text: detailContent[msg], menu: 'content_back' };
+    const reply = { text: detailContent[msg], menu: 'content_back' };
+    const isLayanan = msg.startsWith('2') && msg.length <= 3;
+    if (isLayanan) {
+      reply.nextMenu = '2_layanan_buttons';
+    }
+    return reply;
   }
 
   const dynamicContent = admin.getDynamicContent(msg);
@@ -715,7 +720,12 @@ function handleMessage(text, jid) {
     if (detailContent[contextualKey]) {
       session.currentMenu = 'detail';
       startTimers(jid, session);
-      return { text: detailContent[contextualKey], menu: 'content_back' };
+      const reply = { text: detailContent[contextualKey], menu: 'content_back' };
+      const isLayanan = contextualKey.startsWith('2') && contextualKey.length <= 3;
+      if (isLayanan) {
+        reply.nextMenu = '2_layanan_buttons';
+      }
+      return reply;
     }
     const dynamicContextual = admin.getDynamicContent(contextualKey);
     if (dynamicContextual) {
