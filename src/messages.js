@@ -1,4 +1,3 @@
-const { mainMenu } = require('./menu');
 const { interactiveMenus, detailContent } = require('./interactive');
 const { getSock } = require('./connection');
 const admin = require('./admin');

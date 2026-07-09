@@ -1,5 +1,4 @@
 const { sendInteractiveMessage } = require('@ryuu-reinzz/button-helper');
-const { subMenus } = require('./menu');
 const admin = require('./admin');
 
 const interactiveMenus = {
@@ -9,9 +8,9 @@ const interactiveMenus = {
     footer: '',
     type: 'quick_reply',
     buttons: [
-      { text: 'Administrasi', id: '1' },
-      { text: 'Informasi', id: '2' },
-      { text: 'Pengaduan', id: '3' },
+      { text: 'Informasi & Layanan', id: '1' },
+      { text: 'Pengaduan & Rehabilitasi', id: '2' },
+      { text: 'Hubungi Kami', id: '3' },
     ]
   },
   mainAdmin: {
@@ -33,34 +32,33 @@ const interactiveMenus = {
     ]
   },
   '1': {
-    text: `Anda memilih Administrasi. Silakan pilih opsi di bawah:`,
-    header: 'ADMINISTRASI',
+    text: `Anda memilih Informasi & Layanan Publik. Silakan pilih opsi di bawah:`,
+    header: 'INFORMASI & LAYANAN PUBLIK',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
-      title: 'ADMINISTRASI',
+      title: 'INFORMASI & LAYANAN PUBLIK',
       rows: [
-        { title: 'Cek Status Pendaftaran', rowId: '1a' },
-        { title: 'Perbarui Data Peserta', rowId: '1b' },
-        { title: 'Cetak Kartu Peserta', rowId: '1c' },
+        { title: 'Profil & Tugas BNNP Sulsel', rowId: '1a' },
+        { title: 'Program P4GN', rowId: '1b' },
+        { title: 'Jam & Alamat Kantor', rowId: '1c' },
+        { title: 'Landasan Hukum', rowId: '1d' },
+        { title: 'Lokasi Kantor Cabang', rowId: '1e' },
       ]
     }]
   },
   '2': {
-    text: `Anda memilih Informasi. Silakan pilih opsi di bawah:`,
-    header: 'INFORMASI',
+    text: `Anda memilih Pengaduan & Rehabilitasi. Silakan pilih opsi di bawah:`,
+    header: 'PENGADUAN & REHABILITASI',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
-      title: 'INFORMASI',
+      title: 'PENGADUAN & REHABILITASI',
       rows: [
-        { title: 'Produk dan Program', rowId: '2a' },
-        { title: 'Jam Operasional', rowId: '2b' },
-        { title: 'Alamat Kantor', rowId: '2c' },
-        { title: 'Lokasi Kantor Cabang', rowId: '2g' },
-        { title: 'Panduan dan Persyaratan', rowId: '2d' },
-        { title: 'Pertanyaan Umum', rowId: '2e' },
-        { title: 'Media Sosial dan Website', rowId: '2f' },
+        { title: 'Sampaikan Pengaduan', rowId: '2a' },
+        { title: 'Cek Status Pengaduan', rowId: '2b' },
+        { title: 'Layanan Rehab & Konseling', rowId: '2c' },
+        { title: 'FAQ Narkoba', rowId: '2d' },
       ]
     }]
   },
@@ -98,16 +96,16 @@ const interactiveMenus = {
     }]
   },
   '3': {
-    text: `Anda memilih Pengaduan. Silakan pilih opsi di bawah:`,
-    header: 'PENGADUAN',
+    text: `Anda memilih Hubungi Kami. Silakan pilih opsi di bawah:`,
+    header: 'HUBUNGI KAMI',
     footer: '',
     buttonText: 'Pilih',
     sections: [{
-      title: 'PENGADUAN',
+      title: 'HUBUNGI KAMI',
       rows: [
-        { title: 'Sampaikan Pengaduan', rowId: '3a' },
-        { title: 'Cek Status Pengaduan', rowId: '3b' },
-        { title: 'Customer Service', rowId: '3c' },
+        { title: 'Customer Service & Kontak Resmi', rowId: '3a' },
+        { title: 'Media Sosial & Website', rowId: '3b' },
+        { title: 'Panduan & Syarat Rehabilitasi', rowId: '3c' },
       ]
     }]
   },
@@ -544,71 +542,81 @@ Silakan pilih menu yang tersedia atau klik tombol di bawah untuk kembali ke menu
 };
 
 const detailContent = {
-  '1a': subMenus[2]?.children?.a,
-  '1b': subMenus[5]?.children?.['4'],
-  '1c': `${subMenus[1]?.body}
+  '1a': `
+PROFIL & TUGAS POKOK BNNP SULSEL
 
-CETAK KARTU PESERTA
+BNNP Sulsel adalah Instansi Vertikal di bawah BNN RI yang bertugas melaksanakan Pencegahan dan Pemberantasan Penyalahgunaan serta Peredaran Gelap Narkoba (P4GN) di wilayah Sulawesi Selatan.
 
-Untuk mencetak Kartu Peserta:
+Tugas Pokok:
+• Penyusunan kebijakan teknis P4GN tingkat provinsi
+• Koordinasi dengan BNN Kab/Kota, Polri, TNI, dan stakeholder
+• Pengawasan sirkulasi narkotika & prekursor
+• Rehabilitasi korban penyalahgunaan narkoba
+• Advokasi, sosialisasi, dan pemberdayaan masyarakat
 
-🏛️ Datang Langsung ke Kantor:
-  1. Kunjungi kantor terdekat
-  2. Bawa KTP asli
-  3. Ambil nomor antrean
-  4. Isi formulir permintaan cetak kartu
-  5. Kartu akan dicetak dan diberikan langsung
+Visi: "Sulawesi Selatan Bebas Narkoba, Sejahtera, dan Berbudaya"
+Misi: Pencegahan dini, penegakan hukum humanis, rehabilitasi berkelanjutan.`,
+  '1b': `
+PROGRAM P4GN (PENCEGAHAN & PEMBERDAYAAN)
 
-🌐 Cetak Mandiri:
-  1. Login ke www.perusahaan.com
-  2. Menu Profil → Cetak Kartu
-  3. Klik tombol Cetak
-  4. Simpan file PDF dan cetak
+Program Unggulan BNNP Sulsel:
 
-⏱ Proses: 5-10 menit (langsung) / 1×24 jam (online)`,
-  '2a': subMenus[1]?.children?.b,
-  '2b': subMenus[1]?.children?.c,
-  '2c': subMenus[1]?.children?.d,
-  '2d1': subMenus[3]?.children?.['1'],
-  '2d2': subMenus[3]?.children?.['2'],
-  '2d3': subMenus[3]?.children?.['3'],
-  '2d4': subMenus[3]?.children?.['4'],
-  '2d5': subMenus[3]?.children?.['5'],
-  '2e1': subMenus[5]?.children?.['1'],
-  '2e2': subMenus[5]?.children?.['2'],
-  '2e3': subMenus[5]?.children?.['3'],
-  '2e4': subMenus[5]?.children?.['4'],
-  '2e5': subMenus[5]?.children?.['5'],
-  '2e6': subMenus[5]?.children?.['6'],
-  '2f': `
-MEDIA SOSIAL DAN WEBSITE BNNP SULSEL
+🏘️ DESA/KELURAHAN BERSINAR
+Pemberdayaan masyarakat di tingkat akar rumput untuk jadi "jaga tempat" anti-narkoba.
 
-🌐 Website
-   sulsel.bnn.go.id
+🏫 PENCEGAHAN DI SEKOLAH & KAMPUS
+• Gerakan Sekolah Sehat & Bebas Narkoba (GSSBN)
+• Peer Counselor / Kespro anti-narkoba
+• Kemitraan dengan Dinas Pendidikan
 
-📸 Instagram
-   @infobnn_prov_sulsel
-   instagram.com/infobnn_prov_sulsel
+👨‍👩‍👧‍👦 PENCEGAHAN DI KELUARGA
+• Bina Keluarga Sehat (BKS) anti-narkoba
+• Pelatihan orang tua deteksi dini
+• Modul "Keluarga Tangguh Lawan Narkoba"
 
-🐦 X (Twitter)
-   @humasBNNPsulsel
-   x.com/humasBNNPsulsel
+🌐 SOSIALISASI BAHAYA NARKOBA
+• Roadshow ke kecamatan/desa
+• Media sosial, radio, TV lokal
+• Kemitraan tokoh agama, adat, pemuda
 
-📘 Facebook
-   BNNP Sulawesi Selatan
-   facebook.com/bnnpsulawesiselatan
+📞 LAYANAN KONSULTASI GRATIS
+Hubungi BNNP Sulsel untuk bantuan konseling & rujukan rehab.`,
+  '1c': `
+JAM OPERASIONAL & ALAMAT KANTOR BNNP SULSEL
 
-▶️ YouTube
-   @bnnpsulawesiselatan
-   youtube.com/@bnnpsulawesiselatan
+📍 KANTOR UTAMA BNNP SULSEL
+Jl. A.P. Pettarani No. 14, Makassar 90234
+Sulawesi Selatan
 
-🎵 TikTok
-   @halobnn_sulsel
-   tiktok.com/@halobnn_sulsel`,
-'3a': subMenus[1]?.children?.a,
-  '3b': subMenus[2]?.children?.b,
-  '3c': subMenus[4]?.body,
-  '2g': `
+⏰ JAM KERJA
+Senin–Kamis : 08.00 – 16.00 WITA
+Jumat       : 08.00 – 16.30 WITA
+Sabtu–Minggu & Libur Nasional: TUTUP
+
+📞 KONTAK RESMI
+Telepon : 0411-585xxx (hubungi via WA untuk nomor lengkap)
+WhatsApp: 0821-9xxx-xxxx (CS BNNP Sulsel)
+Email   : humas@sulsel.bnn.go.id
+Website : sulsel.bnn.go.id
+
+💡 Pengaduan & konsultasi bisa 24 jam via WhatsApp/Email.`,
+  '1d': `
+LANDASAN HUKUM BNNP SULSEL
+
+⚖️ UNDANG-UNDANG UTAMA
+• UU No. 35 Tahun 2009 tentang Narkotika
+• UU No. 5 Tahun 1997 tentang Psikotropika
+• UU No. 17 Tahun 2017 tentang Perubahan atas UU 35/2009
+
+📜 PERATURAN PELAKSANA
+• PP No. 31 Tahun 2014 tentang Rehabilitasi
+• Perpres No. 89 Tahun 2014 tentang BNN
+• Inpres No. 2 Tahun 2020 tentang RAN P4GN
+• Perbnn No. 8 Tahun 2020 tata cara rehabilitasi
+• Peraturan Gubernur Sulsel tentang P4GN Daerah
+
+📚 Dokumen lengkap: sulsel.bnn.go.id/regulasi`,
+  '1e': `
 LOKASI KANTOR CABANG BNNP SULSEL
 
 📍 BNN KAB. BONE
@@ -632,6 +640,185 @@ LOKASI KANTOR CABANG BNNP SULSEL
    • Konseling & Edukasi Pencegahan
    • Pemeriksaan Narkoba (Urine Test)
    • Pelayanan Administrasi Umum`,
+  '2a': `
+SAMPAIKAN PENGADUAN NARKOBA
+
+Saluran Resmi Pengaduan BNNP Sulsel:
+
+📱 WHATSAPP (24 Jam)
+0821-9xxx-xxxx (CS BNNP Sulsel)
+
+📧 EMAIL
+pengaduan@sulsel.bnn.go.id
+
+🌐 WEBSITE
+sulsel.bnn.go.id/pengaduan
+
+🏛️ DATANG LANGSUNG
+Kantor BNNP Sulsel, Jl. A.P. Pettarani No. 14, Makassar
+Atau BNN Kab/Kota terdekat
+
+📋 DATA YANG DIBUTUHKAN
+1. Nama lengkap pelapor (bisa anonim)
+2. Nomor telepon/WhatsApp yang bisa dihubungi
+3. Lokasi kejadian (detail alamat/koordinat)
+4. Waktu kejadian (perkiraan)
+5. Uraian pengaduan (jenis narkoba, pelaku, modus)
+6. Bukti pendukung (foto/video) jika ada
+
+⏱ Estimasi: Nomor tiket (TKT-xxx) diterbitkan < 1×24 jam.
+Status bisa dicek via menu "Cek Status Pengaduan".
+
+⚠️ Perlindungan pelapor: UU 31/2014 tentang Perlindungan Saksi & Korban.`,
+  '2b': `
+CEK STATUS PENGADUAN
+
+Kirim *Nomor Tiket* yang diterbitkan saat pengaduan diregistrasi.
+
+Format: *TKT-2025-XXXXXX* (contoh: TKT-2025-001234)
+
+Nomor tiket dikirim via WhatsApp/Email setelah pengaduan diverifikasi.
+
+📊 ALUR STATUS
+1. BARU        → Pengaduan masuk, belum diverifikasi
+2. DIPROSES    → Verifikasi & penyelidikan oleh petugas
+3. SELESAI     → Tindak lanjut selesai (penangkapan/rehab/dll)
+4. DITOLAK     → Tidak memenuhi syarat / data tidak valid
+
+💡 Belum punya nomor tiket? Gunakan menu "Sampaikan Pengaduan" terlebih dahulu.`,
+  '2c': `
+LAYANAN REHABILITASI & KONSELING
+
+BNNP menyediakan layanan rehabilitasi GRATIS & RAHASIA untuk korban penyalahgunaan narkoba.
+
+🏥 JENIS REHABILITASI
+• Rawat Inap (Residensial)  : 3–6 bulan di Lembaga Rehab BNN
+• Rawat Jalan (Non-Residen) : Konseling berkala, tetap tinggal di rumah
+• Komunitas Terapis         : Therapeutic Community (TC)
+
+📋 SYARAT MASUK REHAB
+1. Surat rujukan dokter/RS (bisa dari BNN)
+2. Hasil screening urine positif narkoba
+3. Surat keterangan sehat (bebas TB, HIV, dll)
+4. Surat pernyataan bersedia direhabilitasi
+5. KTP & KK (fotokopi)
+6. Pas foto 3×4 (2 lembar)
+
+📞 KONTAK RUJUKAN REHAB
+• RS Khusus Rehab BNN Makassar
+• Lembaga Rehab Mitra BNN di Sulsel
+• Hubungi BNNP Sulsel (WA/Telepon) untuk asesmen & penempatan
+
+💰 BIAYA: GRATIS (dibiayakan APBN/APBD). Tidak ada biaya tersembunyi.`,
+  '2d': `
+FAQ NARKOBA (PERTANYAAN UMUM)
+
+❓ Apa beda Narkotika & Psikotropika?
+Narkotika (UU 35/2009): zat/obat yang menimbulkan ketergantungan (heroin, sabu, putau, kokain, dll).
+Psikotropika (UU 5/1997): obat yang memengaruhi sistem saraf pusat (ekstasi, shabu-shabu, benzodiazepin, dll).
+
+❓ Apa bahaya narkoba?
+• Kerusakan otak permanen (memori, konsentrasi, emosi)
+• Gangguan jantung, hati, ginjal, paru
+• Gangguan mental: depresi, psikosis, kecemasan
+• Risiko HIV/AIDS (jarum suntik)
+• Ketergantungan fisik & psikologis sulit dilepaskan
+
+❓ Cara melapor narkoba tanpa takut?
+• Anonim via WA/Email BNNP Sulsel
+• Perlindungan identitas pelapor (UU 31/2014)
+• Tidak dipanggil ke pengadilan kecuali sukarela
+
+❓ Rehab gratis & rahasia?
+✅ Ya, 100% dibiayai negara. Data pasien kerahasiaan medis.
+
+❓ Cara daftar rehab?
+Hubungi BNNP Sulsel → Asesmen → Rujuk ke fasilitas rehab.
+
+❓ Apa itu P4GN?
+Pencegahan & Pemberantasan Penyalahgunaan & Peredaran Gelap Narkoba. Program nasional terpadu (Inpres 2/2020).`,
+  '3a': `
+CUSTOMER SERVICE & KONTAK RESMI BNNP SULSEL
+
+📞 TELEPON KANTOR
+0411-585xxx (Jam kerja: Sen–Jum 08.00–16.00 WITA)
+
+💬 WHATSAPP (24 Jam untuk Pengaduan & Konsultasi)
+0821-9xxx-xxxx
+
+📧 EMAIL
+humas@sulsel.bnn.go.id
+pengaduan@sulsel.bnn.go.id
+
+🌐 WEBSITE RESMI
+sulsel.bnn.go.id
+
+📍 ALAMAT KANTOR UTAMA
+Jl. A.P. Pettarani No. 14, Makassar 90234, Sulawesi Selatan
+
+⏰ JAM LAYANAN PUBLIK
+Senin–Kamis : 08.00 – 16.00 WITA
+Jumat       : 08.00 – 16.30 WITA
+Sabtu–Minggu & Libur: TUTUP (kecuali pengaduan darurat via WA)
+
+💡 Petugas kami akan merespons secepatnya pada jam operasional.`,
+  '3b': `
+MEDIA SOSIAL & WEBSITE BNNP SULSEL
+
+🌐 Website
+   sulsel.bnn.go.id
+
+📸 Instagram
+   @infobnn_prov_sulsel
+   instagram.com/infobnn_prov_sulsel
+
+🐦 X (Twitter)
+   @humasBNNPsulsel
+   x.com/humasBNNPsulsel
+
+📘 Facebook
+   BNNP Sulawesi Selatan
+   facebook.com/bnnpsulawesiselatan
+
+▶️ YouTube
+   @bnnpsulawesiselatan
+   youtube.com/@bnnpsulawesiselatan
+
+🎵 TikTok
+   @halobnn_sulsel
+   tiktok.com/@halobnn_sulsel
+
+Ikuti untuk info terbaru: edukasi, kegiatan, pengumuman, dan tips anti-narkoba.`,
+  '3c': `
+PANDUAN & SYARAT REHABILITASI NARKOBA
+
+📋 ALUR PENDAFTARAN REHAB
+1. Hubungi BNNP Sulsel (WA/Telepon/Datang)
+2. Asesmen awal oleh petugas/medis
+3. Cek kesehatan (lab, fisik, psikologis)
+4. Penentuan jenis rehab (Inap/Jalan/Komunitas)
+5. Penempatan ke Lembaga Rehab BNN/Mitra
+
+📄 SYARAT DOKUMEN
+✅ KTP asli & fotokopi (masih berlaku)
+✅ KK fotokopi
+✅ Surat rujukan dokter/RS (bisa dari BNN)
+✅ Hasil screening urine (positif narkoba)
+✅ Surat keterangan sehat (bebas TB, HIV, hepatitis)
+✅ Surat pernyataan bersedia direhabilitasi (bermaterai)
+✅ Pas foto 3×4 (2 lembar)
+✅ KTP & KK orang tua/wali (jika < 21 thn)
+
+⏱ ESTIMASI WAKTU
+Asesmen & administrasi: 1–3 hari kerja
+Penempatan rehab: tergantung kuota fasilitas
+
+💰 BIAYA: GRATIS (APBN/APBD). Tidak ada biaya apapun.
+
+⚠️ PERHATIAN
+• Rehab wajib untuk pengguna (bukan penjara) — UU 35/2009 Pasal 127–129
+• Data pasien kerahasiaan medis
+• Keluarga diikutsertakan dalam program family therapy`,
 };
 
 function delay(ms) {
