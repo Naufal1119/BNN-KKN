@@ -695,12 +695,10 @@ function handleMessage(text, jid) {
   if (detailContent[msg]) {
     session.currentMenu = 'detail';
     startTimers(jid, session);
-    const reply = { text: detailContent[msg], menu: 'content_back' };
-    const isLayanan = msg.startsWith('2') && msg.length <= 3;
-    if (isLayanan) {
-      reply.nextMenu = '2_layanan_buttons';
-    }
-    return reply;
+    let backMenu = 'content_back';
+    if (msg.startsWith('1h2')) backMenu = 'back_layanan';
+    else if (msg.startsWith('2') && msg.length <= 3) backMenu = 'back_layanan_main';
+    return { text: detailContent[msg], menu: backMenu };
   }
 
   const dynamicContent = admin.getDynamicContent(msg);
@@ -720,12 +718,10 @@ function handleMessage(text, jid) {
     if (detailContent[contextualKey]) {
       session.currentMenu = 'detail';
       startTimers(jid, session);
-      const reply = { text: detailContent[contextualKey], menu: 'content_back' };
-      const isLayanan = contextualKey.startsWith('2') && contextualKey.length <= 3;
-      if (isLayanan) {
-        reply.nextMenu = '2_layanan_buttons';
-      }
-      return reply;
+      let backMenu = 'content_back';
+      if (contextualKey.startsWith('1h2')) backMenu = 'back_layanan';
+      else if (contextualKey.startsWith('2') && contextualKey.length <= 3) backMenu = 'back_layanan_main';
+      return { text: detailContent[contextualKey], menu: backMenu };
     }
     const dynamicContextual = admin.getDynamicContent(contextualKey);
     if (dynamicContextual) {

@@ -45,6 +45,7 @@ const interactiveMenus = {
         { title: 'Lokasi Kantor Cabang', rowId: '1e' },
         { title: 'FAQ Narkoba', rowId: '1f' },
         { title: 'Media Sosial & Website', rowId: '1g' },
+        { title: 'Daftar Layanan', rowId: '1h', description: 'TAT, Test Urine, Penyuluhan, dll' },
       ]
     }]
   },
@@ -70,33 +71,27 @@ const interactiveMenus = {
       ]
     }]
   },
-  '2_layanan_buttons': {
-    text: `Pilih layanan lainnya di bawah:`,
-    header: 'LAYANAN BNNP SULSEL',
+  '1h': {
+    text: `Silakan pilih layanan yang Anda butuhkan:`,
+    header: 'LAYANAN',
     footer: '',
-    type: 'quick_reply',
-    buttons: [
-      { text: 'TAT', id: '2a' },
-      { text: 'Test Urine', id: '2b' },
-      { text: 'Penyuluhan', id: '2c' },
-      { text: 'Buku Tamu', id: '2d' },
-      { text: 'Konsultasi Hukum', id: '2e' },
-    ]
-  },
-  '2_layanan_buttons_2': {
-    text: `Lanjutan layanan — pilih di bawah:`,
-    header: 'LAYANAN BNNP SULSEL',
-    footer: '',
-    type: 'quick_reply',
-    buttons: [
-      { text: 'Pengaduan', id: '2f' },
-      { text: 'PKS', id: '2g' },
-      { text: 'Rehabilitasi', id: '2h' },
-      { text: 'Survei', id: '2i' },
-      { text: 'Magang', id: '2j' },
-      { text: 'SKHPN', id: '2k' },
-      { text: '🏠 Kembali', id: 'menu' },
-    ]
+    buttonText: 'Pilih Layanan',
+    sections: [{
+      title: 'LAYANAN',
+      rows: [
+        { title: 'Tes Asesmen Terpadu (TAT)', rowId: '1h2a', description: 'Asesmen awal & rujukan rehabilitasi' },
+        { title: 'Test Urine', rowId: '1h2b', description: 'Pemeriksaan urine deteksi narkoba' },
+        { title: 'Penyuluhan', rowId: '1h2c', description: 'Sosialisasi bahaya narkoba' },
+        { title: 'Buku Tamu', rowId: '1h2d', description: 'Pencatatan kunjungan & layanan' },
+        { title: 'Konsultasi Hukum', rowId: '1h2e', description: 'Konsultasi UU Narkotika & hak hukum' },
+        { title: 'Pengaduan', rowId: '1h2f', description: 'Sampaikan & cek status pengaduan' },
+        { title: 'Perjanjian Kerja Sama (PKS)', rowId: '1h2g', description: 'Kemitraan & MoU dengan institusi' },
+        { title: 'Rehabilitasi', rowId: '1h2h', description: 'Rehab gratis & rahasia korban narkoba' },
+        { title: 'Survei', rowId: '1h2i', description: 'Survei kepuasan & indeks P4GN' },
+        { title: 'Magang', rowId: '1h2j', description: 'Program magang/praktik di BNNP' },
+        { title: 'SKHPN', rowId: '1h2k', description: 'Surat Keterangan Hasil Pemeriksaan Narkoba' },
+      ]
+    }]
   },
   admin_narkoba: {
     text: `📋 *Manajemen Data Narkoba*\n\nGunakan command berikut:\n/narkoba - Lihat semua data\n/narkobaadd <nama>|<jenis>|<efek>|<hukuman>|<keterangan> - Tambah\n/narkobaedit <id>|<field>|<value> - Edit\n/narkobadel <id> - Hapus\n\nField: nama, jenis, efek, hukuman, keterangan`,
@@ -508,6 +503,26 @@ const interactiveMenus = {
       { text: '⬅️ Kembali', id: 'admin_admins' },
     ]
   },
+  back_layanan: {
+    text: '',
+    header: '',
+    footer: '',
+    type: 'quick_reply',
+    buttons: [
+      { text: 'Kembali', id: '1h' },
+      { text: 'Kembali ke Menu Utama', id: 'menu' },
+    ]
+  },
+  back_layanan_main: {
+    text: '',
+    header: '',
+    footer: '',
+    type: 'quick_reply',
+    buttons: [
+      { text: 'Kembali', id: '2' },
+      { text: 'Kembali ke Menu Utama', id: 'menu' },
+    ]
+  },
   error_fallback: {
     text: `⚠️ Maaf, pilihan yang Anda masukkan tidak tersedia.
 
@@ -551,325 +566,410 @@ PROGRAM P4GN (PENCEGAHAN & PEMBERDAYAAN)
 Program Unggulan BNNP Sulsel:
 
 🏘️ DESA/KELURAHAN BERSINAR
-Pemberdayaan masyarakat di tingkat akar rumput untuk jadi "jaga tempat" anti-narkoba.
+Pemberdayaan masyarakat untuk jadi "jaga tempat" anti-narkoba.
 
 🏫 PENCEGAHAN DI SEKOLAH & KAMPUS
-• Gerakan Sekolah Sehat & Bebas Narkoba (GSSBN)
-• Peer Counselor / Kespro anti-narkoba
+• Gerakan Sekolah Sehat & Bebas Narkoba
+• Peer Counselor anti-narkoba
 • Kemitraan dengan Dinas Pendidikan
 
 👨‍👩‍👧‍👦 PENCEGAHAN DI KELUARGA
-• Bina Keluarga Sehat (BKS) anti-narkoba
+• Bina Keluarga Sehat anti-narkoba
 • Pelatihan orang tua deteksi dini
-• Modul "Keluarga Tangguh Lawan Narkoba"
 
 🌐 SOSIALISASI BAHAYA NARKOBA
 • Roadshow ke kecamatan/desa
 • Media sosial, radio, TV lokal
-• Kemitraan tokoh agama, adat, pemuda
 
-📞 LAYANAN KONSULTASI GRATIS
-Hubungi BNNP Sulsel untuk bantuan konseling & rujukan rehab.`,
+📞 Hubungi BNNP Sulsel untuk info program selengkapnya.`,
   '1c': `
 JAM OPERASIONAL & ALAMAT KANTOR BNNP SULSEL
 
 📍 KANTOR UTAMA BNNP SULSEL
 Jl. A.P. Pettarani No. 14, Makassar 90234
-Sulawesi Selatan
 
 ⏰ JAM KERJA
 Senin–Kamis : 08.00 – 16.00 WITA
 Jumat       : 08.00 – 16.30 WITA
 Sabtu–Minggu & Libur Nasional: TUTUP
 
-📞 KONTAK RESMI
-Telepon : 0411-585xxx (hubungi via WA untuk nomor lengkap)
-WhatsApp: 0821-9xxx-xxxx (CS BNNP Sulsel)
+📞 KONTAK
+Telepon : 0411-585xxx
+WhatsApp: 0821-9xxx-xxxx
 Email   : humas@sulsel.bnn.go.id
 Website : sulsel.bnn.go.id
 
-💡 Pengaduan & konsultasi bisa 24 jam via WhatsApp/Email.`,
+💡 Pengaduan & konsultasi 24 jam via WA/Email.`,
   '1d': `
 LANDASAN HUKUM BNNP SULSEL
 
-⚖️ UNDANG-UNDANG UTAMA
-• UU No. 35 Tahun 2009 tentang Narkotika
-• UU No. 5 Tahun 1997 tentang Psikotropika
-• UU No. 17 Tahun 2017 tentang Perubahan atas UU 35/2009
-
-📜 PERATURAN PELAKSANA
-• PP No. 31 Tahun 2014 tentang Rehabilitasi
-• Perpres No. 89 Tahun 2014 tentang BNN
-• Inpres No. 2 Tahun 2020 tentang RAN P4GN
-• Perbnn No. 8 Tahun 2020 tata cara rehabilitasi
-• Peraturan Gubernur Sulsel tentang P4GN Daerah
+⚖️ UU No. 35 Tahun 2009 tentang Narkotika
+⚖️ UU No. 5 Tahun 1997 tentang Psikotropika
+⚖️ PP No. 31 Tahun 2014 tentang Rehabilitasi
+⚖️ Perpres No. 89 Tahun 2014 tentang BNN
+⚖️ Inpres No. 2 Tahun 2020 tentang RAN P4GN
 
 📚 Dokumen lengkap: sulsel.bnn.go.id/regulasi`,
   '1e': `
 LOKASI KANTOR CABANG BNNP SULSEL
 
 📍 BNN KAB. BONE
-📌 Macanang, Tanete Riattang Bar., Macanang, Kec. Tanete Riattang Bar., Kabupaten Bone, Sulawesi Selatan 92713
+📌 Macanang, Tanete Riattang Bar., Kab. Bone 92713
 🗺️ https://maps.app.goo.gl/wiXLnjRd1ipjyktF6
 
 📍 BNN KAB. SIDENRENG RAPPANG
-📌 Jl. Korban 40.000 Jiwa No.6, Majjelling, Kec. Maritengngae, Kabupaten Sidenreng Rappang, Sulawesi Selatan 91611
+📌 Jl. Korban 40.000 Jiwa No.6, Majjelling, Kab. Sidrap 91611
 🗺️ https://maps.app.goo.gl/5S5HSFYKLZbH7ndb6
 
 📍 BNN KOTA PALOPO
-📌 Takkalala, Kec. Wara Sel., Kota Palopo, Sulawesi Selatan 91922
+📌 Takkalala, Kec. Wara Sel., Kota Palopo 91922
 🗺️ https://maps.app.goo.gl/AMY2SX6xot1zxF9w7
 
 📍 BNN KAB. TANA TORAJA
-📌 Jl. Ibu Tien Soeharto, Kamali Pentalluan, Makale, Bombongan, Makale, Bombongan, Kec. Makale, Kabupaten Tana Toraja, Sulawesi Selatan 91811
+📌 Jl. Ibu Tien Soeharto, Kamali Pentalluan, Makale, Kab. Tana Toraja 91811
 🗺️ https://maps.app.goo.gl/VkaUKMKc5AmBQRqdA
 
-📌 Semua cabang menyediakan:
-   • Pendaftaran Program Rehabilitasi
-   • Konseling & Edukasi Pencegahan
-   • Pemeriksaan Narkoba (Urine Test)
-   • Pelayanan Administrasi Umum`,
+📌 Semua cabang: Pendaftaran Rehab, Konseling Edukasi, Test Urine, Adm Umum.`,
   '1f': `
-FAQ NARKOBA (PERTANYAAN UMUM)
+FAQ NARKOBA
 
-❓ Apa beda Narkotika & Psikotropika?
-Narkotika (UU 35/2009): zat/obat yang menimbulkan ketergantungan (heroin, sabu, putau, kokain, dll).
-Psikotropika (UU 5/1997): obat yang memengaruhi sistem saraf pusat ekstasi, shabu-shabu, benzodiazepin, dll, yang juga merupakan bagian dari jenis-jenis tertentu narkotika dan zat lainnya dalam kategori tertentu yang sudah ditentukan oleh undang-undang./g), dll yang sudah ditentukan oleh undang undang **Untuk kelanjutan nya, silahkan langsung berkunjung*
+❓ Apa bahaya narkoba?
+Kerusakan otak permanen, gangguan jantung & mental, HIV/AIDS (jarum suntik), ketergantungan fisik/psikologis, overdosis hingga kematian.
 
-❓ Apa bahaya narkoba?**: Kerusakan organ tubuh permanen seperti otak memori menurun atau bahkan hilang ingatan total. Selain itu juga bisa terjadi kerusakan pada system syaraf pusat maupun tepi sehingga terjadi perubahan tingkah juga serta kebasuhan pada anggota tubuh tertentu tergantung jenisnya masing masing serta bagaimana cara konsumsi nya penggunaannya bisa menyebabkan HIV/AIDS tertular terutama bagi pengguna dengan jarum suntik bersama-sama berbagi (sharing needle)<kemungkinan juga terjadi overdosis akibat penggunaan tidak sesuai dan atau karena kombinasi dengan zat lain baik itu alcohol maupun lainnya menyebabkan berbagai tingkat kesadaran Jika sampai tidak tertolong bisa menyebabkan koma bahkan sampai kematian Narkoba juga menyebabkan ketergantungan fisik maupun mental jika sudah terjadi withdrawal maka akan terjadi efek ketika seseorang tidak mengunakan nya maka akan terjadi rasa sakit pada tubuh tertentu namun jika sudah sangat berat maka akan terjadi seizureatau ketidak sadaran totalitas pada tubuh oleh karena itu bagi yang sudah jadi pecandu maka harus segera direhabilitasi secepat mungkin agar tidak terjadi keadaan yang lebih berbahaya
+❓ Apakah melapor narkoba ada perlindungan?
+Ya, UU 31/2014 melindungi identitas pelapor. Bisa lapor anonim via WA/Email BNNP.
 
-❓Cara melapor narkoba dan jenis-jenisnya tanpa harus khawatir terkena pidana jika suatu ketika terjadi sesuatu yang tidak benar/
-Apakah ada suatu perlindungan hukum untuk pelapor,jika ada apa identitasnya bagaimana dengan jika suatu ketika terjadi pelanggaran hukum yang dilakukan oleh ses. Seseorang melaporkan adanya suatu peredaran gelap Namun wilayah tersebut berada jauh, Apakah bisa melapor cukup dengan jarak jauh seperti itu misalnya melalui telepon whatssapp secara online begitu juga apakah ada suatu reward/hadiah bagi pelapor yang berhasil memberikan informasi yang akurat tentang suatu aktivitas/kegiatan maupun suatu barang bukti narkotika yang nantinya berhasil terungkap.
+❓ Bisa lapor dari jauh?
+Bisa via WA/Email/Website. Tidak harus datang langsung.
 
-❓Rehab itu gratis ya?
-Seluruhnya sudah dibiayai negara 100% untuk masuk kedalam fasilitas rehabilitasi baik itu IPWL atau RSKO atau lembaga swasta yang bermitra dengan BNN
+❓ Apakah ada reward pelapor?
+Informasi lebih lanjut hubungi BNNP Sulsel.
 
-❓ cara daftar rehab bagaimanna?
-Hubungi BNNP Sulsel untuk di assessment dan setelah dinyatakan positif maka akan di rujuk ke IPWL. informasi lengkap, hubungi kami.`,
+❓ Rehab gratis?
+100% gratis, dibiayai negara. Rahasia medis terjamin.
+
+❓ Cara daftar rehab?
+Hubungi BNNP → Asesmen → Positif → Rujuk ke IPWL/RSKO.
+
+Informasi lengkap: hubungi CS BNNP Sulsel.`,
   '1g': `
 MEDIA SOSIAL & WEBSITE BNNP SULSEL
 
-🌐 Website
-   sulsel.bnn.go.id
+🌐 sulsel.bnn.go.id
+📸 @infobnn_prov_sulsel
+🐦 @humasBNNPsulsel
+📘 BNNP Sulawesi Selatan
+▶️ @bnnpsulawesiselatan
+🎵 @halobnn_sulsel
 
-📸 Instagram
-   @infobnn_prov_sulsel
-   instagram.com/infobnn_prov_sulsel
-
-🐦 X (Twitter)
-   @humasBNNPsulsel
-   x.com/humasBNNPsulsel
-
-📘 Facebook
-   BNNP Sulawesi Selatan
-   facebook.com/bnnpsulawesiselatan
-
-▶️ YouTube
-   @bnnpsulawesiselatan
-   youtube.com/@bnnpsulawesiselatan
-
-🎵 TikTok
-   @halobnn_sulsel
-   tiktok.com/@halobnn_sulsel
-
-Ikuti untuk info terbaru: edukasi, kegiatan, pengumuman, dan tips anti-narkoba.`,
-  '2a': `
+Ikuti untuk info edukasi, kegiatan, pengumuman & tips anti-narkoba.`,
+  '1h2a': `
 LAYANAN TES ASESMEN TERPADU (TAT)
 
-TAT adalah layanan assessment awal yang diberikan oleh BNNP Sulsel untuk menentukan tingkat ketergantungan seseorang terhadap narkoba dan merekomendasikan program rehabilitasi yang sesuai.
+TAT adalah layanan assessment awal untuk menentukan tingkat ketergantungan narkoba dan merekomendasikan program rehabilitasi yang sesuai.
 
-📋 MANFAAT TAT
 • Mengetahui tingkat keparahan ketergantungan
 • Mendapatkan rujukan tepat ke lembaga rehab
 • Assessment gratis & rahasia
+• Estimasi: 1-2 jam sesi
 
-⏱ Estimasi: 1-2 jam sesi assessment
 Hubungi BNNP Sulsel untuk janji assessment.`,
-  '2b': `
+  '1h2b': `
 LAYANAN TEST URINE
 
-BNNP Sulsel menyediakan layanan pemeriksaan urine untuk deteksi narkoba.
+Pemeriksaan urine untuk deteksi narkoba.
 
-🔬 JENIS TEST
-• Test Panel Narkoba (multi-jenis narkoba)
-• Test Konfirmasi (jika hasil positif)
+• Test Panel (multi-jenis narkoba) — hasil 15-30 menit
+• Test Konfirmasi — hasil 3-5 hari
+• GRATIS untuk masyarakat umum (program tertentu)
+• Berbayar untuk instansi/perusahaan
 
-💰 BIAYA
-• GRATIS untuk masyarakat umum dalam program tertentu
-• Berbayar untuk instansi/perusahaan (kontrak kerja sama)
+Syarat: KTP asli + formulir permohonan.
 
-📋 SYARAT
+📍 Layanan di Kantor BNNP Sulsel & BNN Kab/Kota.`,
+  '1h2c': `
+LAYANAN PENYULUHAN
+
+Permintaan penyuluhan bahaya narkoba untuk sekolah, kantor, komunitas, dan masyarakat umum.
+
+• GRATIS untuk masyarakat Sulsel
+• Kirim surat permohonan resmi min. 7 hari sebelum pelaksanaan
+
+📍 Alamat: Jl. A.P. Pettarani No. 14, Makassar
+🌐 sulsel.bnn.go.id`,
+  '1h2d': `
+BUKU TAMU BNNP SULSEL
+
+Pencatatan setiap kunjungan masyarakat ke kantor BNNP Sulsel dan BNN Kab/Kota.
+
+• Data kunjungan & layanan
+• Monitoring pengunjung
+• Dasar evaluasi layanan publik
+
+📍 Tersedia di loket pelayanan BNNP Sulsel dan BNN Kab/Kota.`,
+  '1h2e': `
+KONSULTASI HUKUM
+
+Konsultasi hukum terkait narkotika untuk masyarakat umum.
+
+• UU 35/2009 tentang Narkotika
+• Hak hukum tersangka/terdakwa narkotika
+• Rehabilitasi sebagai pengganti hukuman
+• Mekanisme pelaporan & perlindungan saksi
+
+💻 Datang langsung, telepon, atau WA. GRATIS & RAHASIA.
+⏱ Senin–Jumat, 08.00–16.00 WITA.`,
+  '1h2f': `
+LAYANAN PENGADUAN NARKOBA
+
+📱 WA 24 Jam: 0821-9xxx-xxxx
+📧 Email: pengaduan@sulsel.bnn.go.id
+🌐 sulsel.bnn.go.id/pengaduan
+🏛️ Datang langsung: Jl. A.P. Pettarani No. 14, Makassar
+
+Data yg dibutuhkan: nama (bisa anonim), kontak, lokasi & waktu kejadian, uraian, bukti jika ada.
+
+⏱ Nomor tiket (TKT-xxx) < 1×24 jam.
+⚠️ Perlindungan: UU 31/2014 Perlindungan Saksi & Korban.`,
+  '1h2g': `
+PERJANJIAN KERJA SAMA (PKS)
+
+BNNP Sulsel membuka kerja sama dengan institusi.
+
+🤝 Program pencegahan narkoba, test urine massal, pelatihan kader, Desa Bersinar.
+
+Prosedur: surat permohonan → rapat koordinasi → PKS/MoU → implementasi → M&E.
+
+💻 Kontak: humas@sulsel.bnn.go.id`,
+  '1h2h': `
+REHABILITASI NARKOBA
+
+Rehab GRATIS & RAHASIA untuk korban penyalahgunaan narkoba.
+
+• Rawat Inap: 3-6 bulan
+• Rawat Jalan: konseling berkala
+• Komunitas Terapis (TC)
+
+Syarat: KTP, surat rujukan, hasil urine positif, surat sehat.
+
+💰 BIAYA: GRATIS (APBN/APBD).
+
+⚠️ Rehab wajib untuk pengguna (UU 35/2009 Pasal 127-129).`,
+  '1h2i': `
+SURVEI BNNP SULSEL
+
+Survei berkala untuk mengukur:
+• Kepuasan masyarakat terhadap layanan BNN
+• Indeks P4GN
+• Prevalensi penyalahgunaan narkoba
+
+💻 Partisipasi Anda sangat berharga.
+Ikuti survei: sulsel.bnn.go.id/survei`,
+  '1h2j': `
+PROGRAM MAGANG / PRAKTIK KERJA
+
+Kesempatan magang untuk mahasiswa/siswa/fresh graduate.
+
+Syarat: surat pengantar, proposal, CV, transkrip, KTP, pas foto.
+Durasi: 1-3 bulan.
+
+📞 Kirim lamaran: humas@sulsel.bnn.go.id
+📍 Jl. A.P. Pettarani No. 14, Makassar`,
+  '1h2k': `
+SKHPN (SURAT KETERANGAN HASIL PEMERIKSAAN NARKOBA)
+
+SKHPN adalah surat resmi hasil pemeriksaan narkoba untuk keperluan administrasi, pekerjaan, beasiswa, dll.
+
+Prosedur: Datang → Test Urine → Hasil (15-30 menit) → Terbit SKHPN.
+
+💰 GRATIS untuk perorangan.
+
+💡 Hubungi BNNP Sulsel untuk info lebih lanjut.`,
+  '2a': `
+CARDAFTAR TES ASESMEN TERPADU (TAT)
+
+📋 PERSYARATAN:
+• KTP asli
+• Surat rujukan dari dokter/puskesmas (jika ada)
+• Bersedia mengikuti sesi assessment (±1-2 jam)
+
+📝 ALUR:
+1. Hubungi BNNP Sulsel (WA/Telepon/Datang) untuk buat janji
+2. Datang ke kantor sesuai jadwal
+3. Assessment oleh petugas/psikolog
+4. Hasil assessment → rekomendasi rehab
+5. Rujuk ke lembaga rehab sesuai hasil
+
+🌐 Link pendaftaran: sulsel.bnn.go.id/layanan/tat
+
+💡 Assessment GRATIS & RAHASIA.`,
+  '2b': `
+CARDAFTAR TEST URINE
+
+📋 PERSYARATAN:
 • KTP asli
 • Mengisi formulir permohonan
 • Bersedia mengikuti prosedur sampling
 
-⏱ Hasil: 15-30 menit (test panel), 3-5 hari (konfirmasi)
+📝 ALUR:
+1. Datang ke BNNP Sulsel atau BNN Kab/Kota terdekat
+2. Ambil nomor antrean di loket
+3. Isi formulir permohonan test urine
+4. Petugas melakukan sampling urine
+5. Tunggu hasil:
+   - Test Panel: 15-30 menit
+   - Test Konfirmasi: 3-5 hari
+6. Ambil hasil & SKHPN (jika diperlukan)
 
-📍 Layanan di Kantor BNNP Sulsel & BNN Kab/Kota.`,
+💰 BIAYA:
+• GRATIS untuk masyarakat umum (program tertentu)
+• Berbayar untuk instansi/perusahaan
+
+🌐 Link info: sulsel.bnn.go.id/layanan/test-urine`,
   '2c': `
-LAYANAN PENYULUHAN & SOSIALISASI
+CARDAFTAR PENYULUHAN
 
-BNNP Sulsel melayani permintaan penyuluhan bahaya narkoba untuk:
+📋 PERSYARATAN:
+• Surat permohonan resmi dari pimpinan institusi
+• Surat pernyataan kesediaan fasilitas tempat
+• Surat pernyataan jumlah peserta (min. 20 orang)
 
-🏫 SEKOLAH & MADRASAH
-• SD/SMP/SMA sederajat
-• Santri di pesantren
-• Mahasiswa
+📝 ALUR:
+1. Kirim surat permohonan resmi ke:
+   BNNP Sulsel
+   Jl. A.P. Pettarani No. 14, Makassar 90234
+   Atau email: humas@sulsel.bnn.go.id
+2. Tim BNN akan menghubungi untuk koordinasi
+3. Konfirmasi jadwal & tempat
+4. Pelaksanaan penyuluhan
+5. Laporan & evaluasi
 
-🏢 INSTANSI & KANTOR
-• Pemerintah daerah
-• BUMN/BUMD
-• Perusahaan swasta
+⏱ Ajukan minimal 7 hari sebelum pelaksanaan
+💰 GRATIS untuk masyarakat Sulsel
 
-👥 KOMUNITAS & TOGA
-• Karang taruna
-• Kelompok PKK
-• Majelis taklim
-• Tokoh adat & agama
-
-📞 CARA MENGAJUKAN
-Kirim surat permohonan resmi ke BNNP Sulsel minimal 7 hari sebelum pelaksanaan.
-
-📍 Alamat: Jl. A.P. Pettarani No. 14, Makassar
-🌐 sulsel.bnn.go.id
-
-💡 Layanan ini GRATIS untuk masyarakat Sulsel.`,
+🌐 Link info: sulsel.bnn.go.id/layanan/penyuluhan`,
   '2d': `
-BUKU TAMU BNNP SULSEL
+CARDAFTAR BUKU TAMU
 
-Buku tamu adalah pencatatan setiap kunjungan masyarakat ke kantor BNNP Sulsel dan BNN Kab/Kota.
+📝 ALUR:
+1. Datang ke kantor BNNP Sulsel atau BNN Kab/Kota
+2. Menuju loket pelayanan
+3. Isi buku tamu / form digital:
+   • Nama lengkap
+   • Instansi/identitas
+   • Keperluan/kunjungan
+   • No. telepon
+4. Petugas akan mengarahkan ke bagian terkait
 
-📋 KEGUNAAN
-• Data kunjungan tamu & layanan
-• Rekaman pengaduan langsung
-• Monitoring jumlah pengunjung
-• Dasar evaluasi layanan publik
-
-📍 Tersedia di loket pelayanan setiap kantor BNNP Sulsel dan BNN Kab/Kota di Sulawesi Selatan.`,
+🌐 Link: sulsel.bnn.go.id/layanan/buku-tamu`,
   '2e': `
-KONSULTASI HUKUM NARKOBA
+CARDAFTARKONSULTASI HUKUM
 
-BNNP Sulsel menyediakan layanan konsultasi hukum terkait narkotika untuk masyarakat umum.
+📋 PERSYARATAN:
+• KTP/surat identitas
+• Data/informasi terkait kasus (jika ada)
 
-⚖️ CAKUPAN KONSULTASI
-• UU 35/2009 tentang Narkotika
-• UU 5/1997 tentang Psikotropika
-• Hak-hak hukum tersangka/terdakwa narkotika
-• Prosedur rehabilitasi sebagai pengganti hukuman
-• Mekanisme pelaporan & perlindungan saksi
+📝 ALUR:
+1. Hubungi BNNP Sulsel:
+   📞 0411-585xxx (jam kerja)
+   💬 WA: 0821-9xxx-xxxx
+   📧 humas@sulsel.bnn.go.id
+2. Sampaikan topik konsultasi
+3. Petugas hukum akan merespon & menjadwalkan
+4. Sesi konsultasi (datang langsung / telepon / WA)
+5. Dapatkan penjelasan & rekomendasi hukum
 
-💻 CARA KONSULTASI
-• Datang langsung ke kantor BNNP Sulsel
-• Via telepon (jam kerja)
-• Via WhatsApp
+🕒 Senin–Jumat, 08.00–16.00 WITA
+💰 GRATIS & RAHASIA
 
-⏱ Jam konsultasi hukum: Senin–Jumat, 08.00–16.00 WITA
-
-💡 Konsultasi GRATIS dan RAHASIA.`,
+🌐 Link: sulsel.bnn.go.id/layanan/konsultasi-hukum`,
   '2f': `
-LAYANAN PENGADUAN NARKOBA
+CARDAFTAR PENGADUAN
 
-Saluran Resmi Pengaduan BNNP Sulsel:
+📝 ALUR:
+1. Sampaikan pengaduan lewat salah satu saluran:
+   💬 WA 24 Jam: 0821-9xxx-xxxx
+   📧 pengaduan@sulsel.bnn.go.id
+   🌐 sulsel.bnn.go.id/pengaduan
+   🏛️ Datang langsung ke kantor
+2. Lengkapi data:
+   • Nama (bisa anonim)
+   • Kontak yang bisa dihubungi
+   • Lokasi & waktu kejadian
+   • Uraian pengaduan
+   • Bukti pendukung (jika ada)
+3. Petugas memverifikasi & menerbitkan nomor tiket
+4. Pantau status via menu "Pengaduan" atau hubungi CS
 
-📱 WHATSAPP (24 Jam)
-0821-9xxx-xxxx (CS BNN Sulsel)
+⏱ Nomor tiket (TKT-xxx) diterbitkan < 1×24 jam.
 
-📧 EMAIL
-pengaduan@sulsel.bnn.go.id
-
-🌐 WEBSITE
-sulsel.bnn.go.id/pengaduan
-
-🏛️ DATANG LANGSUNG
-Kantor BNNSulsel, Jl. A.P. Pettranian No. 14, Makassar
-Atau BNN Kab/Kota terdekat
-
-📋 DATA YG DIBUTUHKAN
-1. Nama lengkap pelapor (bisa anonim)
-2. Nomor telepon/WA yang bisa dihubungi
-3. Lokasi kejadian (detail alamat/koordinat)
-4. Waktu kejadian (perkiraan)
-5. Uraian pengaduan (jenis narkoba, pelaku, modus)
-6. Bukti pendukung (foto/video) jika ada
-
-⏱ Estimasi: Nomor tiket (TKT-xxx) diterbitkan < 1×24 jam.
-
-⚠️ Perlindungan pelapor: UU 31/2014 tentang Perlindungan Saksi & Korban.`,
+🌐 Link: sulsel.bnn.go.id/layanan/pengaduan`,
   '2g': `
-PERJANJIAN KERJA SAMA (PKS) / KEMITRAAN
+CARDAFTAR PKS / KERJA SAMA
 
-BNNP Sulsel membuka peluang PKS dengan berbagai institusi:
+📋 PERSYARATAN:
+• Surat permohonan dari pimpinan institusi
+• Profil institusi & latar belakang
+• Proposal kerja sama / program
 
-🤝 BENTUK KERJA SAMA
-• Program pencegahan narkoba di lingkungan kerja/sekolah
-• Fasilitasi test urine massal
-• Pelatihan kader anti-narkoba
-• Pembentukan Satgas atau relawan
-• Pengembangan Desa/Kelurahan Bersinar
+📝 ALUR:
+1. Kirim surat permohonan resmi ke:
+   BNNP Sulsel
+   Jl. A.P. Pettarani No. 14, Makassar
+   Atau email: humas@sulsel.bnn.go.id
+2. Tim BNN mengkaji proposal
+3. Rapat koordinasi & presentasi program
+4. Penandatanganan PKS/MoU
+5. Implementasi program bersama
+6. Monitoring & evaluasi berkala
 
-📝 PROSEDUR
-1. Surat permohonan kerja sama dari pimpinan institusi
-2. Rapat koordinasi & presentasi program
-3. Penandatanganan PKS/MoU
-4. Implementasi program bersama
-5. Monitoring dan evaluasi
-
-💻 Kontak: humas@sulsel.bnn.go.id`,
+🌐 Link: sulsel.bnn.go.id/layanan/pks`,
   '2h': `
-LAYANAN REHABILITASI NARKOBA
+CARDAFTARREHABILITASI
 
-BNNP menyediakan layanan rehabilitasi GRATIS & RAHASIA.
+📋 PERSYARATAN:
+• KTP & KK (fotokopi)
+• Surat rujukan dokter/RS (bisa dari BNN)
+• Hasil screening urine positif narkoba
+• Surat keterangan sehat (bebas TB, HIV, hepatitis)
+• Surat pernyataan bersedia direhab (bermaterai)
+• Pas foto 3×4 (2 lembar)
+• KTP & KK orang tua/wali (jika < 21 tahun)
 
-🏥 JENIS
-• Rawat Inap (Residensial) 3-6 bulan
-• Rawat Jalan (Non-Residen) konseling berkala
-• Komunitas Terapis (TC)
-
-📋 ALUR PENDAFTARAN
+📝 ALUR:
 1. Hubungi BNNP Sulsel (WA/Telepon/Datang)
 2. Asesmen awal oleh petugas/medis
 3. Cek kesehatan (lab, fisik, psikologis)
 4. Penentuan jenis rehab (Inap/Jalan/Komunitas)
 5. Penempatan ke Lembaga Rehab BNN/Mitra
-
-📄 SYARAT DOKUMEN
-✅ KTP & KK (fotokopi)
-✅ Surat rujukan dokter/RS (bisa dari BNN)
-✅ Hasil screening urine (positif narkoba)
-✅ Surat keterangan sehat (bebas TB, HIV, hepatitis)
-✅ Surat pernyataan bersedia direhab (bermaterai)
-✅ Pas foto 3×4 (2 lembar)
-✅ KTP & KK orang tua/wali (jika < 21 thn)
+6. Jalani program rehabilitasi
+7. Selesai → reintegrasi sosial & pasca rehab
 
 💰 BIAYA: GRATIS (APBN/APBD)
+⚠️ Rehab wajib untuk pengguna (UU 35/2009 Pasal 127-129)
 
-⚠️ Rehab wajib untuk pengguna (bukan penjara) — UU 35/2009 Pasal 127-129`,
+🌐 Link: sulsel.bnn.go.id/layanan/rehabilitasi`,
   '2i': `
-SURVEI BNNP SULSEL
+CARDAFTAR SURVEI
 
-BNN Sulsel secara berkala menyelenggarakan survei untuk mengukur:
+📝 ALUR:
+1. Buka tautan survei: sulsel.bnn.go.id/survei
+2. Pilih jenis survei yang tersedia:
+   • Kepuasan Masyarakat
+   • Indeks P4GN
+   • Kebutuhan Rehabilitasi
+3. Isi data diri (nama, umur, domisili, pekerjaan)
+4. Jawab pertanyaan survei
+5. Klik "Kirim"
+6. Selesai — partisipasi Anda tercatat
 
-📊 JENIS SURVEI
-• Survei Kepuasan Masyarakat terhadap layanan BNN
-• Survei Indeks P4GN (Pencegahan & Pemberdayaan)
-• Survei Prevalensi penyalahgunaan narkoba
-• Survei Kebutuhan Rehabilitasi
-• Survei Kepuasan Peserta Rehab
+💰 Partisipasi GRATIS & ANONIM.
 
-💻 Partisipasi Anda sangat berharga untuk perbaikan layanan BNN Sulsel.
-
-Ikuti survei terbaru: sulsel.bnn.go.id/survei`,
+🌐 Link: sulsel.bnn.go.id/survei`,
   '2j': `
-PROGRAM MAGANG / PRAKTIK KERJA
+CARDAFTAR MAGANG
 
-BNNP Sulsel membuka kesempatan magang untuk:
-
-🎓 SASARAN
-• Mahasiswa S1/D3/D4 bidang hukum, kesehatan, psikologi, atau sosial
-• Siswa SMK terkait
-• Fresh graduate
-
-📝 PERSYARATAN
+📋 PERSYARATAN:
 • Surat pengantar dari institusi pendidikan
 • Proposal magang (maks 2 halaman)
 • CV & transkrip nilai
@@ -877,31 +977,36 @@ BNNP Sulsel membuka kesempatan magang untuk:
 • Pas foto 3×4 (2 lembar)
 • Surat pernyataan bersedia mengikuti aturan BNN
 
-⏱ DURASI: 1-3 bulan (disesuaikan kebutuhan institusi)
+📝 ALUR:
+1. Kirim lamaran via email: humas@sulsel.bnn.go.id
+2. Tim BNN review proposal
+3. Interview & penempatan bagian
+4. Penandatanganan surat tugas magang
+5. Pelaksanaan magang (1-3 bulan)
+6. Evaluasi & penerbitan sertifikat
 
-📞 Kirim lamaran via email: humas@sulsel.bnn.go.id
-📍 Alamat: Jl. A.P. Pettarani No. 14, Makassar`,
+🌐 Link: sulsel.bnn.go.id/layanan/magang`,
   '2k': `
-SKHPN (SURAT KETERANGAN HASIL PEMERIKSAAN NARKOBA)
+CARDAFTARSKHPN
 
-SKHPN adalah surat resmi yang dikeluarkan BNNP Sulsel sebagai hasil pemeriksaan narkoba seseorang.
+📋 PERSYARATAN:
+• KTP asli & fotokopi
+• Mengisi formulir permohonan SKHPN
+• Surat pengantar dari instansi (jika untuk keperluan kerja/sekolah)
+• Hasil test urine (dilakukan di tempat)
 
-📋 KEGUNAAN
-• Syarat administrasi pekerjaan/kantor
-• Syarat pengajuan beasiswa
-• Syarat masuk institusi pendidikan tertentu
-• Syarat pernikahan (beberapa daerah)
-• Dokumen legal dan resmi dari BNN
+📝 ALUR:
+1. Datang ke BNNP Sulsel / BNN Kab/Kota
+2. Ambil nomor antrean
+3. Isi formulir permohonan
+4. Lakukan test urine (panel 15-30 menit)
+5. Tunggu hasil test
+6. Jika hasil keluar → SKHPN diterbitkan & ditandatangani petugas
+7. Ambil SKHPN di loket
 
-📝 PROSEDUR
-1. Datang ke BNNP Sulsel atau BNN Kab/Kota
-2. Test urine di lokasi (panel atau konfirmasi)
-3. Hasil (15-30 menit untuk panel)
-4. Terbit SKHPN resmi ditandatangani petugas
+💰 BIAYA: GRATIS untuk perorangan
 
-💰 BIAYA: GRATIS untuk perorangan (kebijakan tertentu)
-
-💡 Hubungi BNNP Sulsel untuk info permohonan SKHPN.`,
+🌐 Link: sulsel.bnn.go.id/layanan/skhpn`,
 };
 
 function delay(ms) {

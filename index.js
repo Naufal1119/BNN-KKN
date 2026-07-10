@@ -26,16 +26,6 @@ async function main() {
         } else {
           await sock.sendMessage(jid, { text: reply.text });
         }
-        if (reply.nextMenu) {
-          await delay(800);
-          if (reply.nextMenu === '2_layanan_buttons') {
-            await sendInteractive(sock, jid, '2_layanan_buttons', '');
-            await delay(600);
-            await sendInteractive(sock, jid, '2_layanan_buttons_2', '');
-          } else {
-            await sendInteractive(sock, jid, reply.nextMenu, '');
-          }
-        }
       }
     } catch (err) {
       console.error('Error sending message:', err);
