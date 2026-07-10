@@ -1,4 +1,4 @@
-const { interactiveMenus, detailContent } = require('./interactive');
+const { interactiveMenus, detailContent, serviceUrls } = require('./interactive');
 const { getSock } = require('./connection');
 const admin = require('./admin');
 
@@ -698,7 +698,7 @@ function handleMessage(text, jid) {
     let backMenu = 'content_back';
     if (msg.startsWith('1h2')) backMenu = 'back_layanan';
     else if (msg.startsWith('2') && msg.length <= 3) backMenu = 'back_layanan_main';
-    return { text: detailContent[msg], menu: backMenu };
+    return { text: detailContent[msg], menu: backMenu, url: serviceUrls[msg] || null };
   }
 
   const dynamicContent = admin.getDynamicContent(msg);
@@ -721,7 +721,7 @@ function handleMessage(text, jid) {
       let backMenu = 'content_back';
       if (contextualKey.startsWith('1h2')) backMenu = 'back_layanan';
       else if (contextualKey.startsWith('2') && contextualKey.length <= 3) backMenu = 'back_layanan_main';
-      return { text: detailContent[contextualKey], menu: backMenu };
+      return { text: detailContent[contextualKey], menu: backMenu, url: serviceUrls[contextualKey] || null };
     }
     const dynamicContextual = admin.getDynamicContent(contextualKey);
     if (dynamicContextual) {

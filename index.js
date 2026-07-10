@@ -1,6 +1,6 @@
 const { startConnection, getSock } = require('./src/connection');
 const { handleMessage, initTimers } = require('./src/messages');
-const { sendInteractive } = require('./src/interactive');
+const { sendInteractive, sendServiceUrlButton } = require('./src/interactive');
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -21,6 +21,10 @@ async function main() {
       const reply = handleMessage(text, jid);
       if (reply) {
         await typingDelay(sock, jid, reply.text);
+        if (reply.url) {
+          await sendServiceUrlButton(sock, jid, reply.url);
+          await delay(500);
+        }
         if (reply.menu) {
           await sendInteractive(sock, jid, reply.menu, reply.text);
         } else {

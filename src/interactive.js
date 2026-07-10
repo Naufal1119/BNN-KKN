@@ -800,8 +800,6 @@ CARA DAFTAR TES ASESMEN TERPADU (TAT)
 4. Hasil assessment → rekomendasi rehab
 5. Rujuk ke lembaga rehab sesuai hasil
 
-🌐 Link pendaftaran: sulsel.bnn.go.id/layanan/tat
-
 💡 Assessment GRATIS & RAHASIA.`,
   '2b': `
 CARA DAFTAR TEST URINE
@@ -823,9 +821,7 @@ CARA DAFTAR TEST URINE
 
 💰 BIAYA:
 • GRATIS untuk masyarakat umum (program tertentu)
-• Berbayar untuk instansi/perusahaan
-
-🌐 Link info: sulsel.bnn.go.id/layanan/test-urine`,
+• Berbayar untuk instansi/perusahaan`,
   '2c': `
 CARA DAFTAR PENYULUHAN
 
@@ -845,9 +841,7 @@ CARA DAFTAR PENYULUHAN
 5. Laporan & evaluasi
 
 ⏱ Ajukan minimal 7 hari sebelum pelaksanaan
-💰 GRATIS untuk masyarakat Sulsel
-
-🌐 Link info: sulsel.bnn.go.id/layanan/penyuluhan`,
+💰 GRATIS untuk masyarakat Sulsel`,
   '2d': `
 CARA DAFTAR BUKU TAMU
 
@@ -859,9 +853,7 @@ CARA DAFTAR BUKU TAMU
    • Instansi/identitas
    • Keperluan/kunjungan
    • No. telepon
-4. Petugas akan mengarahkan ke bagian terkait
-
-🌐 Link: sulsel.bnn.go.id/layanan/buku-tamu`,
+4. Petugas akan mengarahkan ke bagian terkait`,
   '2e': `
 CARA DAFTARKONSULTASI HUKUM
 
@@ -880,9 +872,7 @@ CARA DAFTARKONSULTASI HUKUM
 5. Dapatkan penjelasan & rekomendasi hukum
 
 🕒 Senin–Jumat, 08.00–16.00 WITA
-💰 GRATIS & RAHASIA
-
-🌐 Link: sulsel.bnn.go.id/layanan/konsultasi-hukum`,
+💰 GRATIS & RAHASIA`,
   '2f': `
 CARADAFTAR PENGADUAN
 
@@ -901,9 +891,7 @@ CARADAFTAR PENGADUAN
 3. Petugas memverifikasi & menerbitkan nomor tiket
 4. Pantau status via menu "Pengaduan" atau hubungi CS
 
-⏱ Nomor tiket (TKT-xxx) diterbitkan < 1×24 jam.
-
-🌐 Link: sulsel.bnn.go.id/layanan/pengaduan`,
+⏱ Nomor tiket (TKT-xxx) diterbitkan < 1×24 jam.`,
   '2g': `
 CARA DAFTAR PKS / KERJA SAMA
 
@@ -921,9 +909,7 @@ CARA DAFTAR PKS / KERJA SAMA
 3. Rapat koordinasi & presentasi program
 4. Penandatanganan PKS/MoU
 5. Implementasi program bersama
-6. Monitoring & evaluasi berkala
-
-🌐 Link: sulsel.bnn.go.id/layanan/pks`,
+6. Monitoring & evaluasi berkala`,
   '2h': `
 CARA DAFTARREHABILITASI
 
@@ -946,9 +932,7 @@ CARA DAFTARREHABILITASI
 7. Selesai → reintegrasi sosial & pasca rehab
 
 💰 BIAYA: GRATIS (APBN/APBD)
-⚠️ Rehab wajib untuk pengguna (UU 35/2009 Pasal 127-129)
-
-🌐 Link: sulsel.bnn.go.id/layanan/rehabilitasi`,
+⚠️ Rehab wajib untuk pengguna (UU 35/2009 Pasal 127-129)`,
   '2i': `
 CARA DAFTAR SURVEI
 
@@ -963,9 +947,7 @@ CARA DAFTAR SURVEI
 5. Klik "Kirim"
 6. Selesai — partisipasi Anda tercatat
 
-💰 Partisipasi GRATIS & ANONIM.
-
-🌐 Link: sulsel.bnn.go.id/survei`,
+💰 Partisipasi GRATIS & ANONIM.`,
   '2j': `
 CARA DAFTAR MAGANG
 
@@ -983,9 +965,7 @@ CARA DAFTAR MAGANG
 3. Interview & penempatan bagian
 4. Penandatanganan surat tugas magang
 5. Pelaksanaan magang (1-3 bulan)
-6. Evaluasi & penerbitan sertifikat
-
-🌐 Link: sulsel.bnn.go.id/layanan/magang`,
+6. Evaluasi & penerbitan sertifikat`,
   '2k': `
 CARA DAFTAR SKHPN
 
@@ -1004,9 +984,21 @@ CARA DAFTAR SKHPN
 6. Jika hasil keluar → SKHPN diterbitkan & ditandatangani petugas
 7. Ambil SKHPN di loket
 
-💰 BIAYA: GRATIS untuk perorangan
+💰 BIAYA: GRATIS untuk perorangan`,
+};
 
-🌐 Link: sulsel.bnn.go.id/layanan/skhpn`,
+const serviceUrls = {
+  '2a': { text: 'Daftar TAT Online', url: 'https://placeholder.bnn.go.id/layanan/tat' },
+  '2b': { text: 'Daftar Test Urine', url: 'https://placeholder.bnn.go.id/layanan/test-urine' },
+  '2c': { text: 'Daftar Penyuluhan', url: 'https://placeholder.bnn.go.id/layanan/penyuluhan' },
+  '2d': { text: 'Isi Buku Tamu', url: 'https://placeholder.bnn.go.id/layanan/buku-tamu' },
+  '2e': { text: 'Konsultasi Hukum', url: 'https://placeholder.bnn.go.id/layanan/konsultasi-hukum' },
+  '2f': { text: 'Sampaikan Pengaduan', url: 'https://placeholder.bnn.go.id/layanan/pengaduan' },
+  '2g': { text: 'Ajukan PKS', url: 'https://placeholder.bnn.go.id/layanan/pks' },
+  '2h': { text: 'Daftar Rehabilitasi', url: 'https://placeholder.bnn.go.id/layanan/rehabilitasi' },
+  '2i': { text: 'Ikuti Survei', url: 'https://placeholder.bnn.go.id/layanan/survei' },
+  '2j': { text: 'Daftar Magang', url: 'https://placeholder.bnn.go.id/layanan/magang' },
+  '2k': { text: 'Ajukan SKHPN', url: 'https://placeholder.bnn.go.id/layanan/skhpn' },
 };
 
 function delay(ms) {
@@ -1063,4 +1055,27 @@ async function sendInteractive(sock, jid, menuKey, bodyText) {
   }
 }
 
-module.exports = { interactiveMenus, detailContent, sendInteractive };
+async function sendServiceUrlButton(sock, jid, urlData) {
+  if (!urlData) return;
+  try {
+    const urlButton = [{
+      name: 'cta_url',
+      buttonParamsJson: JSON.stringify({
+        display_text: urlData.text,
+        url: urlData.url,
+        merchant_url: 'https://placeholder.bnn.go.id'
+      })
+    }];
+    await sendInteractiveMessage(sock, jid, {
+      text: `Klik tombol di bawah untuk mengakses layanan:`,
+      footer: 'BNNP Sulsel',
+      title: 'LAYANAN ADMINISTRASI',
+      interactiveButtons: urlButton
+    });
+    console.log(`sendServiceUrlButton sent to ${jid}`);
+  } catch (err) {
+    console.error(`sendServiceUrlButton error:`, err.message);
+  }
+}
+
+module.exports = { interactiveMenus, detailContent, serviceUrls, sendInteractive, sendServiceUrlButton };
