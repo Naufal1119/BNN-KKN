@@ -786,7 +786,7 @@ Prosedur: Datang → Test Urine → Hasil (15-30 menit) → Terbit SKHPN.
 
 💡 Hubungi BNNP Sulsel untuk info lebih lanjut.`,
   '2a': `
-CARDAFTAR TES ASESMEN TERPADU (TAT)
+CARA DAFTAR TES ASESMEN TERPADU (TAT)
 
 📋 PERSYARATAN:
 • KTP asli
@@ -804,7 +804,7 @@ CARDAFTAR TES ASESMEN TERPADU (TAT)
 
 💡 Assessment GRATIS & RAHASIA.`,
   '2b': `
-CARDAFTAR TEST URINE
+CARA DAFTAR TEST URINE
 
 📋 PERSYARATAN:
 • KTP asli
@@ -827,7 +827,7 @@ CARDAFTAR TEST URINE
 
 🌐 Link info: sulsel.bnn.go.id/layanan/test-urine`,
   '2c': `
-CARDAFTAR PENYULUHAN
+CARA DAFTAR PENYULUHAN
 
 📋 PERSYARATAN:
 • Surat permohonan resmi dari pimpinan institusi
@@ -849,7 +849,7 @@ CARDAFTAR PENYULUHAN
 
 🌐 Link info: sulsel.bnn.go.id/layanan/penyuluhan`,
   '2d': `
-CARDAFTAR BUKU TAMU
+CARA DAFTAR BUKU TAMU
 
 📝 ALUR:
 1. Datang ke kantor BNNP Sulsel atau BNN Kab/Kota
@@ -863,7 +863,7 @@ CARDAFTAR BUKU TAMU
 
 🌐 Link: sulsel.bnn.go.id/layanan/buku-tamu`,
   '2e': `
-CARDAFTARKONSULTASI HUKUM
+CARA DAFTARKONSULTASI HUKUM
 
 📋 PERSYARATAN:
 • KTP/surat identitas
@@ -884,7 +884,7 @@ CARDAFTARKONSULTASI HUKUM
 
 🌐 Link: sulsel.bnn.go.id/layanan/konsultasi-hukum`,
   '2f': `
-CARDAFTAR PENGADUAN
+CARADAFTAR PENGADUAN
 
 📝 ALUR:
 1. Sampaikan pengaduan lewat salah satu saluran:
@@ -905,7 +905,7 @@ CARDAFTAR PENGADUAN
 
 🌐 Link: sulsel.bnn.go.id/layanan/pengaduan`,
   '2g': `
-CARDAFTAR PKS / KERJA SAMA
+CARA DAFTAR PKS / KERJA SAMA
 
 📋 PERSYARATAN:
 • Surat permohonan dari pimpinan institusi
@@ -925,7 +925,7 @@ CARDAFTAR PKS / KERJA SAMA
 
 🌐 Link: sulsel.bnn.go.id/layanan/pks`,
   '2h': `
-CARDAFTARREHABILITASI
+CARA DAFTARREHABILITASI
 
 📋 PERSYARATAN:
 • KTP & KK (fotokopi)
@@ -950,7 +950,7 @@ CARDAFTARREHABILITASI
 
 🌐 Link: sulsel.bnn.go.id/layanan/rehabilitasi`,
   '2i': `
-CARDAFTAR SURVEI
+CARA DAFTAR SURVEI
 
 📝 ALUR:
 1. Buka tautan survei: sulsel.bnn.go.id/survei
@@ -967,7 +967,7 @@ CARDAFTAR SURVEI
 
 🌐 Link: sulsel.bnn.go.id/survei`,
   '2j': `
-CARDAFTAR MAGANG
+CARA DAFTAR MAGANG
 
 📋 PERSYARATAN:
 • Surat pengantar dari institusi pendidikan
@@ -987,7 +987,7 @@ CARDAFTAR MAGANG
 
 🌐 Link: sulsel.bnn.go.id/layanan/magang`,
   '2k': `
-CARDAFTARSKHPN
+CARA DAFTAR SKHPN
 
 📋 PERSYARATAN:
 • KTP asli & fotokopi
