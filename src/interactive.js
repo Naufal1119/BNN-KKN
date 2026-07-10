@@ -9,7 +9,7 @@ const interactiveMenus = {
     type: 'quick_reply',
     buttons: [
       { text: 'Informasi', id: '1' },
-      { text: 'Layanan', id: '2' },
+      { text: 'Administrasi', id: '2' },
     ]
   },
   mainAdmin: {
