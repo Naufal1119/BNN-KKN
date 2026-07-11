@@ -988,17 +988,17 @@ CARA DAFTAR SKHPN
 };
 
 const serviceUrls = {
-  '2a': { text: 'Daftar TAT Online', url: 'https://placeholder.bnn.go.id/layanan/tat' },
-  '2b': { text: 'Daftar Test Urine', url: 'https://placeholder.bnn.go.id/layanan/test-urine' },
-  '2c': { text: 'Daftar Penyuluhan', url: 'https://placeholder.bnn.go.id/layanan/penyuluhan' },
-  '2d': { text: 'Isi Buku Tamu', url: 'https://placeholder.bnn.go.id/layanan/buku-tamu' },
-  '2e': { text: 'Konsultasi Hukum', url: 'https://placeholder.bnn.go.id/layanan/konsultasi-hukum' },
-  '2f': { text: 'Sampaikan Pengaduan', url: 'https://placeholder.bnn.go.id/layanan/pengaduan' },
-  '2g': { text: 'Ajukan PKS', url: 'https://placeholder.bnn.go.id/layanan/pks' },
-  '2h': { text: 'Daftar Rehabilitasi', url: 'https://placeholder.bnn.go.id/layanan/rehabilitasi' },
-  '2i': { text: 'Ikuti Survei', url: 'https://placeholder.bnn.go.id/layanan/survei' },
-  '2j': { text: 'Daftar Magang', url: 'https://placeholder.bnn.go.id/layanan/magang' },
-  '2k': { text: 'Ajukan SKHPN', url: 'https://placeholder.bnn.go.id/layanan/skhpn' },
+  '2a': { text: 'Daftar TAT Online', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=tat' },
+  '2b': { text: 'Daftar Test Urine', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=test-urine' },
+  '2c': { text: 'Daftar Penyuluhan', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=penyuluhan' },
+  '2d': { text: 'Isi Buku Tamu', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=buku-tamu' },
+  '2e': { text: 'Konsultasi Hukum', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=konsultasi-hukum' },
+  '2f': { text: 'Sampaikan Pengaduan', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=pengaduan' },
+  '2g': { text: 'Ajukan PKS', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=pks' },
+  '2h': { text: 'Daftar Rehabilitasi', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=rehabilitasi' },
+  '2i': { text: 'Ikuti Survei', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=survei' },
+  '2j': { text: 'Daftar Magang', url: 'https://sites.google.com/view/simagbnnpsulsel/simag-bnnp-sulsel' },
+  '2k': { text: 'Ajukan SKHPN', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=skhpn' },
 };
 
 function delay(ms) {
