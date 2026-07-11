@@ -38,13 +38,13 @@ const interactiveMenus = {
     sections: [{
       title: 'INFORMASI',
       rows: [
-        { title: 'Profil & Tugas BNNP Sulsel', rowId: '1a' },
-        { title: 'Program P4GN', rowId: '1b' },
-        { title: 'Jam & Alamat Kantor', rowId: '1c' },
-        { title: 'Landasan Hukum', rowId: '1d' },
-        { title: 'Lokasi Kantor Cabang', rowId: '1e' },
-        { title: 'FAQ Narkoba', rowId: '1f' },
-        { title: 'Media Sosial & Website', rowId: '1g' },
+        { title: 'Profil & Tugas BNNP Sulsel', rowId: '1a', description: 'Visi, misi, tugas & fungsi BNNP Sulsel' },
+        { title: 'Program P4GN', rowId: '1b', description: 'Pencegahan & pemberantasan penyalahgunaan narkoba' },
+        { title: 'Jam & Alamat Kantor', rowId: '1c', description: 'Lokasi & jam operasional kantor' },
+        { title: 'Landasan Hukum', rowId: '1d', description: 'UU, PP, dan regulasi terkait narkotika' },
+        { title: 'Lokasi Kantor Cabang', rowId: '1e', description: 'BNN Kab/Kota se-Sulawesi Selatan' },
+        { title: 'FAQ Narkoba', rowId: '1f', description: 'Pertanyaan umum seputar narkoba & hukum' },
+        { title: 'Media Sosial & Website', rowId: '1g', description: 'Instagram, YouTube, website resmi' },
         { title: 'Daftar Layanan', rowId: '1h', description: 'TAT, Test Urine, Penyuluhan, dll' },
       ]
     }]
