@@ -8,9 +8,7 @@ const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
 const welcomeMessage = `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`;
 
-const reminderMessage = `Apakah Sahabat BNNP masih bersama kami?
-
-Jika masih memerlukan bantuan, silakan pilih menu yang tersedia.`;
+const reminderMessage = `Apakah Sahabat BNNP masih bersama kami?`;
 
 const closeMessage = `Terima kasih telah mengakses Layanan Pandawa, senang dapat membantu Sahabat BNN.`;
 
@@ -18,7 +16,7 @@ function initTimers() {}
 
 function getSession(jid) {
   if (!userSessions.has(jid)) {
-    userSessions.set(jid, { currentMenu: 'main', greeted: false });
+    userSessions.set(jid, { currentMenu: 'main', greeted: false, reminderSent: false });
   }
   return userSessions.get(jid);
 }
@@ -29,12 +27,20 @@ function resetSession(jid) {
     clearTimeout(session.reminderTimer);
     clearTimeout(session.closeTimer);
   }
-  userSessions.set(jid, { currentMenu: 'main', greeted: session?.greeted ?? false });
+  userSessions.set(jid, { currentMenu: 'main', greeted: session?.greeted ?? false, reminderSent: false });
 }
 
 function clearTimers(session) {
   clearTimeout(session.reminderTimer);
   clearTimeout(session.closeTimer);
+}
+
+function cleanupSession(jid) {
+  const session = userSessions.get(jid);
+  if (session) {
+    clearTimers(session);
+  }
+  userSessions.delete(jid);
 }
 
 function startTimers(jid, session) {
@@ -43,8 +49,10 @@ function startTimers(jid, session) {
 
   session.reminderTimer = setTimeout(() => {
     const sock = getSock();
-    if (sock) {
-      sock.sendMessage(jid, { text: reminderMessage });
+    if (sock && !session.reminderSent) {
+      const { sendInteractive } = require('./interactive');
+      session.reminderSent = true;
+      sendInteractive(sock, jid, 'reminder', reminderMessage);
     }
 
     session.closeTimer = setTimeout(() => {
@@ -665,6 +673,17 @@ function handleMessage(text, jid) {
   const msg = text.toLowerCase().trim();
 
   clearTimers(session);
+
+  if (msg === 'yes_still_here') {
+    session.reminderSent = false;
+    startTimers(jid, session);
+    return { text: interactiveMenus[session.currentMenu].text, menu: session.currentMenu };
+  }
+
+  if (msg === 'end_session') {
+    cleanupSession(jid);
+    return { text: closeMessage };
+  }
 
   if (isLoggedIn && (msg === 'mainadmin' || msg === '/admin' || msg === '/panel')) {
     resetSession(jid);

@@ -12,6 +12,16 @@ const interactiveMenus = {
       { text: 'Administrasi', id: '2' },
     ]
   },
+  reminder: {
+    text: `Apakah Sahabat BNNP masih bersama kami?`,
+    header: '',
+    footer: '',
+    type: 'quick_reply',
+    buttons: [
+      { text: 'Ya, masih di sini', id: 'yes_still_here' },
+      { text: 'Akhiri Sesi', id: 'end_session' }
+    ]
+  },
   mainAdmin: {
     text: `Selamat datang di Panel Admin BNNP Sulsel. Silakan pilih menu administrasi.`,
     header: 'PANEL ADMIN BNNP SULSEL',
