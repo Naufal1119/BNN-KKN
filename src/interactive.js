@@ -81,6 +81,29 @@ const interactiveMenus = {
       ]
     }]
   },
+  layanan_picker: {
+    text: `Pilih layanan lain atau kembali ke menu utama:`,
+    header: 'LAYANAN ADMINISTRASI',
+    footer: '',
+    buttonText: 'Pilih Layanan',
+    sections: [{
+      title: 'LAYANAN',
+      rows: [
+        { title: 'Tes Asesmen Terpadu (TAT)', rowId: '2a', description: 'Asesmen awal & rujukan rehabilitasi' },
+        { title: 'Test Urine', rowId: '2b', description: 'Pemeriksaan urine deteksi narkoba' },
+        { title: 'Penyuluhan', rowId: '2c', description: 'Sosialisasi bahaya narkoba ke sekolah/komunitas' },
+        { title: 'Buku Tamu', rowId: '2d', description: 'Pencatatan kunjungan & layanan' },
+        { title: 'Konsultasi Hukum', rowId: '2e', description: 'Konsultasi UU Narkotika & hak hukum' },
+        { title: 'Pengaduan', rowId: '2f', description: 'Sampaikan & cek status pengaduan' },
+        { title: 'Perjanjian Kerja Sama (PKS)', rowId: '2g', description: 'Kemitraan & MoU dengan institusi' },
+        { title: 'Rehabilitasi', rowId: '2h', description: 'Rehab gratis & rahasia korban narkoba' },
+        { title: 'Survei', rowId: '2i', description: 'Survei kepuasan & indeks P4GN' },
+        { title: 'Magang', rowId: '2j', description: 'Program magang/praktik di BNNP' },
+        { title: 'SKHPN', rowId: '2k', description: 'Surat Keterangan Hasil Pemeriksaan Narkoba' },
+        { title: '🏠 Kembali ke Menu Utama', rowId: 'menu', description: 'Kembali ke menu awal' },
+      ]
+    }]
+  },
   '1h': {
     text: `Silakan pilih layanan yang Anda butuhkan:`,
     header: 'LAYANAN',
@@ -523,16 +546,7 @@ const interactiveMenus = {
       { text: 'Kembali ke Menu Utama', id: 'menu' },
     ]
   },
-  back_layanan_main: {
-    text: '',
-    header: '',
-    footer: '',
-    type: 'quick_reply',
-    buttons: [
-      { text: 'Kembali', id: '2' },
-      { text: 'Kembali ke Menu Utama', id: 'menu' },
-    ]
-  },
+
   error_fallback: {
     text: `⚠️ Maaf, pilihan yang Anda masukkan tidak tersedia.
 

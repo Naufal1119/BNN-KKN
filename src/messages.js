@@ -720,7 +720,16 @@ function handleMessage(text, jid) {
     startTimers(jid, session);
     let backMenu = 'content_back';
     if (msg.startsWith('1h2')) backMenu = 'back_layanan';
-    else if (msg.startsWith('2') && msg.length <= 3) backMenu = 'back_layanan_main';
+    
+    if (msg.startsWith('2') && msg.length === 2) {
+      return {
+        text: detailContent[msg],
+        url: serviceUrls[msg] || null,
+        isServiceDetail: true,
+        nextMenu: 'layanan_picker'
+      };
+    }
+    
     return { text: detailContent[msg], menu: backMenu, url: serviceUrls[msg] || null };
   }
 
@@ -743,7 +752,6 @@ function handleMessage(text, jid) {
       startTimers(jid, session);
       let backMenu = 'content_back';
       if (contextualKey.startsWith('1h2')) backMenu = 'back_layanan';
-      else if (contextualKey.startsWith('2') && contextualKey.length <= 3) backMenu = 'back_layanan_main';
       return { text: detailContent[contextualKey], menu: backMenu, url: serviceUrls[contextualKey] || null };
     }
     const dynamicContextual = admin.getDynamicContent(contextualKey);
