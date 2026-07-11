@@ -6,7 +6,11 @@ const userSessions = new Map();
 const TIMEOUT_REMINDER = 3 * 60 * 1000;
 const TIMEOUT_CLOSE = 5 * 60 * 1000;
 
-const welcomeMessage = `Selamat datang di Layanan Chatbot BNNP Sulsel. Silakan pilih menu yang dibutuhkan.`;
+const welcomeMessage = `Selamat datang di Layanan Chatbot BNNP Sulsel.
+
+Kami siap membantu Anda mengakses berbagai informasi dan layanan publik dari Badan Narkotika Nasional Provinsi Sulawesi Selatan.
+
+Silakan pilih menu di bawah untuk melanjutkan:`;
 
 const reminderMessage = `Apakah Sahabat BNNP masih bersama kami?`;
 
@@ -667,7 +671,7 @@ function handleMessage(text, jid) {
     session.greeted = true;
     session.currentMenu = 'main';
     startTimers(jid, session);
-    return { text: welcomeMessage, menu: 'main' };
+    return { text: welcomeMessage, menu: 'main', sendMenuSeparate: true };
   }
 
   const msg = text.toLowerCase().trim();

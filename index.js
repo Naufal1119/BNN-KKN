@@ -21,14 +21,21 @@ async function main() {
       const reply = handleMessage(text, jid);
       if (reply) {
         await typingDelay(sock, jid, reply.text);
-        if (reply.url) {
-          await sendServiceUrlButton(sock, jid, reply.url);
-          await delay(500);
-        }
-        if (reply.menu) {
-          await sendInteractive(sock, jid, reply.menu, reply.text);
-        } else {
+        
+        if (reply.sendMenuSeparate) {
           await sock.sendMessage(jid, { text: reply.text });
+          await delay(1000);
+          await sendInteractive(sock, jid, reply.menu, '');
+        } else {
+          if (reply.url) {
+            await sendServiceUrlButton(sock, jid, reply.url);
+            await delay(500);
+          }
+          if (reply.menu) {
+            await sendInteractive(sock, jid, reply.menu, reply.text);
+          } else {
+            await sock.sendMessage(jid, { text: reply.text });
+          }
         }
       }
     } catch (err) {
