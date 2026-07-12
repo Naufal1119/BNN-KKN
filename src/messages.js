@@ -726,6 +726,7 @@ function handleMessage(text, jid) {
         text: detailContent[msg],
         url: serviceUrls[msg] || null,
         isServiceDetail: true,
+        backMenu: 'back_service_buttons',
         nextMenu: 'layanan_picker'
       };
     }

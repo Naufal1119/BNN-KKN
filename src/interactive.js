@@ -546,6 +546,16 @@ const interactiveMenus = {
       { text: 'Kembali ke Menu Utama', id: 'menu' },
     ]
   },
+  back_service_buttons: {
+    text: '',
+    header: '',
+    footer: '',
+    type: 'quick_reply',
+    buttons: [
+      { text: 'Kembali', id: '2' },
+      { text: 'Kembali ke Menu Utama', id: 'menu' },
+    ]
+  },
 
   error_fallback: {
     text: `⚠️ Maaf, pilihan yang Anda masukkan tidak tersedia.
