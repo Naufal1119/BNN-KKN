@@ -82,7 +82,7 @@ const interactiveMenus = {
     }]
   },
   layanan_picker: {
-    text: `Pilih layanan lain atau kembali ke menu utama:`,
+    text: `Pilih layanan lain:`,
     header: 'LAYANAN ADMINISTRASI',
     footer: '',
     buttonText: 'Pilih Layanan',
@@ -100,7 +100,6 @@ const interactiveMenus = {
         { title: 'Survei', rowId: '2i', description: 'Survei kepuasan & indeks P4GN' },
         { title: 'Magang', rowId: '2j', description: 'Program magang/praktik di BNNP' },
         { title: 'SKHPN', rowId: '2k', description: 'Surat Keterangan Hasil Pemeriksaan Narkoba' },
-        { title: '🏠 Kembali ke Menu Utama', rowId: 'menu', description: 'Kembali ke menu awal' },
       ]
     }]
   },
