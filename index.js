@@ -27,8 +27,6 @@ async function main() {
           await delay(1000);
           await sendInteractive(sock, jid, reply.menu, '');
         } else if (reply.isServiceDetail) {
-          await sendServiceUrlButton(sock, jid, reply.url);
-          await delay(800);
           await sendInteractive(sock, jid, reply.backMenu, reply.text);
           await delay(800);
           await sendInteractive(sock, jid, reply.nextMenu, '');

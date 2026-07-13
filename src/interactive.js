@@ -1021,7 +1021,7 @@ CARA DAFTAR SKHPN
 };
 
 const serviceUrls = {
-  '2a': { text: 'Daftar TAT Online', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=tat' },
+  // '2a': { text: 'Daftar TAT Online', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=tat' },
   '2b': { text: 'Daftar Test Urine', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=test-urine' },
   '2c': { text: 'Daftar Penyuluhan', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=penyuluhan' },
   '2d': { text: 'Isi Buku Tamu', url: 'https://script.google.com/macros/s/AKfycbx3nevyFnzooaqbayQlpMQdBo8KX2HuoU7MRseG8M1Q/dev?page=buku-tamu' },
