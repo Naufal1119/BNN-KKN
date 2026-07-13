@@ -699,14 +699,15 @@ Ikuti untuk info edukasi, kegiatan, pengumuman & tips anti-narkoba.`,
   '1h2a': `
 LAYANAN TES ASESMEN TERPADU (TAT)
 
-TAT adalah layanan assessment awal untuk menentukan tingkat ketergantungan narkoba dan merekomendasikan program rehabilitasi yang sesuai.
+Tes Asesmen Terpadu (TAT) merupakan layanan asesmen awal yang bertujuan untuk mengidentifikasi tingkat ketergantungan terhadap narkotika serta memberikan rekomendasi program rehabilitasi yang sesuai dengan kebutuhan klien.
 
-• Mengetahui tingkat keparahan ketergantungan
-• Mendapatkan rujukan tepat ke lembaga rehab
-• Assessment gratis & rahasia
-• Estimasi: 1-2 jam sesi
+• Evaluasi tingkat keparahan ketergantungan secara klinis
+• Rekomendasi rujukan yang tepat ke lembaga rehabilitasi
+• Asesmen bersifat gratis dan dijamin kerahasiaannya
+• Estimasi durasi sesi: 1–2 jam
 
-Hubungi BNNP Sulsel untuk janji assessment.`,
+Untuk memperoleh layanan TAT, klien diharapkan hadir langsung ke Kantor BNNP Sulawesi Selatan tanpa perlu membuat janji terlebih dahulu. Petugas kami akan melayani Anda pada jam operasional kantor.
+`,
   '1h2b': `
 LAYANAN TEST URINE
 
@@ -819,21 +820,26 @@ Prosedur: Datang → Test Urine → Hasil (15-30 menit) → Terbit SKHPN.
 
 💡 Hubungi BNNP Sulsel untuk info lebih lanjut.`,
   '2a': `
-CARA DAFTAR TES ASESMEN TERPADU (TAT)
+TATA CARA PENDAFTARAN TES ASESMEN TERPADU (TAT)
 
 📋 PERSYARATAN:
-• KTP asli
-• Surat rujukan dari dokter/puskesmas (jika ada)
-• Bersedia mengikuti sesi assessment (±1-2 jam)
+• Kartu Tanda Penduduk (KTP) asli
+• Surat rujukan dari dokter atau puskesmas (jika tersedia)
+• Kesediaan mengikuti sesi asesmen dengan estimasi durasi ±1–2 jam
 
-📝 ALUR:
-1. Hubungi BNNP Sulsel (WA/Telepon/Datang) untuk buat janji
-2. Datang ke kantor sesuai jadwal
-3. Assessment oleh petugas/psikolog
-4. Hasil assessment → rekomendasi rehab
-5. Rujuk ke lembaga rehab sesuai hasil
+📝 ALUR PENDAFTARAN:
+1. Hadir langsung ke Kantor BNNP Sulawesi Selatan pada jam operasional.
+2. Menuju loket pelayanan dan menyampaikan keperluan untuk mengikuti TAT.
+3. Petugas akan melakukan verifikasi dokumen dan registrasi.
+4. Klien mengikuti sesi asesmen bersama petugas/psikolog.
+5. Hasil asesmen digunakan sebagai dasar rekomendasi program rehabilitasi.
+6. Klien dirujuk ke lembaga rehabilitasi yang sesuai dengan hasil asesmen.
 
-💡 Assessment GRATIS & RAHASIA.`,
+📌 Catatan: Pendaftaran hanya dapat dilakukan secara langsung di kantor. Tidak diperlukan janji temu terlebih dahulu.
+
+💰 BIAYA: GRATIS (dibiayai oleh APBN/APBD).
+🔒 Kerahasiaan data dan hasil asesmen dijamin oleh undang-undang.
+`,
   '2b': `
 CARA DAFTAR TEST URINE
 
